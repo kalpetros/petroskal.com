@@ -2,12 +2,22 @@
 layout: default
 ---
 
-<div class="inner cover">
+<div class="inner cover one">
   <h1 class="cover-heading">{{ site.title }}</h1>
   <p class="lead">{{ site.description }}</p>
   <div class="btn-group" role="group" aria-label="...">
-    <button type="button" class="btn btn-primary">{% include icon-twitter.html username=site.twitter_username %}</button>
-    <button type="button" class="btn btn-primary">{% include icon-github.html username=site.github_username %}</button>
-    <button type="button" class="btn btn-primary">{% include icon-linkedin.html username=site.linkedin_username %}</button>
+    <button type="button" class="btn btn-primary btn1">{% include icon-twitter.html username=site.twitter_username %}</button>
+    <button type="button" class="btn btn-primary btn1">{% include icon-github.html username=site.github_username %}</button>
+    <button type="button" class="btn btn-primary btn1">{% include icon-linkedin.html username=site.linkedin_username %}</button>
   </div>
+</div>
+<div class="inner cover one">
+  <div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-primary btn2" id="email"><i class="fa fa-envelope"></i> e-mail</button>
+    <button type="button" class="btn btn-primary btn2" id="pgp"><i class="fa fa-key"></i> PGP Key</button>
+  </div>
+</div>
+<div class="inner cover three">
+  <div class="email"><i class="fa fa-envelope"></i> kalpetros@gmail.com</div>
+  <div class="pgp"><i class="fa fa-key"></i> asasdlajf9u90jr0192uh09hy09fh023h0h8901f9h9f812</div>
 </div>
