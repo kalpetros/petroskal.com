@@ -1,55 +1,6 @@
 ---
 ---
 /* Globals */
-/* Links */
-a,
-a:active,
-a:focus,
-a:hover {
-  color: #fff;
-}
-/* Size of contact buttons */
-.btn1 {
-}
-.btn2 {
-}
-.btn a,
-.btn a:active,
-.btn a:focus,
-.btn a:hover {
-	color: #69b7f6;
-	text-decoration: none;
-}
-.btn-group .btn-primary,
-.btn-group .btn-primary:active,
-.btn-group .btn-primary:focus,
-.btn-group .btn-primary:hover {
-	border-radius: 0;
-	color: #69b7f6;
-}
-.cover-heading, .lead {
-	color: #fff;
-}
-/* Custom default button */
-.btn-default,
-.btn-default:hover,
-.btn-default:focus {
-  color: #333;
-  text-shadow: none; /* Prevent inheritence from `body` */
-  background-color: #fff;
-  border-style: solid;
-  border-color: white;
-}
-/* Email & PGP */
-.email,
-.pgp {
-  background-color: rgba(255,255,255,0.2);
-  color: #fff;
-  height: 50px;
-  line-height: 50px;
-  border-bottom: 2px solid #69b7f6;
-  /*word-wrap: break-word;*/
-}
 /* Base structure */
 html,
 body {
@@ -59,6 +10,57 @@ body {
 }
 body {
   text-align: center;
+}
+/* Links */
+a,
+a:active,
+a:focus,
+a:hover {
+  color: #fff;
+}
+.btn a,
+.btn a:active,
+.btn a:focus,
+.btn a:hover {
+	color: #69b7f6;
+	text-decoration: none;
+}
+/* Buttons style */
+.btn-group .btn-primary,
+.btn-group .btn-primary:active,
+.btn-group .btn-primary:focus,
+.btn-group .btn-primary:hover {
+	height: 50px;
+	border-radius: 0;
+	color: #69b7f6;
+}
+.btn-group {
+	width: 300px;
+}
+/* Top buttons */
+.top {
+	width: 33.3%;
+}
+/* Bottom buttons */
+.bottom {
+	width: 49.7%;
+}
+.cover-heading, .lead {
+	color: #fff;
+}
+/* Second row of buttons */
+.srow {
+	margin-top: 0.2%;
+}
+/* Email & PGP */
+.email,
+.pgp {
+  background-color: rgba(255,255,255,0.2);
+  color: #fff;
+  width: 99.1%;
+  line-height: 50px;
+  border-bottom: 2px solid #69b7f6;
+  /*word-wrap: break-word;*/
 }
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
@@ -77,9 +79,6 @@ body {
   margin-left: auto;
 }
 /* Padding for spacing */
-.one {
-  margin-top: 2%;
-}
 .inner {
   padding: 30px;
 }

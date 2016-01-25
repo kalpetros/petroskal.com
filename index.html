@@ -2,22 +2,24 @@
 layout: default
 ---
 
-<div class="inner cover one">
+<div class="inner cover">
   <h1 class="cover-heading">{{ site.title }}</h1>
   <p class="lead">{{ site.description }}</p>
   <div class="btn-group" role="group" aria-label="...">
-    <button type="button" class="btn btn-primary btn1">{% include icon-twitter.html username=site.twitter_username %}</button>
-    <button type="button" class="btn btn-primary btn1">{% include icon-github.html username=site.github_username %}</button>
-    <button type="button" class="btn btn-primary btn1">{% include icon-linkedin.html username=site.linkedin_username %}</button>
+    <button type="button" class="btn btn-primary top">{% include icon-twitter.html username=site.twitter_username %}</button>
+    <button type="button" class="btn btn-primary top">{% include icon-github.html username=site.github_username %}</button>
+    <button type="button" class="btn btn-primary top">{% include icon-linkedin.html username=site.linkedin_username %}</button>
   </div>
 </div>
-<div class="inner cover one">
+<div class="inner cover srow">
   <div class="btn-group" role="group" aria-label="...">
-    <button type="button" class="btn btn-primary btn2" id="email"><i class="fa fa-envelope"></i> e-mail</button>
-    <button type="button" class="btn btn-primary btn2" id="pgp"><i class="fa fa-key"></i> PGP Key</button>
+    <button type="button" class="btn btn-primary bottom" id="email"><i class="fa fa-envelope"></i> e-mail</button>
+    <button type="button" class="btn btn-primary bottom" id="pgp"><i class="fa fa-key"></i> PGP Key</button>
   </div>
 </div>
-<div class="inner cover three">
-  <div class="email"><i class="fa fa-envelope"></i> email(at)petroskal(dot)com</div>
-  <div class="pgp"><i class="fa fa-key"></i> 0xAEA16D60</div>
+<div class="inner cover">
+  <div class="btn-group" role="group" aria-label="...">
+    <div class="email"><i class="fa fa-envelope"></i> email(at)petroskal(dot)com</div>
+    <div class="pgp"><i class="fa fa-key"></i> 0xAEA16D60</div>
+  </div>
 </div>
