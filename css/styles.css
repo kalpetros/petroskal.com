@@ -10,11 +10,8 @@ a:hover {
 }
 /* Size of contact buttons */
 .btn1 {
-  height: 50px;
 }
 .btn2 {
-  height: 50px;
-  width: 130px;
 }
 .btn a,
 .btn a:active,
@@ -50,7 +47,7 @@ a:hover {
   color: #fff;
   height: 50px;
   line-height: 50px;
-  border-bottom: 5px solid white;
+  border-bottom: 2px solid #69b7f6;
   /*word-wrap: break-word;*/
 }
 /* Base structure */
@@ -72,9 +69,8 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 .site-wrapper-inner {
-  /*display: table-cell;*/
+  display: table-cell;
   vertical-align: top;
-  margin-top: 18%;
 }
 .cover-container {
   margin-right: auto;
