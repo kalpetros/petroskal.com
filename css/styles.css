@@ -26,13 +26,20 @@ a:hover {
 	text-decoration: none;
 }
 /* Buttons style */
-.btn-group .btn-primary,
-.btn-group .btn-primary:active,
-.btn-group .btn-primary:focus,
-.btn-group .btn-primary:hover {
+.btn-group .btn-primary {
 	height: 50px;
 	border-radius: 0;
 	color: #69b7f6;
+}
+.btn-group .btn-primary:active,
+.btn-group .btn-primary:focus,
+.btn-group .btn-primary:hover {
+	color: #69b7f6;
+	border-top-color: rgb(40, 96, 144);
+	border-bottom-color: rgb(40, 96, 144);
+	border-left-color: rgb(40, 96, 144);
+	border-right-color: rgb(40, 96, 144);
+	outline: 0;
 }
 .btn-group {
 	width: 300px;
@@ -55,8 +62,8 @@ a:hover {
 /* Email & PGP */
 .email,
 .pgp {
-  background-color: rgba(255,255,255,0.2);
-  color: #fff;
+  background-color: rgb(40, 96, 144);
+  color: #69b7f6;
   width: 99.1%;
   line-height: 50px;
   border-bottom: 2px solid #69b7f6;
