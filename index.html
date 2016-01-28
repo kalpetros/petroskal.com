@@ -23,6 +23,13 @@ layout: default
 <div class="inner cover">
   <div class="btn-group" role="group" aria-label="...">
     <div class="email"><i class="fa fa-envelope"></i> email(at)petroskal(dot)com</div>
-    <div class="pgp"><i class="fa fa-key"></i> 0xAEA16D60</div>
+    <div class="pgp"><i class="fa fa-key"></i>
+      {% for my_page in site.pages %}
+        {% if my_page.title %}
+          <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">0xAEA16D60
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
   </div>
 </div>

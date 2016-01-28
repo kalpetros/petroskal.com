@@ -9,9 +9,10 @@ $("#email").click(function(){
   });
   // Hide email after 5 seconds
   $(document).ready( function() {
-    $('.email').delay(5000).fadeOut();
+    $('.email').delay(4000).slideUp();
   });
 });
+
 // Show pgp on button click
 $("#pgp").click(function(){
   $(".pgp").slideDown( "slow", function() {
@@ -19,6 +20,6 @@ $("#pgp").click(function(){
   });
   // Hide pgp after 5 seconds
   $(document).ready( function() {
-    $('.pgp').delay(5000).fadeOut();
+    $('.pgp').delay(4000).slideUp();
   });
 });
