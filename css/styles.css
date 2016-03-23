@@ -16,13 +16,13 @@ a,
 a:active,
 a:focus,
 a:hover {
-  	color: #fff;
+	color: #fff;
 }
 .pgp a,
 .pgp a:active,
 .pgp a:focus,
 .pgp a:hover {
-  	color: #fff;
+	color: #fff;
 	text-decoration: none;
 }
 .btn a,
@@ -70,43 +70,43 @@ a:hover {
 /* Email & PGP */
 .email,
 .pgp {
-  	background-color: rgba(51,122,183,0.5);
-  	color: #fff;
-  	width: 99.1%;
-  	line-height: 50px;
-  	border-bottom: 2px solid #69b7f6;
-  	/*word-wrap: break-word;*/
+	background-color: rgba(51,122,183,0.5);
+	color: #fff;
+	width: 99.1%;
+	line-height: 50px;
+	border-bottom: 2px solid #69b7f6;
+	/*word-wrap: break-word;*/
 }
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
-  	display: table;
-  	width: 100%;
-  	height: 100%; /* For at least Firefox */
-  	min-height: 100%;
-  	font-family: 'Roboto', sans-serif;
+	display: table;
+	width: 100%;
+	height: 100%; /* For at least Firefox */
+	min-height: 100%;
+	font-family: 'Roboto', sans-serif;
 }
 .site-wrapper-inner {
-  	display: table-cell;
-  	vertical-align: top;
+	display: table-cell;
+	vertical-align: top;
 }
 .cover-container {
-  	margin-right: auto;
-  	margin-left: auto;
+	margin-right: auto;
+	margin-left: auto;
 }
 /* Padding for spacing */
 .inner {
-  	padding: 30px;
+	padding: 30px;
 }
 /* Header */
 .masthead-brand {
-  	margin-top: 10px;
-  	margin-bottom: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 .masthead-nav > li {
-  	display: inline-block;
+	display: inline-block;
 }
 .masthead-nav > li + li {
-  	margin-left: 20px;
+	margin-left: 20px;
 }
 .masthead-nav > li > a {
 	padding-right: 0;
@@ -148,6 +148,15 @@ a:hover {
 /* Footer */
 .mastfoot {
 	color: #fff; /* IE8 proofing */
+}
+.mastfoot a {
+	background-color: rgba(51,122,183,1);
+	padding: 5px;
+}
+.mastfoot a,
+.mastfoot a:hover {
+	color: #69b7f6;
+	text-decoration: none;
 }
 /* Affix and center */
 @media (min-width: 768px) {

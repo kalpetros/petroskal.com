@@ -9,7 +9,7 @@
 title: Petros Kalogiannakis
 email: kalpetros@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  FRONT/BACK-END WEB DEVELOPER
+  Front/Back-end Web Developer
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://petroskal.com" # the base hostname & protocol for your site
 twitter_username: kalpetross

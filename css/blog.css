@@ -1,0 +1,57 @@
+---
+---
+/* Customize container */
+@media (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}
+/* Blog styles */
+nav.navbar {
+	background: transparent;
+	border-style: none;
+}
+/* Name & description */
+.inner {
+	text-align: center;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+/* Name's font */
+.cover-heading {
+	font-weight: bold;
+}
+/* Description's font */
+.lead {
+	color: grey;
+}
+/* Posts list */
+.posts {
+	margin-top: 5%;
+}
+/* Post's title */
+td a,
+td a:active,
+td a:visited,
+td a:hover {
+	color: black;
+	text-decoration: none;
+}
+/* Individual post's title */
+.post-header {
+	text-align: center;
+}
+/* Table's text alignement */
+.table {
+	text-align: center;
+}
+/* Line under every post */
+.table tr td {
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+/* Remove default bootstrap top table line */
+.borderless tr td {
+    border-top: none !important;
+}

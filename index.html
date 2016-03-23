@@ -1,7 +1,6 @@
 ---
 layout: default
 ---
-
 <div class="inner cover">
   <img id="gravatar" class="img-circle" src="">
   <h1 class="cover-heading">{{ site.title }}</h1>
@@ -9,9 +8,9 @@ layout: default
 </div>
 <div class="inner cover">
   <div class="btn-group" role="group" aria-label="...">
-    <button type="button" class="btn btn-primary top">{% include icon-twitter.html username=site.twitter_username %}</button>
-    <button type="button" class="btn btn-primary top">{% include icon-github.html username=site.github_username %}</button>
-    <button type="button" class="btn btn-primary top">{% include icon-linkedin.html username=site.linkedin_username %}</button>
+    <button type="button" class="btn btn-primary top"><a href="https://twitter.com/{{ include.username }}"><i class="fa fa-twitter-square"></i> Twitter</a></button>
+    <button type="button" class="btn btn-primary top"><a href="https://github.com/{{ include.username }}"><i class="fa fa-github-square"></i> GitHub</a></button>
+    <button type="button" class="btn btn-primary top"><a href="https://gr.linkedin.com/in/{{ include.username }}"><i class="fa fa-linkedin-square"></i> LinkedIn</a></button>
   </div>
 </div>
 <div class="inner cover srow">
@@ -23,13 +22,6 @@ layout: default
 <div class="inner cover">
   <div class="btn-group" role="group" aria-label="...">
     <div class="email"><i class="fa fa-envelope"></i> email(at)petroskal(dot)com</div>
-    <div class="pgp"><i class="fa fa-key"></i>
-      {% for my_page in site.pages %}
-        {% if my_page.title %}
-          <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">0xAEA16D60
-          </a>
-        {% endif %}
-      {% endfor %}
-    </div>
+    <div class="pgp"><i class="fa fa-key"></i><a class="page-link" href="/key">0xAEA16D60</a></div>
   </div>
 </div>

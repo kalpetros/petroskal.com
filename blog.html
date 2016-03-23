@@ -1,0 +1,29 @@
+---
+layout: blog
+title: Petros's Blog
+permalink: /blog/
+---
+<!-- Name & description -->
+<div class="inner cover">
+  <h1 class="cover-heading">{{ site.title }}</h1>
+  <p class="lead">{{ site.description }}</p>
+</div>
+<!-- Posts list -->
+<div class="posts">
+  <div class="table-responsive">
+    <table class="table borderless table-hover">
+      <tbody>
+      {% for post in site.posts %}
+      <tr class="borderless">
+        <td>
+          <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h3></td>
+        <td>
+          <h3><small>{{ post.date | date: "%B %-d, %Y" }}</small></h3>
+        </td>
+      </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
