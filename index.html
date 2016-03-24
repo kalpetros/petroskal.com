@@ -1,11 +1,13 @@
 ---
 layout: default
 ---
+<!-- Gravatar, name & description -->
 <div class="inner cover">
   <img id="gravatar" class="img-circle" src="">
   <h1 class="cover-heading">{{ site.title }}</h1>
   <p class="lead">{{ site.description }}</p>
 </div>
+<!-- Twitter, Github & Linkedin -->
 <div class="inner cover">
   <div class="btn-group" role="group" aria-label="...">
     <button type="button" class="btn btn-primary top"><a href="https://twitter.com/{{ include.username }}"><i class="fa fa-twitter-square"></i> Twitter</a></button>
@@ -13,12 +15,14 @@ layout: default
     <button type="button" class="btn btn-primary top"><a href="https://gr.linkedin.com/in/{{ include.username }}"><i class="fa fa-linkedin-square"></i> LinkedIn</a></button>
   </div>
 </div>
+<!-- Email & PGP Key -->
 <div class="inner cover srow">
   <div class="btn-group" role="group" aria-label="...">
     <button type="button" class="btn btn-primary bottom" id="email"><i class="fa fa-envelope"></i> e-mail</button>
     <button type="button" class="btn btn-primary bottom" id="pgp"><i class="fa fa-key"></i> PGP Key</button>
   </div>
 </div>
+<!-- Email & PGP Key Boxes -->
 <div class="inner cover">
   <div class="btn-group" role="group" aria-label="...">
     <div class="email"><i class="fa fa-envelope"></i> email(at)petroskal(dot)com</div>
