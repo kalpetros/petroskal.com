@@ -1,5 +1,74 @@
 ---
 ---
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+/* Everything gets side spacing for mobile first views */
+.header,
+.content,
+.footer {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+/* Custom page header */
+.header {
+  padding-bottom: 20px;
+}
+/* Gravatar, name & description */
+.inner {
+	text-align: center;
+	border-bottom: 1px solid #e5e5e5;
+}
+/* Alias font */
+.cover-heading {
+	font-weight: bold;
+}
+/* Description's font */
+.lead {
+	color: #777;
+}
+/* Supporting content */
+.content {
+  margin: 40px 0;
+}
+/* Posts list */
+.posts {
+  margin-top: 5%;
+}
+/* Posts list */
+.list {
+  list-style-type: none;
+}
+/* Post's title */
+.item {
+  font-size: 21px;
+  margin-top: 2%;
+}
+.item a,
+.item a:visited {
+  color: black;
+}
+.item a:hover,
+.item a:active {
+  color: blue;
+  text-decoration: none;
+}
+/* Post's date */
+.item span {
+  color: #777;
+  margin-left: 2%;
+}
+/* Individual post's title */
+.post-header {
+	text-align: center;
+}
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
 /* Customize container */
 @media (min-width: 768px) {
   .container {
@@ -9,49 +78,17 @@
 .container-narrow > hr {
   margin: 30px 0;
 }
-/* Blog styles */
-nav.navbar {
-	background: transparent;
-	border-style: none;
-}
-/* Gravatar, name & description */
-.inner {
-	text-align: center;
-	border-bottom: 1px solid rgba(0,0,0,0.1);
-}
-/* Name's font */
-.cover-heading {
-	font-weight: bold;
-}
-/* Description's font */
-.lead {
-	color: grey;
-}
-/* Posts list */
-.posts {
-	margin-top: 5%;
-}
-/* Post's title */
-td a,
-td a:active,
-td a:visited,
-td a:hover {
-	color: black;
-	text-decoration: none;
-}
-/* Individual post's title */
-.post-header {
-	text-align: center;
-}
-/* Table's text alignement */
-.table {
-	text-align: center;
-}
-/* Line under every post */
-.table tr td {
-	border-bottom: 1px solid rgba(0,0,0,0.1);
-}
-/* Remove default bootstrap top table line */
-.borderless tr td {
-    border-top: none !important;
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  /* Remove the padding we set earlier */
+  .header,
+  .content,
+  .footer {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
 }

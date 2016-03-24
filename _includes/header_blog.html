@@ -1,11 +1,11 @@
 <!-- Navigation bar -->
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <ul class="nav navbar-nav">
-      <li><a href="/">Home</a></li>
+<div class="header clearfix">
+  <nav>
+    <ul class="nav nav-pills pull-left">
+      <li role="presentation"><a href="/">Home</a></li>
+      <li role="presentation"><a href="https://twitter.com/{{ include.username }}"><i class="fa fa-twitter-square"></i> Twitter</a></li>
+      <li role="presentation"><a href="https://github.com/{{ include.username }}"><i class="fa fa-github-square"></i> GitHub</a></li>
+      <li role="presentation"><a href="{{ "/feed.xml" | prepend: site.baseurl }}"><i class="fa fa-rss"></i> RSS</a></li>
     </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="{{ "/feed.xml" | prepend: site.baseurl }}"><i class="fa fa-rss"></i> RSS</a></li>
-    </ul>
-  </div>
-</nav>
+  </nav>
+</div>

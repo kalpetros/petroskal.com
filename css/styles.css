@@ -58,7 +58,7 @@ a:hover {
 }
 /* Bottom buttons */
 .bottom {
-	width: 49.7%;
+	width: 33.3%;
 }
 .cover-heading, .lead {
 	color: #fff;
@@ -72,7 +72,7 @@ a:hover {
 .pgp {
 	background-color: rgba(51,122,183,0.5);
 	color: #fff;
-	width: 99.1%;
+	width: 99.2%;
 	line-height: 50px;
 	border-bottom: 2px solid #69b7f6;
 	/*word-wrap: break-word;*/
@@ -83,7 +83,6 @@ a:hover {
 	width: 100%;
 	height: 100%; /* For at least Firefox */
 	min-height: 100%;
-	font-family: 'Roboto', sans-serif;
 }
 .site-wrapper-inner {
 	display: table-cell;
@@ -148,17 +147,6 @@ a:hover {
 /* Footer */
 .mastfoot {
 	color: #fff; /* IE8 proofing */
-}
-.mastfoot a {
-	background-color: rgba(51,122,183,1);
-	color: #69b7f6;
-	text-decoration: none;
-	padding: 10px;
-}
-.mastfoot a:hover {
-	background-color: rgba(51,122,183,0.5);
-	color: #69b7f6;
-	text-decoration: none;
 }
 /* Affix and center */
 @media (min-width: 768px) {

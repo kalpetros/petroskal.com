@@ -6,25 +6,17 @@ permalink: /blog/
 <!-- Gravatar, name & description -->
 <div class="inner cover">
   <img id="gravatar" class="img-circle" src="">
-  <h1 class="cover-heading">{{ site.title }}</h1>
+  <h1 class="cover-heading">@{{ site.alias }}</h1>
   <p class="lead">{{ site.description }}</p>
 </div>
 <!-- Posts list -->
 <div class="posts">
-  <div class="table-responsive">
-    <table class="table borderless table-hover">
-      <tbody>
-      {% for post in site.posts %}
-      <tr class="borderless">
-        <td>
-          <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h3></td>
-        <td>
-          <h3><small>{{ post.date | date: "%B %-d, %Y" }}</small></h3>
-        </td>
-      </tr>
-      {% endfor %}
-      </tbody>
-    </table>
-  </div>
+  <ul class="list">
+    {% for post in site.posts %}
+    <li class="item">
+      <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      <span>{{ post.date | date: "%B %-d, %Y" }}</span>
+    </li>
+    {% endfor %}
+  </ul>
 </div>
