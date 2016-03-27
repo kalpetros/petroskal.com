@@ -36,28 +36,26 @@ body {
 .posts {
   margin-top: 5%;
 }
-/* Posts list */
-.list {
-  list-style-type: none;
-}
 /* Post's title */
-.item {
+td {
   font-size: 21px;
   margin-top: 2%;
 }
-.item a,
-.item a:visited {
+.borderless tr td {
+  border: none !important;
+}
+.title a,
+.title a:visited {
   color: black;
 }
-.item a:hover,
-.item a:active {
+.title a:hover,
+.title a:active {
   color: blue;
   text-decoration: none;
 }
 /* Post's date */
-.item span {
+.date {
   color: #777;
-  margin-left: 2%;
 }
 /* Individual post's title */
 .post-header {
