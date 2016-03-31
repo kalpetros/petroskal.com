@@ -62,7 +62,7 @@ and to retrieve the value of **foo** from session store use:
 foo = self.session.get('foo')
 {% endhighlight %}
 
-Below is a complete example combining the above:
+Putting it all together:
 
 {% highlight python %}
 import webapp2
