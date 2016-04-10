@@ -33,7 +33,8 @@ body {
   margin: 40px 0;
 }
 /* Posts list */
-.posts {
+.posts,
+.projects {
   margin-top: 5%;
 }
 /* Post's title */
@@ -60,6 +61,10 @@ td {
 /* Individual post's title */
 .post-header {
 	text-align: center;
+}
+/* Subtext */
+.subtext {
+  color: grey;
 }
 /* Custom page footer */
 .footer {
