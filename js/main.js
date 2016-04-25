@@ -1,9 +1,7 @@
 $(document).ready(function() {
   // Show name & description
-  $('.cover-heading').hide();
-  $('.lead').hide();
-  $('.cover-heading').fadeIn();
-  $('.lead').fadeIn();
+  $(".inner").hide();
+  $(".inner").fadeIn(2000);
   // Hide email
   $(".email").hide();
   // Show email on button click
@@ -12,6 +10,6 @@ $(document).ready(function() {
       $(".email").show();
     });
     // Hide email after 5 seconds
-    $('.email').delay(4000).slideUp();
+    $(".email").delay(4000).slideUp();
   });
 });
