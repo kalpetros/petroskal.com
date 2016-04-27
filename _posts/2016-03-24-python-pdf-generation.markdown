@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Generate PDFs in Python using reportlab's library"
+title:  "Generate PDFs in Python Using Reportlab's Library"
 date:   2016-03-24 01:40:18 +0200
 categories: blog
 ---

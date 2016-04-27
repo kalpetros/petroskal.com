@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Webapp2 sessions"
+title:  "Webapp2 Sessions"
 date:   2016-03-27 00:13:18 +0200
 categories: blog
 ---
