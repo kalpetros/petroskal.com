@@ -12,4 +12,20 @@ $(document).ready(function() {
     // Hide email after 5 seconds
     $(".email").delay(4000).slideUp();
   });
+  // Buttons
+  $('#twitter').click(function() {
+    window.location.href = "https://twitter.com/kalpetross";
+  });
+  $('#github').click(function() {
+    window.location.href = "https://github.com/kalpetros";
+  });
+  $('#linkedin').click(function() {
+    window.location.href = "https://gr.linkedin.com/in/kalpetros";
+  });
+  $('#projects').click(function() {
+    window.location.href = "/projects";
+  });
+  $('#blog').click(function() {
+    window.location.href = "/blog";
+  });
 });

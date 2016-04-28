@@ -23,28 +23,6 @@ body {
 .lead {
 	color: #FFFFFF !important;
 }
-/* Links */
-a,
-a:active,
-a:focus,
-a:hover {
-	color: #FFFFFF;
-}
-.pgp a,
-.pgp a:active,
-.pgp a:focus,
-.pgp a:hover {
-	color: #FFFFFF;
-	text-decoration: none;
-}
-.btn a,
-.btn a:active,
-.btn a:focus,
-.btn a:hover,
-.btn a:visited {
-	color: rgba(255, 255, 255, 0.7);
-	text-decoration: none;
-}
 /* Buttons style */
 .btn-group .btn-primary {
 	height: 50px;

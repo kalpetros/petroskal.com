@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: secondary
 title: Petros's Blog
 permalink: /blog/
 ---
@@ -11,20 +11,18 @@ permalink: /blog/
 </div>
 <!-- Posts list -->
 <div class="posts">
-  <ul class="list">
-    <table class="table borderless">
-      <tbody>
-        {% for post in site.posts %}
-        <tr>
-          <td class="title">
-            <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-          </td>
-          <td class="date">
-            {{ post.date | date: "%B %-d, %Y" }}
-          </td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </ul>
+  <table class="table borderless">
+    <tbody>
+      {% for post in site.posts %}
+      <tr>
+        <td class="title">
+          <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </td>
+        <td class="date">
+          {{ post.date | date: "%B %-d, %Y" }}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </div>
