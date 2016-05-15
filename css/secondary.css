@@ -11,10 +11,6 @@ body {
   padding-right: 15px;
   padding-left: 15px;
 }
-/* Custom page header */
-.header {
-  padding-bottom: 20px;
-}
 /* Gravatar, name & description */
 .inner {
 	text-align: center;
