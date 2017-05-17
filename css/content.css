@@ -1,0 +1,118 @@
+---
+---
+body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+/* Everything gets side spacing for mobile first views */
+.header,
+.content,
+.footer {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+/* Navigation */
+.navigation-trigger {
+    position: absolute;
+    left: 25px;
+    cursor: pointer;
+}
+.navigation-panel {
+    background-color: #f5f5f5;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    bottom: 0;
+    width: 250px;
+    overflow: auto;
+}
+.navigation-panel ul {
+    display: inline;
+}
+.navigation-panel ul li {
+    padding: 20px;
+}
+.navigation-panel ul li:hover {
+    background-color: #e0e0e0;
+    cursor: pointer;
+}
+.navigation-panel ul a {
+    color: #424242;
+    text-decoration: none;
+}
+/* Gravatar, name & description */
+.inner {
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
+}
+/* Alias font */
+.cover-heading {
+    font-weight: bold;
+}
+/* Description's font */
+.lead {
+    color: #777;
+}
+/* Posts list */
+.posts,
+.projects {
+    margin-top: 5%;
+}
+/* Post's title */
+td {
+    font-size: 21px;
+    margin-top: 2%;
+}
+.borderless tr td {
+    border: none !important;
+}
+.title a,
+.title a:visited {
+    color: black;
+}
+.title a:hover,
+.title a:active {
+    color: #01579b;
+    text-decoration: none;
+}
+/* Post's date */
+.date {
+    color: #777;
+}
+/* Individual post's title */
+.post-header {
+    text-align: center;
+}
+/* Subtext */
+.subtext {
+    color: grey;
+}
+/* Custom page footer */
+.footer {
+    padding-top: 19px;
+    color: #777;
+    border-top: 1px solid #e5e5e5;
+}
+/* Customize container */
+@media (min-width: 768px) {
+    .container {
+	max-width: 730px;
+    }
+}
+.container-narrow > hr {
+    margin: 30px 0;
+}
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    /* Remove the padding we set earlier */
+    .header,
+    .content,
+    .footer {
+	padding-right: 0;
+	padding-left: 0;
+    }
+    /* Space out the masthead */
+    .header {
+	margin-bottom: 30px;
+    }
+}

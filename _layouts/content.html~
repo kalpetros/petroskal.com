@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  <body>
+    <!-- Navigation bar -->
+    <div class="header clearfix">
+      <nav>
+	<ul class="nav nav-pills pull-left">
+	  <li role="presentation"><a href="/">Home</a></li>
+	  <li role="presentation"><a href="/blog"><i class="fa fa-rss"></i> Blog</a></li>
+	  <li role="presentation"><a href="/projects"><i class="fa fa-code-fork"></i> Projects</a></li>
+	  <li role="presentation"><a href="https://twitter.com/{{ site.twitter_username }}"><i class="fa fa-twitter-square"></i> Twitter</a></li>
+	  <li role="presentation"><a href="https://github.com/{{ site.github_username }}"><i class="fa fa-github-square"></i> GitHub</a></li>
+	  <li role="presentation"><a href="{{ "/feed.xml" | prepend: site.baseurl }}"><i class="fa fa-rss"></i> RSS</a></li>
+	</ul>
+      </nav>
+    </div>
+    <div class="container">
+      <div class="content">
+        {{ content }}
+      </div>
+      <footer class="footer text-center"></footer>
+    </div>
+  </body>
+  <!-- Scripts -->
+  <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/gravatar.js"></script>
+  <script src="/js/main.js"></script>
+</html>

@@ -1,0 +1,15 @@
+<!-- Navigation bar -->
+<div class="navigation-trigger">
+  <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+</div>
+<div class="navigation-panel">
+  <ul>
+    <a href="/"><li>Home</li></a>
+    <a href="/blog"><li><i class="fa fa-rss"></i> Blog</li></a>
+    <a href="/projects"><li><i class="fa fa-code-fork"></i> Projects</li></a>
+    <a href="https://twitter.com/{{ site.twitter_username }}"><li><i class="fa fa-twitter-square"></i> Twitter</li></a>
+    <a href="https://github.com/{{ site.github_username }}"><li><i class="fa fa-github-square"></i> GitHub</li></a>
+    <a href="{{ "/feed.xml" | prepend: site.baseurl }}"><li><i class="fa fa-rss"></i> RSS</li></a>
+  </ul>
+</div>
+

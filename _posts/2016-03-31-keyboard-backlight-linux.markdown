@@ -3,6 +3,8 @@ layout: post
 title:  "Enable Keyboard Backlight on Linux"
 date:   2016-03-30 16:12:18 +0200
 categories: blog
+font: PT+Serif
+stylesheet: content
 ---
 A while back I purchased a keyboard with a great red backlight that you can turn on/off by pressing the Scroll Lock button. In Windows it works right out of the box but not with Linux (I'm using Ubuntu).
 

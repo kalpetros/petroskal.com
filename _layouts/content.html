@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  <body>
+    {% include navigation.html %}
+    <div class="container">
+      <div class="content">
+	{% if page.layout == "content" %}
+	{% include gravatar.html %}
+	{% endif %}
+        {{ content }}
+      </div>
+      <footer class="footer text-center"></footer>
+    </div>
+  </body>
+  <!-- Scripts -->
+  <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/js/gravatar.js"></script>
+  <script src="/js/main.js"></script>
+</html>

@@ -1,2 +1,2 @@
 # kalpetros.github.io
-My personal site
+Personal site based on jekyll

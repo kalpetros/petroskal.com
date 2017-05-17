@@ -3,6 +3,8 @@ layout: post
 title:  "Generate PDFs in Python Using Reportlab's Library"
 date:   2016-03-24 01:40:18 +0200
 categories: blog
+font: PT+Serif
+stylesheet: content
 ---
 ### What is the ReportLab library?
 This library lets you create documents in PDF format using the **Python** programming language. You can also create charts or data graphics in various formats.
