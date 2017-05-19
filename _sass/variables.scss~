@@ -1,0 +1,17 @@
+/*
+Global variables
+*/
+/* Main page */
+$base_color: #ffffff; // white
+$cover_heading: #000000; // black
+$cover_secondary: #0277bd; // light-blue darken-3
+$cover_light: #fff;
+/* Content page */
+$navigation_panel_bg: #f5f5f5; // grey lighten-4
+$navigation_panel_item_hover: #e0e0e0; // grey lighten-2
+$navigation_panel_anchor: #424242; // grey darken-3
+$content_separator: #eeeeee; // grey lighten-3
+$content_secondary: #bdbdbd; // grey lighten-1
+$content_title: #000000; // black
+$content_title_visited: #0277bd; // light-blue darken-3
+$content_title_active: #0277bd; // light-blue darken-3

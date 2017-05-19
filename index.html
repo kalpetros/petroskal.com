@@ -1,10 +1,10 @@
 ---
-layout: landing
+layout: main
 font: Varela+Round
-stylesheet: landing
+stylesheet: main
 ---
 <!-- Gravatar, name & description -->
-<div class="inner cover">
+<div class="row">
   <img id="gravatar" class="img-circle" src="">
   <h1 class="cover-heading">
     {{ site.firstname }}
@@ -13,7 +13,7 @@ stylesheet: landing
   <p class="lead">{{ site.description }}</p>
 </div>
 <!-- Twitter, Github & Linkedin -->
-<div class="inner cover">
+<div class="row">
   <div class="btn-group" role="group" aria-label="...">
     <button type="button" class="btn btn-primary top" id="twitter">
       <i class="fa fa-twitter-square"></i> Twitter
@@ -27,7 +27,7 @@ stylesheet: landing
   </div>
 </div>
 <!-- Email & PGP Key -->
-<div class="inner cover srow">
+<div class="row srow">
   <div class="btn-group" role="group" aria-label="...">
     <button type="button" class="btn btn-primary bottom" id="projects">
       <i class="fa fa-code-fork"></i> Projects
@@ -41,13 +41,22 @@ stylesheet: landing
   </div>
 </div>
 <!-- Email & PGP Key Boxes -->
-<div class="inner cover">
+<div class="row">
   <div class="btn-group" role="group" aria-label="...">
     <div class="email">
-      <i class="fa fa-envelope"></i> email (at) petroskal.com
-    </div>
-    <div class="email">
-      <i class="fa fa-key"></i> <a class="page-link" href="/key">0xAEA16D60</a>
+      <div>
+	<a class="page-link" href="/key">
+	  <i class="fa fa-lock"
+	     title={{ site.emailKey }}>
+	  </i>
+	</a> {{ site.email }}
+      </div>
+      <div>
+	<i class="fa fa-lock"></i> {{ site.emailAlt2 }}
+      </div>
+      <div>
+	<i class="fa fa-unlock-alt"></i> {{ site.emailAlt }}
+      </div>
     </div>
   </div>
 </div>

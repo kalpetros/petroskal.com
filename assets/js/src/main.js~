@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(function() {
     // Auto date update
     var date = new Date();
     var year = date.getFullYear();

@@ -1,0 +1,105 @@
+@import "variables.scss";
+
+html,
+body {
+    height: 100%;
+    background-image: url('/assets/img/cover.webp');
+    background-size: cover;
+}
+body {
+    text-align: center;
+}
+/* Header & Description */
+.cover-heading {
+    text-transform: uppercase;
+    color: $cover_heading;
+    letter-spacing: 5px;
+}
+.lastname,
+.lead{
+    color: $cover_secondary;
+}
+/* Buttons style */
+.btn-group {
+    width: 300px;
+    .btn-primary {
+	background-color: $buttons;
+	height: 50px;
+	border-radius: 0;
+	color: $cover_light;
+	border: none;
+	&:active,
+	&:focus,
+	&:hover {
+	    background-color: rgba(51,122,183,0.5);
+	    border-top-color: rgba(51,122,183,0);
+	    border-bottom-color: rgba(51,122,183,0);
+	    border-left-color: rgba(51,122,183,0);
+	    border-right-color: rgba(51,122,183,0);
+	    outline: 0;
+	}
+    }
+}
+.top,
+.bottom {
+    width: 33.3%;
+}
+/* Second row of buttons */
+.srow {
+    margin-top: 0.2%;
+}
+/* Email & PGP */
+.email {
+    background-color: rgba(51,122,183,0.5);
+    color: $cover_light;
+    width: 99.2%;
+    line-height: 50px;
+    display: none;
+    a,
+    a:hover,
+    a:active,
+    a:visited {
+	color: $cover_light;
+    }
+}
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.site-wrapper {
+    display: table;
+    width: 100%;
+    height: 100%; /* For at least Firefox */
+    min-height: 100%;
+}
+.site-wrapper-inner {
+    display: table-cell;
+    vertical-align: top;
+    @media (min-width: 768px) {
+	/* Start the vertical centering */
+	vertical-align: middle;
+    }
+}
+.cover-container {
+    margin-right: auto;
+    margin-left: auto;
+    font-family: 'Varela Round', sans-serif;
+    display: none;
+    @media (min-width: 768px) {
+	width: 100%; /* Must be percentage or pixels for horizontal alignment */
+    }
+    @media (min-width: 992px) {
+	width: 700px;
+    }
+}
+.row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+footer {
+    @media (min-width: 768px) {
+	position: fixed;
+	bottom: 0;
+	width: 100%; /* Must be percentage or pixels for horizontal alignment */
+    }
+    @media (min-width: 992px) {
+	width: 700px;
+    }
+}

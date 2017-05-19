@@ -10,7 +10,10 @@ title: Petros Kalogiannakis
 firstname: Petros
 lastname: Kalogiannakis
 alias: kalpetros
-email: kalpetros@gmail.com
+email: email [at] petroskal.com
+emailAlt: kalpetros [at] gmail.com
+emailAlt2: kalpetros [at] protonmail.com
+emailKey: "0xAEA16D60"
 description: > # this means to ignore newlines until "baseurl:"
   Full Stack Web Developer
 baseurl: "" # the subpath of your site, e.g. /blog

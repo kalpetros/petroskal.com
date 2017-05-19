@@ -1,5 +1,5 @@
----
----
+@import "variables.scss";
+
 body {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -10,6 +10,12 @@ body {
 .footer {
     padding-right: 15px;
     padding-left: 15px;
+    /* Responsive: Portrait tablets and up */
+    @media screen and (min-width: 768px) {
+	/* Remove the padding we set earlier */
+	padding-right: 0;
+	padding-left: 0;
+    }
 }
 /* Navigation */
 .navigation-trigger {
@@ -18,32 +24,32 @@ body {
     cursor: pointer;
 }
 .navigation-panel {
-    background-color: #f5f5f5;
+    background-color: $navigation_panel_bg;
     position: fixed;
     top: 0;
     left: -250px;
     bottom: 0;
     width: 250px;
     overflow: auto;
-}
-.navigation-panel ul {
-    display: inline;
-}
-.navigation-panel ul li {
-    padding: 20px;
-}
-.navigation-panel ul li:hover {
-    background-color: #e0e0e0;
-    cursor: pointer;
-}
-.navigation-panel ul a {
-    color: #424242;
-    text-decoration: none;
+    ul {
+	display: inline;
+	li {
+	    padding: 20px; 
+	    &:hover {
+	        background-color: $navigation_panel_item_hover;
+		cursor: pointer;
+	    }
+	}
+	a {
+	    color: $navigation_panel_anchor;
+	    text-decoration: none;
+	}
+    }
 }
 /* Gravatar, name & description */
 .inner {
     text-align: center;
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid $content_separator;
 }
 /* Alias font */
 .cover-heading {
@@ -51,7 +57,7 @@ body {
 }
 /* Description's font */
 .lead {
-    color: #777;
+    color: $content_secondary;
 }
 /* Posts list */
 .posts,
@@ -66,18 +72,22 @@ td {
 .borderless tr td {
     border: none !important;
 }
-.title a,
-.title a:visited {
-    color: black;
-}
-.title a:hover,
-.title a:active {
-    color: #01579b;
-    text-decoration: none;
+.title {
+    a {
+	color: $content_title;
+	&:visited {
+	    color: $content_title_visited;
+	}
+	&:hover,
+	&:active {
+	    color: $content_title_active;
+	    text-decoration: none;
+	}
+    }
 }
 /* Post's date */
 .date {
-    color: #777;
+    color: $content_secondary;
 }
 /* Individual post's title */
 .post-header {
@@ -90,29 +100,14 @@ td {
 /* Custom page footer */
 .footer {
     padding-top: 19px;
-    color: #777;
-    border-top: 1px solid #e5e5e5;
+    color: $content_secondary;
+    border-top: 1px solid $content_separator;
 }
-/* Customize container */
-@media (min-width: 768px) {
-    .container {
+.container {
+    @media (min-width: 768px) {
 	max-width: 730px;
     }
 }
 .container-narrow > hr {
     margin: 30px 0;
-}
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-    /* Remove the padding we set earlier */
-    .header,
-    .content,
-    .footer {
-	padding-right: 0;
-	padding-left: 0;
-    }
-    /* Space out the masthead */
-    .header {
-	margin-bottom: 30px;
-    }
 }

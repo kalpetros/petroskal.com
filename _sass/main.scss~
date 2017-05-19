@@ -1,0 +1,167 @@
+@import "variables.scss";
+
+html,
+body {
+    height: 100%;
+    background-image: url('/assets/img/cover.webp');
+    background-size: cover;
+}
+body {
+    text-align: center;
+}
+/* Header & Description */
+.cover-heading {
+    text-transform: uppercase;
+    color: $cover_heading !important;
+    letter-spacing: 5px;
+}
+.lastname {
+    color: $cover_secondary;
+}
+.lead {
+    color: $cover_secondary !important;
+}
+/* Buttons style */
+.btn-group {
+    width: 300px;
+    .btn-primary {
+	height: 50px;
+	border-radius: 0;
+	color: rgba(255, 255, 255, 0.7);
+	&:active,
+	&:focus,
+	&:hover {
+	    background-color: rgba(51,122,183,0.5);
+	    border-top-color: rgba(51,122,183,0);
+	    border-bottom-color: rgba(51,122,183,0);
+	    border-left-color: rgba(51,122,183,0);
+	    border-right-color: rgba(51,122,183,0);
+	    outline: 0;
+	}
+    }
+}
+/* Top buttons */
+.top {
+    width: 33.3%;
+}
+/* Bottom buttons */
+.bottom {
+    width: 33.3%;
+}
+/* Second row of buttons */
+.srow {
+    margin-top: 0.2%;
+}
+/* Email & PGP */
+.email {
+    background-color: rgba(51,122,183,0.5);
+    color: $cover_light;
+    width: 99.2%;
+    line-height: 50px;
+    a,
+    a:hover,
+    a:active,
+    a:visited {
+	color: $cover_light;
+    }
+}
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.site-wrapper {
+    display: table;
+    width: 100%;
+    height: 100%; /* For at least Firefox */
+    min-height: 100%;
+}
+.site-wrapper-inner {
+    display: table-cell;
+    vertical-align: top;
+    @media (min-width: 768px) {
+	/* Start the vertical centering */
+	vertical-align: middle;
+    }
+}
+.cover-container {
+    margin-right: auto;
+    margin-left: auto;
+    font-family: 'Varela Round', sans-serif;
+    @media (min-width: 768px) {
+	width: 100%; /* Must be percentage or pixels for horizontal alignment */
+    }
+    @media (min-width: 992px) {
+	width: 700px;
+    }
+}
+/* Padding for spacing */
+.inner {
+    padding: 30px;
+}
+/* Header */
+.masthead-brand {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    @media (min-width: 768px) {
+	float: left;
+    }
+}
+.masthead-nav {
+    > li {
+	display: inline-block;
+	> a {
+	    padding-right: 0;
+	    padding-left: 0;
+	    font-size: 16px;
+	    font-weight: bold;
+	    color: $cover_light; /* IE8 proofing */
+	    color: rgba(255,255,255,.75);
+	    border-bottom: 2px solid transparent;
+	    a:hover,
+	    a:focus {
+		background-color: transparent;
+		border-bottom-color: #a9a9a9;
+		border-bottom-color: rgba(255,255,255,.25);
+	    }
+	}
+    }
+    > li + li {
+	margin-left: 20px;
+    }
+    > .active > a,
+    > .active > a:hover,
+    > .active > a:focus {
+	color: $cover_light;
+	border-bottom-color: $cover_light;
+    }
+    @media (min-width: 768px) {
+	float: right;
+    }
+}
+/* Cover */
+.cover {
+    padding: 0 20px;
+    .btn-lg {
+	padding: 10px 20px;
+	font-weight: bold;
+    }
+}
+.masthead {
+    @media (min-width: 768px) {
+	/* Pull out the header and footer */
+	position: fixed;
+	top: 0;
+	width: 100%; /* Must be percentage or pixels for horizontal alignment */
+    }
+    @media (min-width: 992px) {
+	width: 700px;
+    }
+}
+/* Footer */
+.mastfoot {
+    @media (min-width: 768px) {
+	position: fixed;
+	bottom: 0;
+	width: 100%; /* Must be percentage or pixels for horizontal alignment */
+    }
+    @media (min-width: 992px) {
+	width: 700px;
+    }
+}

@@ -18,7 +18,7 @@
           {{ content }}
 	  <div class="mastfoot">
 	    <div class="inner">
-	      <p><a href="/"><img src="/img/favicon.ico"></a></p>
+	      <p><a href="/"><img src="/assets/img/favicon.ico"></a></p>
 	    </div>
 	  </div>
         </div>
@@ -27,6 +27,6 @@
   </body>
   <!-- Scripts -->
   <script src="/bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="js/gravatar.js"></script>
-  <script src="js/main.js"></script>
+  <script src="/assets/js/gravatar.min.js"></script>
+  <script src="/assets/js/main.min.js"></script>
 </html>
