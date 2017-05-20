@@ -2,7 +2,7 @@
   "name": "kalpetros.github.io",
   "version": "1.0.0",
   "description": "Personal site based on jekyll",
-  "main": "main.js",
+  "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/kalpetros/kalpetros.github.io.git"
   },
   "author": "Petros Kalogiannakis",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/kalpetros/kalpetros.github.io/issues"
   },
@@ -19,8 +19,6 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.3.1",
-    "gulp-htmlmin": "^3.0.0",
-    "gulp-notify": "^3.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^2.1.2",

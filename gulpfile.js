@@ -1,10 +1,8 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
-var minHTML = require('gulp-htmlmin');
 var minCSS = require('gulp-clean-css');
 var rename = require('gulp-rename');
-var notify = require("gulp-notify");
 var pump = require('pump');
 
 gulp.task('main', function() {
@@ -23,12 +21,6 @@ gulp.task('content', function() {
 	    suffix: '.min'
 	}))
 	.pipe(gulp.dest('assets/css/'));
-});
-
-gulp.task('minify-html', function() {
-  return gulp.src('*.html')
-    .pipe(minHTML({collapseWhitespace: true}))
-    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('minify-css', function() {
