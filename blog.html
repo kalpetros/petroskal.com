@@ -4,19 +4,22 @@ title: Blog posts
 permalink: /blog/
 ---
 
-<div class="posts">
-  <table class="table borderless">
-    <tbody>
+<div class="container">
+  <div class="wrapper">
+    <div class="is-2-4 is-m-1-5 is-centered">
+      {% include header.html %}
+    </div>
+    <div class="is-2-4 is-m-1-5 posts">
       {% for post in site.posts %}
-      <tr>
-        <td class="title">
-          <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </td>
-        <td class="date">
-          {{ post.date | date: "%B %-d, %Y" }}
-        </td>
-      </tr>
+	<h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+	<span class="secondary">
+	  {{ post.date | date: "%B %-d, %Y" }}
+	</span>
+	</h3>
       {% endfor %}
-    </tbody>
-  </table>
+    </div>
+    <div class="is-2-4 is-m-1-5 is-centered footer">
+      {% include footer.html %}
+    </div>
+  </div>
 </div>

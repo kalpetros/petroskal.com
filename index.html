@@ -2,26 +2,12 @@
 layout: default
 ---
 
-<section class="full-height">
+<div class="container">
   <div class="wrapper">
-    <div class="container">
-      <ul class="list">
-	<li>
-	  <a href="{{ site.github }}" target="_blank" rel="noopener"><i class="fa fa-github"></i></a>
-	</li>
-	<li>
-	  <a href="{{ site.linkedin }}" target="_blank" rel="noopener"><i class="fa fa-linkedin"></i></a>
-	</li>
-	<li>
-	  <a href="mailto:{{ site.email }}" target="_blank" rel="noopener"><i class="fa fa-envelope-o"></i></a>
-	</li>
-	<li>
-	  <a href="{{ site.codepen }}" target="_blank" rel="noopener"><i class="fa fa-codepen"></i></a>
-	</li>
-      </ul>
-      <img id="gravatar" class="img-circle big" src="">
-      <h1 class="title">{{ site.firstname }} {{ site.lastname }}</h1>
-      <h2 class="subtitle">{{ site.description }}</h2>
+    <div class="is-2-4 is-m-1-5 is-centered">
+      {% include header.html %}
+    </div>
+    <div class="is-2-4 is-m-1-5 is-centered">
       <p>I'm currently working with Python and JavaScript. <br> UX design follower. FOSS advocate. Living in sunny Crete.</p>
       <a href="/projects" class="button"><i class="fa fa-code"></i> Code</a>
       <a href="/blog" class="button"><i class="fa fa-rss"></i> Posts</a>
@@ -36,4 +22,4 @@ layout: default
       <div class="divider"></div>
     </div>
   </div>
-</section>
+</div>
