@@ -5,7 +5,6 @@ $(function() {
     $('.list-container').html(list[0].innerHTML);
 
     $('.listhandler').on('click', function() {
-	console.log(index, list.length);
 	if (index < list.length) {
 	    $('.list-container').html(list[index].innerHTML);
 	    index = index + 1;

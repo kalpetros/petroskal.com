@@ -1,0 +1,22 @@
+---
+layout: default
+title: Blog posts
+permalink: /blog/
+---
+
+<div class="posts">
+  <table class="table borderless">
+    <tbody>
+      {% for post in site.posts %}
+      <tr>
+        <td class="title">
+          <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </td>
+        <td class="date">
+          {{ post.date | date: "%B %-d, %Y" }}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>

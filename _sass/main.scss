@@ -26,6 +26,9 @@ a {
     max-width: 1080px;
     width: 1080px;
     margin: auto;
+    @media (max-width: 600px) {
+	width: 90%;
+    }
 }
 
 .wrapper {
@@ -44,6 +47,7 @@ a {
     font-size: 2rem;
     font-weight: 600;
     color: #37474f;
+    margin-top: 1.5rem;
 }
 
 .subtitle {
@@ -56,7 +60,7 @@ a {
 .img-circle {
     border-radius: 50%;
     &.big {
-	height: 9rem;
+	height: 10rem;
     }
     &.medium {
 	height: 8rem;
