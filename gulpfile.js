@@ -1,31 +1,24 @@
 var gulp = require('gulp');
+var postcss = require('gulp-postcss');
+var autoprefixer = require('autoprefixer');
+var cssnano = require('cssnano');
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
-var minCSS = require('gulp-clean-css');
 var rename = require('gulp-rename');
 var pump = require('pump');
 
 gulp.task('main', function() {
+    let processors = [
+	autoprefixer,
+	cssnano
+    ];
+    
     gulp.src('_sass/main.scss')
 	.pipe(sass().on('error', sass.logError))
+	.pipe(postcss(processors))
 	.pipe(rename({
 	    suffix: '.min'
 	}))
-	.pipe(gulp.dest('assets/css/'));
-});
-
-gulp.task('content', function() {
-    gulp.src('_sass/content.scss')
-	.pipe(sass().on('error', sass.logError))
-	.pipe(rename({
-	    suffix: '.min'
-	}))
-	.pipe(gulp.dest('assets/css/'));
-});
-
-gulp.task('minify-css', function() {
-  return gulp.src('assets/css/*.css')
-    .pipe(minCSS({compatibility: 'ie8'}))
 	.pipe(gulp.dest('assets/css/'));
 });
 
@@ -41,7 +34,6 @@ gulp.task('compress', function (cb) {
 });
 
 gulp.task('default', function() {
-    gulp.watch('_sass/*.scss', ['main', 'content']);
+    gulp.watch('_sass/*.scss', ['main']);
     gulp.watch('assets/js/src/*.js', ['compress']);
-    gulp.watch('assets/css/*.css', ['minify-css']);
 });
