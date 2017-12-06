@@ -62,6 +62,10 @@ a {
     grid-area: a;
     justify-self: center;
     align-self: center;
+    @media (max-width: 600px) {
+	grid-area: unset;
+	grid-column: 1 / 5;
+    }
 }
 
 .is-hidden {
