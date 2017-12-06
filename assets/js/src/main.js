@@ -1,5 +1,5 @@
 $(function() {
-    $('.hidden').fadeIn(2000);
+    $('.is-hidden').fadeIn(2000);
     
     var list = $('.list li');
     var index = 1;

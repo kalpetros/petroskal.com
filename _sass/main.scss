@@ -11,11 +11,11 @@ h4,
 h5,
 h6,
 p {
-    color: #757575;
+    color: #616161;
 }
 
 a {
-    color: #607d8b;
+    color: #616161;
 }
 
 .container {
@@ -34,10 +34,10 @@ a {
     display: grid;
     grid-template-columns: repeat(4, 25%);
     grid-template-rows: 100%;
-    grid-template-areas: 
-    ". a a ."
-    ". a a ."
-    ". a a .";
+    &.is-full {
+	grid-template-rows: 100vh;
+	grid-template-areas: ". a a .";
+    }
 }
 
 .is-2-4 {
@@ -54,27 +54,30 @@ a {
     }
 }
 
-.is-full {
-    height: 100vh;
-    width: 100%;
-}
-
 .is-centered {
     text-align: center;
 }
 
-.secondary {
-    font-size: 0.8em;
-    float: right;
+.is-valigned {
+    grid-area: a;
+    justify-self: center;
+    align-self: center;
 }
 
-.hidden {
+.is-hidden {
     display: none;
+}
+
+.secondary {
+    color: #bdbdbd;
+    font-size: 0.8em;
+    float: right;
 }
 
 pre {
     background-color: #eee;
     padding: 10px;
+    overflow: auto;
 }
 
 header {
@@ -84,14 +87,14 @@ header {
 .title {
     font-size: 2rem;
     font-weight: 600;
-    color: #37474f;
+    color: #212121;
     margin: 1.5rem 0 0 0;
 }
 
 .subtitle {
     font-size: 1.5rem;
     font-weight: 400;
-    color: #455a64;
+    color: #424242;
     margin: 0 0 1.5rem 0;
 }
 
