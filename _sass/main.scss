@@ -1,7 +1,7 @@
 body {
-    color: #212121;
+    color: #333;
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'PT Serif', serif;
 }
 
 h1,
@@ -9,13 +9,12 @@ h2,
 h3,
 h4,
 h5,
-h6,
-p {
-    color: #616161;
+h6 {
+    color: #333;
 }
 
 a {
-    color: #616161;
+    color: #333;
 }
 
 .container {
@@ -84,21 +83,54 @@ pre {
     overflow: auto;
 }
 
+article {
+    header {
+	text-align: center;
+    }
+}
+
 header {
     margin-top: 1rem;
+}
+
+.linkedin {
+    color: #0077B5;
+}
+
+.so {
+    color: #f48024;
+}
+
+.py {
+    color: #4584b6;
+}
+
+.js {
+    color: #f7df1e;
+}
+
+.card {
+    background-color: #fff;
+    padding: 1.5rem;
+    box-shadow: 0 0 2px 0 #bdbdbd;
+    border-bottom: 3px solid #e0e0e0;
+    p {
+	color: #bdbdbd;
+	margin: 1.5rem 0;
+    }
 }
 
 .title {
     font-size: 2rem;
     font-weight: 600;
-    color: #212121;
+    color: #222;
     margin: 1.5rem 0 0 0;
 }
 
 .subtitle {
     font-size: 1.5rem;
     font-weight: 400;
-    color: #424242;
+    color: #bdbdbd;
     margin: 0 0 1.5rem 0;
 }
 
@@ -116,16 +148,17 @@ header {
 }
 
 .button {
-    background-color: #eeeeee;
-    color: #37474f;
+    color: #bdbdbd;
     text-decoration: none;
     padding: 0 15px;
-    margin: 1.5rem 0;
     border-radius: 5px;
     cursor: pointer;
     height: 3rem;
     line-height: 3rem;
     display: inline-block;
+    &:hover {
+	background-color: #eee;
+    }
 }
 
 .divider {
@@ -159,4 +192,17 @@ header {
     a {
 	text-decoration: none;
     }
+}
+
+.contact {
+    a {
+	margin: 0 1rem;
+    }
+}
+
+.lines {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
 }

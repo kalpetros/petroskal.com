@@ -3,21 +3,29 @@ layout: default
 ---
 
 <div class="container">
+  <div class="lines"></div>
   <div class="wrapper is-full">
     <div class="is-centered is-valigned is-hidden">
-      {% include header.html %}
-      <p>I'm currently working with Python and JavaScript. <br> UX design follower. FOSS advocate. Living in sunny Crete.</p>
-      <a href="/projects" class="button"><i class="fa fa-code"></i> Code</a>
-      <a href="/blog" class="button"><i class="fa fa-rss"></i> Posts</a>
-      <a href="{{ site.twitter }}"
-	 class="button"
-	 target="_blank"
-	 rel="noopener">
-	<i class="fa fa-twitter"></i> Twitter
-      </a>
-      <h2 class="contact">
-	You can also find me on<span class="list-container"></span><i class="fa fa-long-arrow-right listhandler"></i></h2>
-      <div class="divider"></div>
+      <div class="card">
+	{% include header.html %}
+	<p>I'm currently working with <i class="fab fa-python py"></i> Python and <i class="fab fa-js js"></i> JavaScript. <br> UX design follower. FOSS advocate. Living in sunny Crete.</p>
+	<a href="/projects" class="button"><i class="fas fa-code"></i> Code</a>
+	<a href="/blog" class="button"><i class="fas fa-rss"></i> Posts</a>
+	<a href="{{ site.twitter }}"
+	   class="button"
+	   target="_blank"
+	   rel="noopener">
+	  <i class="fab fa-twitter"></i> Twitter
+	</a>
+	<div class="divider"></div>
+	<div class="contact">
+	  <a href="{{ site.linkedin }}" target="_blank" rel="noopener" class="linkedin"><i class="fab fa-linkedin fa-lg"></i></a>
+	  <a href="{{ site.github }}" target="_blank" rel="noopener"><i class="fab fa-github fa-lg"></i></a>
+	  <a href="{{ site.stackoverflow }}" target="_blank" rel="noopener" class="so"><i class="fab fa-stack-overflow fa-lg"></i></a>
+	  <a href="{{ site.codepen }}" target="_blank" rel="noopener"><i class="fab fa-codepen fa-lg"></i></a>
+	  <a href="mailto:{{ site.email }}" target="_blank" rel="noopener"><i class="fas fa-envelope fa-lg"></i></a>
+	</div>
+      </div>
     </div>
   </div>
 </div>

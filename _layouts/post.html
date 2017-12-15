@@ -6,6 +6,14 @@ layout: default
   <div class="wrapper">
     <div class="is-2-4 is-m-1-5 is-centered">
       {% include header.html %}
+      <div class="contact">
+	<a href="{{ site.linkedin }}" target="_blank" rel="noopener" class="linkedin"><i class="fab fa-linkedin fa-lg"></i></a>
+	<a href="{{ site.github }}" target="_blank" rel="noopener"><i class="fab fa-github fa-lg"></i></a>
+	<a href="{{ site.stackoverflow }}" target="_blank" rel="noopener" class="so"><i class="fab fa-stack-overflow fa-lg"></i></a>
+	<a href="{{ site.codepen }}" target="_blank" rel="noopener"><i class="fab fa-codepen fa-lg"></i></a>
+	<a href="mailto:{{ site.email }}" target="_blank" rel="noopener"><i class="fas fa-envelope fa-lg"></i></a>
+      </div>
+      <div class="divider"></div>
     </div>
     <div class="is-2-4 is-m-1-5">
       <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -14,8 +22,8 @@ layout: default
 	  <p>
 	    <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%B %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
 	  <!-- Twitter share button -->
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-via="kalpetross" data-size="large">Tweet</a>
-	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	    <a href="https://twitter.com/share" class="twitter-share-button" data-via="kalpetross" data-size="large">Tweet</a>
+	    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</header>
 	<div itemprop="articleBody">
 	  {{ content }}
