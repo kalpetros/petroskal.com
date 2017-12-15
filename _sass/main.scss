@@ -109,6 +109,10 @@ header {
     color: #f7df1e;
 }
 
+.jsx {
+    color: #00d8ff;
+}
+
 .card {
     background-color: #fff;
     padding: 1.5rem;
@@ -166,25 +170,6 @@ header {
     height: 1px;
     width: 100%;
     margin: 1.5rem 0;
-}
-
-.list {
-    display: none;
-}
-
-.contact {
-    font-weight: 400;
-}
-
-.list-container {
-    font-size: 2rem;
-    margin: 0 10px;
-    border-bottom: 1px dashed;
-    cursor: pointer;
-}
-
-.listhandler {
-    cursor: pointer;
 }
 
 .projects,

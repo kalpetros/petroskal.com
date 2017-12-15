@@ -88,8 +88,8 @@ $(function() {
 
 	    event.preventDefault();
 
-	    mouseX = event.touches[ 0 ].pageX - windowHalfX;
-	    mouseY = event.touches[ 0 ].pageY - windowHalfY;
+	    mouseX = event.touches[0].pageX - windowHalfX;
+	    mouseY = event.touches[0].pageY - windowHalfY;
 	}
     }
 
