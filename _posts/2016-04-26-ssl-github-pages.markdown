@@ -3,6 +3,7 @@ layout: post
 title:  "Use SSL on GitHub Pages"
 date:   2016-04-26 13:30:18 +0200
 categories: blog
+comments: true
 ---
 
 By default [GitHub Pages](https://pages.github.com/) are served over HTTPS but not if you want to use your own domain name. If you are using GitHub Pages to host your website and especially if your website generates sensitive information such as passwords then you need to take some steps to protect it.

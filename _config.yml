@@ -21,7 +21,7 @@ firstname: Petros
 lastname: Kalogiannakis
 description: Software Engineer
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://www.petroskal.com" # the base hostname & protocol for your site, e.g. http://example.com
+url: "petroskal.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter: https://twitter.com/kalpetross
 linkedin: https://www.linkedin.com/in/kalpetros
 github:  https://github.com/kalpetros

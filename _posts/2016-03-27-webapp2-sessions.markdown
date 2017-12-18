@@ -3,6 +3,7 @@ layout: post
 title:  "Webapp2 Sessions"
 date:   2016-03-27 00:13:18 +0200
 categories: blog
+comments: true
 ---
 
 Sessions is a webapp2 module that can be used to store values that can be
