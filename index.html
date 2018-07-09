@@ -8,18 +8,14 @@ layout: default
     <div class="is-centered is-valigned is-hidden">
       <div class="card">
 	{% include header.html %}
-	<p>I'm currently working with <i class="fab fa-python py"></i> Python and <i class="fab fa-js js"></i> JavaScript. <br> <i class="fab fa-react jsx"></i> React enthusiast. UX design follower. FOSS advocate. <br></p>
-	<a href="/projects" class="button"><i class="fas fa-code"></i> Code</a>
+	<p>Living and working in {{site.town}}  at <a href={{site.worksite}} target="_blank" rel="noopener">{{ site.work }}</a>.</p>
+	<p>Passionate about <i class="fab fa-python py"></i> Python, <i class="fab fa-js js"></i> JavaScript & <i class="fab fa-react jsx"></i> React. <br> UX design follower.</p>
+	<a href="/projects" class="button"><i class="fas fa-code"></i> Projects</a>
 	<a href="/blog" class="button"><i class="fas fa-rss"></i> Posts</a>
-	<a href="{{ site.twitter }}"
-	   class="button"
-	   target="_blank"
-	   rel="noopener">
-	  <i class="fab fa-twitter"></i> Twitter
-	</a>
 	<div class="divider"></div>
 	<div class="contact">
 	  <a href="{{ site.linkedin }}" target="_blank" rel="noopener" class="linkedin"><i class="fab fa-linkedin fa-lg"></i></a>
+	  <a href="{{ site.twitter }}" target="_blank" rel="noopener" class="twitter"><i class="fab fa-twitter fa-lg"></i></a>
 	  <a href="{{ site.github }}" target="_blank" rel="noopener"><i class="fab fa-github fa-lg"></i></a>
 	  <a href="{{ site.stackoverflow }}" target="_blank" rel="noopener" class="so"><i class="fab fa-stack-overflow fa-lg"></i></a>
 	  <a href="{{ site.codepen }}" target="_blank" rel="noopener"><i class="fab fa-codepen fa-lg"></i></a>

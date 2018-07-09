@@ -19,7 +19,11 @@ email: email@petroskal.com
 alias: kalpetros
 firstname: Petros
 lastname: Kalogiannakis
-description: Software Engineer
+job: Software Engineer
+work: Tetractys
+worksite: https://www.tetractys.tech
+town: Athens
+country: Greece
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "petroskal.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter: https://twitter.com/kalpetross
