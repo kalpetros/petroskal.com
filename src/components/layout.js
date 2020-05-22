@@ -25,17 +25,15 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <div className="container mx-auto">
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <main>{children}</main>
-        <footer className="p-4 text-center">
-          <p>© {new Date().getFullYear()}, kalpetros.</p>
-          <p>
-            <a href="https://www.gatsbyjs.org">Built with gatsby</a> &{" "}
-            <a href="https://www.tailwindcss.com">tailwindcss</a>
-          </p>
-        </footer>
-      </div>
+      <Header siteTitle={data.site.siteMetadata.title} />
+      <main>{children}</main>
+      <footer className="p-4 text-center">
+        <p>© {new Date().getFullYear()}, kalpetros.</p>
+        <p>
+          <a href="https://www.gatsbyjs.org">Built with gatsby</a> &{" "}
+          <a href="https://www.tailwindcss.com">tailwindcss</a>
+        </p>
+      </footer>
     </>
   )
 }

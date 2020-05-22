@@ -7,13 +7,15 @@ const list = Array(5)
   .fill(1)
   .map(i => {
     return (
-      <div className="m-4">
+      <div className="mb-4">
         <Panel />
       </div>
     )
   })
 
-const Articles = ({ children }) => <div>{list}</div>
+const Articles = ({ children }) => (
+  <div className="container mx-auto">{list}</div>
+)
 
 Articles.propTypes = {
   siteTitle: PropTypes.string,

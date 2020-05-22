@@ -8,13 +8,14 @@
 const path = require(`path`)
 
 exports.createPages = ({ actions }) => {
+  const blogBostTemplate = path.resolve(`./src/components/article.js`)
   const { createPage } = actions
   Array(5)
     .fill(1)
     .forEach((i, z) => {
       createPage({
         path: `/my-sweet-new-page-${z}/`,
-        component: path.resolve(`./src/components/article.js`),
+        component: blogBostTemplate,
         // The context is passed as props to the component as well
         // as into the component's GraphQL query.
         context: {
