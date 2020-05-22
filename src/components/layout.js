@@ -31,7 +31,7 @@ const Layout = ({ children }) => {
         <footer className="p-4 text-center">
           <p>© {new Date().getFullYear()}, kalpetros.</p>
           <p>
-            <a href="https://www.gatsbyjs.org">Built with Gatsby</a> &{" "}
+            <a href="https://www.gatsbyjs.org">Built with gatsby</a> &{" "}
             <a href="https://www.tailwindcss.com">tailwindcss</a>
           </p>
         </footer>
