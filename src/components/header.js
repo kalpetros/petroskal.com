@@ -1,40 +1,50 @@
-import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+
 const Header = ({ siteTitle }) => (
   <header>
-    <nav className="grid p-6">
-      <div className="">
-        <img className="block mx-auto sm:mx-0 sm:flex-shrink-0 sm:h-12 rounded-full" src="https://avatars2.githubusercontent.com/u/5626758?s=460&v=4"/>
+    <nav className="grid grid-cols-2 p-6 items-center">
+      <div>
+        <img
+          className="flex-shrink-0 h-12 rounded-full mb-0 pb-0"
+          src="https://avatars2.githubusercontent.com/u/5626758?s=460&v=4"
+          alt=""
+        />
       </div>
       <div className="">
-        <div className="">
+        <div className="grid grid-flow-col text-right">
           <a
-            href="#responsive-header"
-            className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+            href="https://github.com/kalpetros"
+            className="cursor-pointer"
+            target="__blank"
           >
-            Docs
+            <FontAwesomeIcon icon={["fab", "github"]} />
           </a>
           <a
-            href="#responsive-header"
-            className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+            href="https://twitter.com/kalpetross"
+            className="cursor-pointer"
+            target="__blank"
           >
-            Examples
+            <FontAwesomeIcon icon={["fab", "twitter"]} />
           </a>
           <a
-            href="#responsive-header"
-            className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white"
+            href="https://www.linkedin.com/in/kalpetros/"
+            className="cursor-pointer"
+            target="__blank"
           >
-            Blog
+            <FontAwesomeIcon icon={["fab", "linkedin"]} />
           </a>
-        </div>
-        <div>
           <a
-            href="#"
-            className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
+            href="https://stackoverflow.com/users/2005799/kalpetros"
+            className="cursor-pointer"
+            target="__blank"
           >
-            Download
+            <FontAwesomeIcon icon={["fab", "stack-overflow"]} />
+          </a>
+          <a href="" className="cursor-pointer" target="__blank">
+            <FontAwesomeIcon icon="envelope-open" />
           </a>
         </div>
       </div>

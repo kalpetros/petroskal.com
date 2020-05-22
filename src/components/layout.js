@@ -28,10 +28,12 @@ const Layout = ({ children }) => {
       <div className="container mx-auto">
         <Header siteTitle={data.site.siteMetadata.title} />
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+        <footer className="p-4 text-center">
+          <p>© {new Date().getFullYear()}, kalpetros.</p>
+          <p>
+            <a href="https://www.gatsbyjs.org">Built with Gatsby</a> &{" "}
+            <a href="https://www.tailwindcss.com">tailwindcss</a>
+          </p>
         </footer>
       </div>
     </>
