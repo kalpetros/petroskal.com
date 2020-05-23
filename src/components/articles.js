@@ -6,8 +6,8 @@ import Panel from "./panel"
 
 const Articles = () => {
   const data = useStaticQuery(graphql`
-    query test {
-      allMarkdownRemark {
+    query Articles {
+      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
         edges {
           node {
             excerpt(pruneLength: 250)
