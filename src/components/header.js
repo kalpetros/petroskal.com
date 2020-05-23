@@ -3,7 +3,6 @@ import { Link, graphql, useStaticQuery } from "gatsby"
 // import Img from "gatsby-image"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import styles from "./header.module.css"
 
 const Header = () => {
   const data = useStaticQuery(graphql`
@@ -24,7 +23,7 @@ const Header = () => {
     <header className="bg-white sticky top-0 mb-8 shadow">
       <div className="container mx-auto px-12">
         <nav className="grid grid-cols-2 py-6 items-center sticky">
-          <div className={`grid grid-flow-col gap-8 items-center ${styles.navLeft}`}>
+          <div className="grid grid-flow-col gap-8 items-center justify-start">
             <Link to="/">
               <img
                 className="flex-shrink-0 h-12 rounded-full mb-0 pb-0"
@@ -36,7 +35,7 @@ const Header = () => {
               <FontAwesomeIcon icon="info-circle" />
             </Link>
           </div>
-          <div className="grid grid-flow-col items-center text-right">
+          <div className="grid grid-flow-col gap-8 items-center justify-end text-right">
             <a
               href="https://github.com/kalpetros"
               className="cursor-pointer"
