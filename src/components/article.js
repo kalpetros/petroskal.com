@@ -4,16 +4,33 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const Article = () => (
-  <Layout>
-    <SEO title="Article" />
-    <div className="m-4">
-      <p>12 March 2020</p>
-      <h1>Test of testing tests</h1>
-      <p>Lorem ipsum</p>
-    </div>
-  </Layout>
-)
+export const pageQuery = graphql`
+  query ArticlePyPath($path: String!) {
+    markdownRemark(frontmatter: { path: { eq: $path } }) {
+      html
+      frontmatter {
+        date(formatString: "MMMM DD, YYYY")
+        path
+        title
+      }
+    }
+  }
+`
+
+const Article = ({ data }) => {
+  const { markdownRemark: post } = data
+
+  return (
+    <Layout>
+      <SEO title="Article" />
+      <div className="container mx-auto px-8">
+        <p>{post.frontmatter.date}</p>
+        <h1>{post.frontmatter.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      </div>
+    </Layout>
+  )
+}
 
 Article.propTypes = {
   siteTitle: PropTypes.string,

@@ -5,9 +5,9 @@ import { Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const Header = ({ siteTitle }) => (
-  <header className="bg-white sticky top-0 mb-4 shadow">
-    <div className="container mx-auto">
-      <nav className="grid grid-cols-2 p-6 items-center sticky">
+  <header className="bg-white sticky top-0 mb-8 shadow">
+    <div className="container mx-auto px-8">
+      <nav className="grid grid-cols-2 py-6 items-center sticky">
         <div>
           <Link to="/">
             <img
@@ -28,21 +28,21 @@ const Header = ({ siteTitle }) => (
             </a>
             <a
               href="https://twitter.com/kalpetross"
-              className="cursor-pointer"
+              className="cursor-pointer text-indigo-500"
               target="__blank"
             >
               <FontAwesomeIcon icon={["fab", "twitter"]} />
             </a>
             <a
               href="https://www.linkedin.com/in/kalpetros/"
-              className="cursor-pointer"
+              className="cursor-pointer text-indigo-700"
               target="__blank"
             >
               <FontAwesomeIcon icon={["fab", "linkedin"]} />
             </a>
             <a
               href="https://stackoverflow.com/users/2005799/kalpetros"
-              className="cursor-pointer"
+              className="cursor-pointer text-orange-500"
               target="__blank"
             >
               <FontAwesomeIcon icon={["fab", "stack-overflow"]} />

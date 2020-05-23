@@ -4,23 +4,39 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-// You can delete this file if you're not using it
 const path = require(`path`)
 
-exports.createPages = ({ actions }) => {
-  const blogBostTemplate = path.resolve(`./src/components/article.js`)
+exports.createPages = async ({ actions, graphql, reporter }) => {
+  const blogPostTemplate = path.resolve(`./src/components/article.js`)
   const { createPage } = actions
-  Array(5)
-    .fill(1)
-    .forEach((i, z) => {
-      createPage({
-        path: `/my-sweet-new-page-${z}/`,
-        component: blogBostTemplate,
-        // The context is passed as props to the component as well
-        // as into the component's GraphQL query.
-        context: {
-          id: `123456`,
-        },
-      })
+
+  const result = await graphql(`
+    {
+      allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+      ) {
+        edges {
+          node {
+            frontmatter {
+              path
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  if (result.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
+  }
+
+  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    createPage({
+      path: node.frontmatter.path,
+      component: blogPostTemplate,
+      context: {},
     })
+  })
 }

@@ -3,28 +3,33 @@ import React from "react"
 
 import { Link } from "gatsby"
 
-const Panel = ({ children }) => (
-  <div className="bg-white p-4 leading-normal rounded-lg shadow-xl">
-    <div className="mb-8">
-      <p className="text-sm text-gray-600 flex items-center">22/05/2020</p>
-      <div className="text-gray-900 font-bold text-xl mb-2 cursor-pointer">
-        <Link to="/why">Can coffee make you a better developer?</Link>
-      </div>
-      <p className="text-gray-700 text-base">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus
-        quia, nulla! Maiores et perferendis eaque, exercitationem praesentium
-        nihil.
-      </p>
+const Panel = props => (
+  <div
+    className="bg-white p-4 leading-normal rounded-lg shadow-xl"
+    id={props.id}
+  >
+    <p className="text-sm text-gray-600 flex items-center">{props.legend}</p>
+    <div className="text-gray-900 font-bold text-xl mb-2 cursor-pointer">
+      <Link to={props.path}>{props.title}</Link>
     </div>
+    <p className="text-gray-700 text-base">{props.description}</p>
   </div>
 )
 
 Panel.propTypes = {
-  siteTitle: PropTypes.string,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  path: PropTypes.string,
+  legend: PropTypes.string,
+  id: PropTypes.string.isRequired,
 }
 
 Panel.defaultProps = {
-  siteTitle: ``,
+  title: `default`,
+  description: `default`,
+  path: `/`,
+  legend: `default`,
+  id: `1`,
 }
 
 export default Panel
