@@ -1,24 +1,42 @@
-import PropTypes from "prop-types"
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
+// import Img from "gatsby-image"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import styles from "./header.module.css"
 
-const Header = ({ siteTitle }) => (
-  <header className="bg-white sticky top-0 mb-8 shadow">
-    <div className="container mx-auto px-8">
-      <nav className="grid grid-cols-2 py-6 items-center sticky">
-        <div>
-          <Link to="/">
-            <img
-              className="flex-shrink-0 h-12 rounded-full mb-0 pb-0"
-              src="https://avatars2.githubusercontent.com/u/5626758?s=460&v=4"
-              alt=""
-            />
-          </Link>
-        </div>
-        <div className="">
-          <div className="grid grid-flow-col text-right">
+const Header = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      placeholderImage: file(relativePath: { eq: "avatar.jpeg" }) {
+        childImageSharp {
+          fluid(maxWidth: 300) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
+
+  const imageSrc = data.placeholderImage.childImageSharp.fluid.src
+
+  return (
+    <header className="bg-white sticky top-0 mb-8 shadow">
+      <div className="container mx-auto px-12">
+        <nav className="grid grid-cols-2 py-6 items-center sticky">
+          <div className={`grid grid-flow-col gap-8 items-center ${styles.navLeft}`}>
+            <Link to="/">
+              <img
+                className="flex-shrink-0 h-12 rounded-full mb-0 pb-0"
+                src={imageSrc}
+                alt="avatar"
+              />
+            </Link>
+            <Link to="/about">
+              <FontAwesomeIcon icon="info-circle" />
+            </Link>
+          </div>
+          <div className="grid grid-flow-col items-center text-right">
             <a
               href="https://github.com/kalpetros"
               className="cursor-pointer"
@@ -51,18 +69,10 @@ const Header = ({ siteTitle }) => (
               <FontAwesomeIcon icon="envelope-open" />
             </a>
           </div>
-        </div>
-      </nav>
-    </div>
-  </header>
-)
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
+        </nav>
+      </div>
+    </header>
+  )
 }
 
 export default Header

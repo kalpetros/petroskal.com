@@ -12,9 +12,16 @@ import {
   faLinkedin,
   faStackOverflow,
 } from "@fortawesome/free-brands-svg-icons"
-import { faEnvelopeOpen } from "@fortawesome/free-solid-svg-icons"
+import { faEnvelopeOpen, faInfoCircle } from "@fortawesome/free-solid-svg-icons"
 
-library.add(faGithub, faTwitter, faLinkedin, faStackOverflow, faEnvelopeOpen)
+library.add(
+  faGithub,
+  faTwitter,
+  faLinkedin,
+  faStackOverflow,
+  faEnvelopeOpen,
+  faInfoCircle
+)
 
 const IndexPage = () => (
   <Layout>

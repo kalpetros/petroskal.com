@@ -23,7 +23,7 @@ const Articles = () => {
     }
   `)
 
-  const results = data.allMarkdownRemark.edges.map(data => {
+  return data.allMarkdownRemark.edges.map(data => {
     const { node: article } = data
 
     return (
@@ -38,8 +38,6 @@ const Articles = () => {
       </div>
     )
   })
-
-  return <div className="container mx-auto px-8">{results}</div>
 }
 
 Articles.propTypes = {

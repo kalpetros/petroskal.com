@@ -7,32 +7,27 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import "./layout.css"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <main>{children}</main>
-      <footer className="p-4 text-center">
-        <p>© {new Date().getFullYear()}, kalpetros.</p>
-        <p>
-          <a href="https://www.gatsbyjs.org">Built with gatsby</a> &{" "}
-          <a href="https://www.tailwindcss.com">tailwindcss</a>
-        </p>
+      <Header />
+      <main className="container mx-auto px-12">{children}</main>
+      <footer className="text-center p-4">
+        <a
+          rel="license"
+          href="http://creativecommons.org/licenses/by/4.0/"
+          target="__blank"
+        >
+          <img
+            className="inline-block"
+            src="https://i.creativecommons.org/l/by/4.0/80x15.png"
+            alt="Creative Commons License"
+          />
+        </a>
       </footer>
     </>
   )

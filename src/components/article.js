@@ -23,11 +23,9 @@ const Article = ({ data }) => {
   return (
     <Layout>
       <SEO title="Article" />
-      <div className="container mx-auto px-8">
-        <p>{post.frontmatter.date}</p>
-        <h1>{post.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-      </div>
+      <p>{post.frontmatter.date}</p>
+      <h1>{post.frontmatter.title}</h1>
+      <div dangerouslySetInnerHTML={{ __html: post.html }} />
     </Layout>
   )
 }
