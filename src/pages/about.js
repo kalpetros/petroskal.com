@@ -9,6 +9,7 @@ import reactImg from "../images/react.png"
 import graphqlImg from "../images/graphql.png"
 import tailwindImg from "../images/tailwind.png"
 import markdownImg from "../images/markdown.png"
+import netlifyImg from "../images/netlify.png"
 
 export const data = graphql`
   query Images {
@@ -91,7 +92,7 @@ const About = data => {
             <a href="https://www.netlify.com/" target="__blank">
               <img
                 className="flex-shrink-0 h-5 mb-0 pb-0 mr-2 inline-block"
-                src={graphqlImg}
+                src={netlifyImg}
                 alt="avatar"
               />
               Netlify
