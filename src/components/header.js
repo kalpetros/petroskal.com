@@ -1,13 +1,13 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
-// import Img from "gatsby-image"
+import Img from "gatsby-image"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const Header = () => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "avatar.jpeg" }) {
+      avatar: file(relativePath: { eq: "avatar.jpeg" }) {
         childImageSharp {
           fluid(maxWidth: 300) {
             ...GatsbyImageSharpFluid
@@ -17,18 +17,22 @@ const Header = () => {
     }
   `)
 
-  const imageSrc = data.placeholderImage.childImageSharp.fluid.src
+  const fluidImg = data.avatar.childImageSharp.fluid
 
   return (
     <header className="bg-white sticky top-0 mb-8 shadow">
       <div className="container mx-auto px-12">
         <nav className="grid grid-cols-2 py-6 items-center">
           <div className="grid grid-flow-col sm:gap-8 items-center sm:justify-start">
-            <Link to="/">
-              <img
-                className="flex-shrink-0 h-12 rounded-full mb-0 pb-0"
-                src={imageSrc}
+            <Link
+              className="h-12 w-12"
+              to="/"
+            >
+              <Img
+                fluid={fluidImg}
                 alt="avatar"
+                className="rounded-full"
+                placeholderClassName="mb-0"
               />
             </Link>
             <Link to="/about">
