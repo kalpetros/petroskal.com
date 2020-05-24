@@ -5,8 +5,8 @@ import { Link } from "gatsby"
 
 const Panel = props => (
   <div
-    className="bg-white p-4 leading-normal rounded-lg shadow-md"
     id={props.id}
+    className="bg-white p-4 leading-normal rounded-lg shadow-lg"
   >
     <p className="text-sm text-gray-600 flex items-center">{props.legend}</p>
     <div className="text-gray-900 font-bold text-xl mb-2 cursor-pointer">

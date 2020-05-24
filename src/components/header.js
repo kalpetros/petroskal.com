@@ -21,7 +21,7 @@ const Header = () => {
 
   return (
     <header className="bg-white sticky top-0 mb-8 shadow">
-      <div className="container mx-auto px-12">
+      <div className="max-w-screen-lg mx-auto px-12">
         <nav className="grid grid-cols-2 py-6 items-center">
           <div className="grid grid-flow-col sm:gap-8 items-center sm:justify-start">
             <Link

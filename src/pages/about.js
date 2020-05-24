@@ -123,15 +123,6 @@ const About = data => {
             </a>
           </li>
         </ul>
-        <h3>
-          Fork this website{" "}
-          <a
-            href="https://github.com/kalpetros/kalpetros.github.io"
-            target="__blank"
-          >
-            here.
-          </a>
-        </h3>
       </div>
     </Layout>
   )
