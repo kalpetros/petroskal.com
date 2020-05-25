@@ -5,11 +5,32 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
+import "./layout.css"
+
 import React from "react"
 import PropTypes from "prop-types"
 
 import Header from "./header"
-import "./layout.css"
+
+import { library } from "@fortawesome/fontawesome-svg-core"
+
+import {
+  faGithub,
+  faTwitter,
+  faLinkedin,
+  faStackOverflow,
+} from "@fortawesome/free-brands-svg-icons"
+import { faEnvelopeOpen, faInfoCircle } from "@fortawesome/free-solid-svg-icons"
+
+library.add(
+  faGithub,
+  faTwitter,
+  faLinkedin,
+  faStackOverflow,
+  faEnvelopeOpen,
+  faInfoCircle
+)
+
 
 const Layout = ({ children }) => {
   return (

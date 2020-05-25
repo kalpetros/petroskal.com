@@ -31,7 +31,7 @@ const Article = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Article" />
+      <SEO title={article.frontmatter.title} />
       <p>{legend}</p>
       <h1>{article.frontmatter.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: article.html }} />
