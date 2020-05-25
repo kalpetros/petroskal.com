@@ -26,6 +26,17 @@ Item.propTypes = {
 const Header = () => {
   const data = useStaticQuery(graphql`
     query {
+      site {
+        siteMetadata {
+          title
+          twitter
+          linkedin
+          github
+          stackoverflow
+          email
+        }
+      }
+
       avatar: file(relativePath: { eq: "avatar.jpeg" }) {
         childImageSharp {
           fluid(maxWidth: 300) {
@@ -56,19 +67,22 @@ const Header = () => {
             </Link>
           </div>
           <div className="grid grid-flow-col sm:gap-8 items-center sm:justify-end text-right">
-            <Item url="https://github.com/kalpetros" icon={["fab", "github"]} />
             <Item
-              url="https://twitter.com/kalpetross"
+              url={data.site.siteMetadata.twitter}
               icon={["fab", "twitter"]}
               iconColor="text-indigo-500"
             />
             <Item
-              url="https://www.linkedin.com/in/kalpetros/"
+              url={data.site.siteMetadata.linkedin}
               icon={["fab", "linkedin"]}
               iconColor="text-indigo-700"
             />
             <Item
-              url="https://stackoverflow.com/users/2005799/kalpetros"
+              url={data.site.siteMetadata.github}
+              icon={["fab", "github"]}
+            />
+            <Item
+              url={data.site.siteMetadata.stackoverflow}
               icon={["fab", "stack-overflow"]}
               iconColor="text-orange-500"
             />

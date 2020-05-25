@@ -1,7 +1,9 @@
 import PropTypes from "prop-types"
 import React from "react"
+
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -18,6 +20,17 @@ export const image = graphql`
 
 export const images = graphql`
   query {
+    site {
+      siteMetadata {
+        title
+        twitter
+        linkedin
+        github
+        stackoverflow
+        email
+      }
+    }
+
     gatsby: file(relativePath: { eq: "gatsby.png" }) {
       ...image
     }
@@ -44,11 +57,38 @@ export const images = graphql`
   }
 `
 
-const Item = props => (
-  <li className="grid grid-flow-col gap-2">
+const IconItem = props => {
+  let className = "mr-2"
+
+  if (props.iconColor) {
+    className = `${className} ${props.iconColor}`
+  }
+
+  return (
+    <li>
+      <a href={props.url} target="__blank">
+        <FontAwesomeIcon
+          className={className}
+          icon={props.icon}
+        />
+        {props.name}
+      </a>
+    </li>
+  )
+}
+
+IconItem.propTypes = {
+  url: PropTypes.string,
+  icon: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  iconColor: PropTypes.string,
+  name: PropTypes.string.isRequired,
+}
+
+const ImageItem = props => (
+  <li>
     <a href={props.url} target="__blank">
       <Img
-        fluid={props.imageSrc}
+        fluid={props.image}
         alt={props.imageAlt}
         className="h-5 w-5 mr-2 inline-block align-middle"
         placeholderClassName="mb-0"
@@ -58,58 +98,78 @@ const Item = props => (
   </li>
 )
 
-Item.propTypes = {
+ImageItem.propTypes = {
   url: PropTypes.string,
-  imageSrc: PropTypes.string,
+  image: PropTypes.string,
   imageAlt: PropTypes.string,
-  name: PropTypes.string.isRequired
+  name: PropTypes.string.isRequired,
 }
 
-const About = data => {
-  const { data: images } = data
+const About = props => {
+  const { data: data } = props
 
   return (
     <Layout>
       <SEO title="About" />
+      <h3>Hey there!</h3>
+      <p>
+        I'm Petro. I'm currently living in Athens, Greece working as a Software
+        Engineer for a travel tech startup.
+      </p>
+      <p>You can find me on:</p>
+      <ul>
+        <IconItem
+          url={data.site.siteMetadata.twitter}
+          icon={["fab", "twitter"]}
+          iconColor="text-indigo-500"
+          name="Twitter"
+        />
+        <IconItem
+          url={data.site.siteMetadata.linkedin}
+          icon={["fab", "linkedin"]}
+          iconColor="text-indigo-700"
+          name="Linkedin"
+        />
+      </ul>
       <div>
-        <h3>Made with:</h3>
+        <h3>This website is made with:</h3>
         <ul>
-          <Item
+          <ImageItem
             url="https://www.gatsbyjs.org/"
-            imageSrc={images.gatsby.childImageSharp.fluid}
+            image={data.gatsby.childImageSharp.fluid}
             imageAlt="gatsby"
             name="Gatsby"
           />
-          <Item
+          <ImageItem
             url="https://reactjs.org/"
-            imageSrc={images.react.childImageSharp.fluid}
+            image={data.react.childImageSharp.fluid}
             imageAlt="react"
             name="ReactJS"
           />
-          <Item
+          <ImageItem
             url="https://graphql.org/"
-            imageSrc={images.graphql.childImageSharp.fluid}
+            image={data.graphql.childImageSharp.fluid}
             imageAlt="graphql"
             name="GraphQL"
           />
-          <Item
+          <ImageItem
             url="https://tailwindcss.com/"
-            imageSrc={images.tailwind.childImageSharp.fluid}
+            image={data.tailwind.childImageSharp.fluid}
             imageAlt="tailwind"
             name="Tailwind"
           />
-          <Item
+          <ImageItem
             url="https://daringfireball.net/projects/markdown/"
-            imageSrc={images.markdown.childImageSharp.fluid}
+            image={data.markdown.childImageSharp.fluid}
             imageAlt="markdown"
             name="Markdown"
           />
         </ul>
-        <h3>Hosted on:</h3>
+        <h3>and hosted on:</h3>
         <ul>
-          <Item
+          <ImageItem
             url="https://www.netlify.com/"
-            imageSrc={images.netlify.childImageSharp.fluid}
+            image={data.netlify.childImageSharp.fluid}
             imageAlt="netlify"
             name="Netlify"
           />

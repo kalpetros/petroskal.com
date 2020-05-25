@@ -3,6 +3,11 @@ module.exports = {
     title: `Petros Kalogiannakis`,
     description: `Personal website`,
     author: `Petros Kalogiannakis`,
+    twitter: "https://twitter.com/kalpetross",
+    linkedin: "https://www.linkedin.com/in/kalpetros/",
+    github: "https://github.com/kalpetros",
+    stackoverflow: "https://stackoverflow.com/users/2005799/kalpetros",
+    email: "hi@petroskal.com",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
