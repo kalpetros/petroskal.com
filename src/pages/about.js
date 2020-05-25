@@ -67,10 +67,7 @@ const IconItem = props => {
   return (
     <li>
       <a href={props.url} target="__blank">
-        <FontAwesomeIcon
-          className={className}
-          icon={props.icon}
-        />
+        <FontAwesomeIcon className={className} icon={props.icon} />
         {props.name}
       </a>
     </li>
@@ -131,50 +128,49 @@ const About = props => {
           name="Linkedin"
         />
       </ul>
-      <div>
-        <h3>This website is made with:</h3>
-        <ul>
-          <ImageItem
-            url="https://www.gatsbyjs.org/"
-            image={data.gatsby.childImageSharp.fluid}
-            imageAlt="gatsby"
-            name="Gatsby"
-          />
-          <ImageItem
-            url="https://reactjs.org/"
-            image={data.react.childImageSharp.fluid}
-            imageAlt="react"
-            name="ReactJS"
-          />
-          <ImageItem
-            url="https://graphql.org/"
-            image={data.graphql.childImageSharp.fluid}
-            imageAlt="graphql"
-            name="GraphQL"
-          />
-          <ImageItem
-            url="https://tailwindcss.com/"
-            image={data.tailwind.childImageSharp.fluid}
-            imageAlt="tailwind"
-            name="Tailwind"
-          />
-          <ImageItem
-            url="https://daringfireball.net/projects/markdown/"
-            image={data.markdown.childImageSharp.fluid}
-            imageAlt="markdown"
-            name="Markdown"
-          />
-        </ul>
-        <h3>and hosted on:</h3>
-        <ul>
-          <ImageItem
-            url="https://www.netlify.com/"
-            image={data.netlify.childImageSharp.fluid}
-            imageAlt="netlify"
-            name="Netlify"
-          />
-        </ul>
-      </div>
+      <hr />
+      <h3>This website is made with:</h3>
+      <ul>
+        <ImageItem
+          url="https://www.gatsbyjs.org/"
+          image={data.gatsby.childImageSharp.fluid}
+          imageAlt="gatsby"
+          name="Gatsby"
+        />
+        <ImageItem
+          url="https://reactjs.org/"
+          image={data.react.childImageSharp.fluid}
+          imageAlt="react"
+          name="ReactJS"
+        />
+        <ImageItem
+          url="https://graphql.org/"
+          image={data.graphql.childImageSharp.fluid}
+          imageAlt="graphql"
+          name="GraphQL"
+        />
+        <ImageItem
+          url="https://tailwindcss.com/"
+          image={data.tailwind.childImageSharp.fluid}
+          imageAlt="tailwind"
+          name="Tailwind"
+        />
+        <ImageItem
+          url="https://daringfireball.net/projects/markdown/"
+          image={data.markdown.childImageSharp.fluid}
+          imageAlt="markdown"
+          name="Markdown"
+        />
+      </ul>
+      <h3>and hosted on:</h3>
+      <ul>
+        <ImageItem
+          url="https://www.netlify.com/"
+          image={data.netlify.childImageSharp.fluid}
+          imageAlt="netlify"
+          name="Netlify"
+        />
+      </ul>
     </Layout>
   )
 }

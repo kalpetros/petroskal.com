@@ -1,5 +1,5 @@
 {
-  "name": "kalpetros.github.io",
+  "name": "petroskal.com",
   "private": true,
   "description": "Personal website",
   "version": "0.1.0",
@@ -44,9 +44,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/kalpetros/petroskal.com"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/kalpetros/petroskal.com/issues"
   }
 }

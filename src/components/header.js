@@ -62,7 +62,7 @@ const Header = () => {
                 placeholderClassName="mb-0"
               />
             </Link>
-            <Link className="text-gray-400" to="/about">
+            <Link to="/about">
               <FontAwesomeIcon icon="info-circle" />
             </Link>
           </div>
