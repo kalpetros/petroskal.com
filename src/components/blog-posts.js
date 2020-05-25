@@ -1,10 +1,9 @@
-import PropTypes from "prop-types"
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Panel from "./panel"
 
-const Articles = () => {
+const BlogPosts = () => {
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
@@ -29,32 +28,24 @@ const Articles = () => {
   `)
 
   return data.allMarkdownRemark.edges.map(data => {
-    const { node: article } = data
+    const { node: blogPost } = data
 
-    const date = article.frontmatter.date
-    const readingTime = article.fields.readingTime.text
+    const date = blogPost.frontmatter.date
+    const readingTime = blogPost.fields.readingTime.text
     const legend = `${date} - ${readingTime}`
 
     return (
-      <div key={article.id} className="mb-8">
+      <div key={blogPost.id} className="mb-8">
         <Panel
-          id={article.id}
-          title={article.frontmatter.title}
-          description={article.excerpt}
+          id={blogPost.id}
+          title={blogPost.frontmatter.title}
+          description={blogPost.excerpt}
           legend={legend}
-          path={article.frontmatter.path}
+          path={blogPost.frontmatter.path}
         />
       </div>
     )
   })
 }
 
-Articles.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Articles.defaultProps = {
-  siteTitle: ``,
-}
-
-export default Articles
+export default BlogPosts

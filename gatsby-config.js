@@ -9,8 +9,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        name: `assets`,
+        path: `${__dirname}/src/assets`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -24,22 +24,15 @@ module.exports = {
         background_color: `#fff`,
         theme_color: `#fff`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby.png`, // This path is relative to the root of the site.
+        icon: `src/assets/gatsby.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/data/posts`,
+        path: `${__dirname}/src/pages`,
         name: "posts",
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/images`,
-        name: "images",
       },
     },
     {
