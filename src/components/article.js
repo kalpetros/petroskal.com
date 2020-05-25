@@ -13,19 +13,28 @@ export const pageQuery = graphql`
         path
         title
       }
+      fields {
+        readingTime {
+          text
+        }
+      }
     }
   }
 `
 
 const Article = ({ data }) => {
-  const { markdownRemark: post } = data
+  const { markdownRemark: article } = data
+
+  const date = article.frontmatter.date
+  const readingTime = article.fields.readingTime.text
+  const legend = `${date} - ${readingTime}`
 
   return (
     <Layout>
       <SEO title="Article" />
-      <p>{post.frontmatter.date}</p>
-      <h1>{post.frontmatter.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      <p>{legend}</p>
+      <h1>{article.frontmatter.title}</h1>
+      <div dangerouslySetInnerHTML={{ __html: article.html }} />
     </Layout>
   )
 }

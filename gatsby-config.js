@@ -28,7 +28,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-postcss`,
-     {
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/data/posts`,
@@ -45,9 +45,11 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        // CommonMark mode (default: true)
-        plugins: [],
-      }
+        plugins: [
+          `gatsby-remark-reading-time`,
+          // ...
+        ],
+      },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

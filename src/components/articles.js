@@ -6,7 +6,7 @@ import Panel from "./panel"
 
 const Articles = () => {
   const data = useStaticQuery(graphql`
-    query Articles {
+    query {
       allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
         edges {
           node {
@@ -17,6 +17,11 @@ const Articles = () => {
               date(formatString: "MMMM DD, YYYY")
               title
             }
+            fields {
+              readingTime {
+                text
+              }
+            }
           }
         }
       }
@@ -26,13 +31,17 @@ const Articles = () => {
   return data.allMarkdownRemark.edges.map(data => {
     const { node: article } = data
 
+    const date = article.frontmatter.date
+    const readingTime = article.fields.readingTime.text
+    const legend = `${date} - ${readingTime}`
+
     return (
       <div key={article.id} className="mb-8">
         <Panel
           id={article.id}
           title={article.frontmatter.title}
           description={article.excerpt}
-          legend={article.frontmatter.date}
+          legend={legend}
           path={article.frontmatter.path}
         />
       </div>
