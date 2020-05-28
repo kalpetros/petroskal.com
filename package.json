@@ -28,6 +28,7 @@
     "react-typography": "^0.16.19",
     "tailwindcss": "^1.4.6",
     "typography": "^0.16.19",
+    "typography-theme-lawton": "^0.16.19",
     "typography-theme-parnassus": "^0.16.19"
   },
   "devDependencies": {

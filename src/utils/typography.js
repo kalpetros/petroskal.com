@@ -1,6 +1,6 @@
 import Typography from "typography"
-import parnassusTheme from "typography-theme-parnassus"
+import lawtonTheme from "typography-theme-lawton"
 
-const typography = new Typography(parnassusTheme)
+const typography = new Typography(lawtonTheme)
 
 export default typography

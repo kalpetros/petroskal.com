@@ -13221,6 +13221,15 @@ typography-normalize@^0.16.19:
   resolved "https://registry.yarnpkg.com/typography-normalize/-/typography-normalize-0.16.19.tgz#58e0cf12466870c5b27006daa051fe7307780660"
   integrity sha512-vtnSv/uGBZVbd4e/ZhZB9HKBgKKlWQUXw74+ADIHHxzKp27CEf8PSR8TX1zF2qSyQ9/qMdqLwXYz8yRQFq9JLQ==
 
+typography-theme-lawton@^0.16.19:
+  version "0.16.19"
+  resolved "https://registry.yarnpkg.com/typography-theme-lawton/-/typography-theme-lawton-0.16.19.tgz#2ddfff6de8a8b63137ff1ea4d7c89d9863a955d1"
+  integrity sha512-SbDK88HdXwoDG4R/Py2h1+KMRxZXfr3XM3FTH2JKGQy5Kzkca3aIdxcHHRjm4ze3fUjQ8paCoK+0uRkFgRgcbQ==
+  dependencies:
+    compass-vertical-rhythm "^1.2.1"
+    gray-percentage "^2.0.0"
+    typography-breakpoint-constants "^0.16.19"
+
 typography-theme-parnassus@^0.16.19:
   version "0.16.19"
   resolved "https://registry.yarnpkg.com/typography-theme-parnassus/-/typography-theme-parnassus-0.16.19.tgz#d82f2abd3a15caf5ca3ed699191ec88370cadd70"
