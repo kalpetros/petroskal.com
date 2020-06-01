@@ -122,7 +122,7 @@ def upload_to_s3(json_file, file_name):
 
 
 def analyse_image(image, image_id):
-    logging.info(f'Analyzing image {image_id}')
+    logging.info(f'Analysing image {image_id}')
     rekognition = boto3.client('rekognition')
 
     response = rekognition.detect_labels(
