@@ -67,7 +67,7 @@ const Header = () => {
                 placeholderClassName="mb-0"
               />
             </Link>
-            <Link to="/about">
+            <Link to="/about" className="text-black">
               <FontAwesomeIcon icon="info-circle" />
             </Link>
           </div>
@@ -85,6 +85,7 @@ const Header = () => {
             <Item
               url={data.site.siteMetadata.github}
               icon={["fab", "github"]}
+              iconColor="text-black"
             />
             {/* <Item
               url={data.site.siteMetadata.stackoverflow}
@@ -94,6 +95,7 @@ const Header = () => {
             <Item
               url={`mailto:${data.site.siteMetadata.email}`}
               icon="envelope-open"
+              iconColor="text-black"
               target="_self"
             />
           </div>
