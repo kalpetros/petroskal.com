@@ -24,7 +24,7 @@ Item.defaultProps = {
 
 Item.propTypes = {
   url: PropTypes.string,
-  icon: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  icon: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
   iconColor: PropTypes.string,
 }
 
