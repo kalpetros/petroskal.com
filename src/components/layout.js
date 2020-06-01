@@ -9,9 +9,6 @@ import "./layout.css"
 
 import React from "react"
 import PropTypes from "prop-types"
-
-import Header from "./header"
-
 import { library } from "@fortawesome/fontawesome-svg-core"
 
 import {
@@ -22,6 +19,8 @@ import {
 } from "@fortawesome/free-brands-svg-icons"
 import { faEnvelopeOpen, faInfoCircle } from "@fortawesome/free-solid-svg-icons"
 
+import Header from "./header"
+
 library.add(
   faGithub,
   faTwitter,
@@ -30,7 +29,6 @@ library.add(
   faEnvelopeOpen,
   faInfoCircle
 )
-
 
 const Layout = ({ children }) => {
   return (

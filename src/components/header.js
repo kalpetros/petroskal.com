@@ -2,7 +2,6 @@ import PropTypes from "prop-types"
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const Item = props => {
