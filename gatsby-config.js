@@ -11,6 +11,9 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -18,8 +21,13 @@ module.exports = {
         path: `${__dirname}/src/assets`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/pages`,
+        name: "posts",
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -29,15 +37,7 @@ module.exports = {
         background_color: `#fff`,
         theme_color: `#fff`,
         display: `minimal-ui`,
-        icon: `src/assets/gatsby.png`, // This path is relative to the root of the site.
-      },
-    },
-    `gatsby-plugin-postcss`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/pages`,
-        name: "posts",
+        icon: `src/assets/avatar.jpeg`, // This path is relative to the root of the site.
       },
     },
     {
@@ -45,6 +45,13 @@ module.exports = {
       options: {
         plugins: [
           `gatsby-remark-reading-time`,
+          `gatsby-remark-copy-linked-files`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590,
+            },
+          },
         ],
       },
     },

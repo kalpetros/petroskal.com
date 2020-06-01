@@ -103,26 +103,24 @@ ImageItem.propTypes = {
 }
 
 const About = props => {
-  const { data: data } = props
-
   return (
     <Layout>
       <SEO title="About" />
       <h3>Hey there!</h3>
       <p>
-        I'm Petro. I'm currently living in Athens, Greece working as a Software
+        I'm Petros. I'm currently living in Athens, Greece working as a Software
         Engineer for a travel tech startup.
       </p>
       <p>You can find me on:</p>
       <ul>
         <IconItem
-          url={data.site.siteMetadata.twitter}
+          url={props.data.site.siteMetadata.twitter}
           icon={["fab", "twitter"]}
           iconColor="text-indigo-500"
           name="Twitter"
         />
         <IconItem
-          url={data.site.siteMetadata.linkedin}
+          url={props.data.site.siteMetadata.linkedin}
           icon={["fab", "linkedin"]}
           iconColor="text-indigo-700"
           name="Linkedin"
@@ -133,31 +131,31 @@ const About = props => {
       <ul>
         <ImageItem
           url="https://www.gatsbyjs.org/"
-          image={data.gatsby.childImageSharp.fluid}
+          image={props.data.gatsby.childImageSharp.fluid}
           imageAlt="gatsby"
           name="Gatsby"
         />
         <ImageItem
           url="https://reactjs.org/"
-          image={data.react.childImageSharp.fluid}
+          image={props.data.react.childImageSharp.fluid}
           imageAlt="react"
           name="ReactJS"
         />
         <ImageItem
           url="https://graphql.org/"
-          image={data.graphql.childImageSharp.fluid}
+          image={props.data.graphql.childImageSharp.fluid}
           imageAlt="graphql"
           name="GraphQL"
         />
         <ImageItem
           url="https://tailwindcss.com/"
-          image={data.tailwind.childImageSharp.fluid}
+          image={props.data.tailwind.childImageSharp.fluid}
           imageAlt="tailwind"
           name="Tailwind"
         />
         <ImageItem
           url="https://daringfireball.net/projects/markdown/"
-          image={data.markdown.childImageSharp.fluid}
+          image={props.data.markdown.childImageSharp.fluid}
           imageAlt="markdown"
           name="Markdown"
         />
@@ -166,7 +164,7 @@ const About = props => {
       <ul>
         <ImageItem
           url="https://www.netlify.com/"
-          image={data.netlify.childImageSharp.fluid}
+          image={props.data.netlify.childImageSharp.fluid}
           imageAlt="netlify"
           name="Netlify"
         />
