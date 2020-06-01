@@ -31,7 +31,7 @@ const BlogPostTemplate = ({ data }) => {
   return (
     <Layout>
       <SEO title={blogPost.frontmatter.title} />
-      <p>{legend}</p>
+      <p className="font-bold">{legend}</p>
       <h1>{blogPost.frontmatter.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: blogPost.html }} />
     </Layout>
