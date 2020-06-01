@@ -233,8 +233,6 @@ $ aws s3 cp file.json s3://bucket1
 
 Visit your AWS lambda console and check the monitor tab. There should be an entry in the **Recent invocations** panel.
 
-![function_invocation](function_invocation.png)
-
 Finally check **bucket2** for the generated **.json** file with the image analysis.
 
 A Rekognition analysis includes one or more labels. Each label includes an object name with a confidence percentage.
