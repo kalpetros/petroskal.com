@@ -7,14 +7,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const Item = props => {
   let className = "cursor-pointer"
+  const target = props.target
 
   if (props.iconColor) className = `${className} ${props.iconColor}`
 
   return (
-    <a href={props.url} className={className} target="__blank">
+    <a href={props.url} className={className} target={target}>
       <FontAwesomeIcon icon={props.icon} />
     </a>
   )
+}
+
+Item.defaultProps = {
+  target: "_blank"
 }
 
 Item.propTypes = {
@@ -81,12 +86,16 @@ const Header = () => {
               url={data.site.siteMetadata.github}
               icon={["fab", "github"]}
             />
-            <Item
+            {/* <Item
               url={data.site.siteMetadata.stackoverflow}
               icon={["fab", "stack-overflow"]}
               iconColor="text-orange-500"
+            /> */}
+            <Item
+              url={`mailto:${data.site.siteMetadata.email}`}
+              icon="envelope-open"
+              target="_self"
             />
-            <Item url="" icon="envelope-open" />
           </div>
         </nav>
       </div>
