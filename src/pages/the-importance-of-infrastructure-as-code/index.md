@@ -16,15 +16,18 @@ Some popular tools for writing IAC are Terraform and CloudFormation. Personally 
 
 To get started with Terraform go ahead and [download it from the official website](https://www.terraform.io/).
 
-Export the binary's path in your __.profile__
+Export the binary's path in your **.profile**
+
 ```
 export PATH="$PATH:~/path-to-binary"
 ```
 
 ## Build Infrastructure
-First you need to create a file with the __.tf__ extension.
+
+First you need to create a file with the **.tf** extension.
 
 Inside the file add the following:
+
 ```
 provider "aws" {
   region = 'eu-west-1'
@@ -33,9 +36,10 @@ provider "aws" {
 
 This defines the provider your are about to use.
 
-__Note:__ It is recommended not to hardcode credentials into the *.tf cofiguration files.
+**Note:** It is recommended not to hardcode credentials into the \*.tf cofiguration files.
 
 Then run the following:
+
 ```
 $ terraform init
 ```
@@ -43,27 +47,31 @@ $ terraform init
 By running `terraform init` Terraform downloads everything that is necessary to provision resources in your specified provider.
 
 To format your configuration for easy readability run:
+
 ```
 $ terraform fmt
 ```
 
 To syntactically validate your configuration run:
+
 ```
 $ terraform validate
 ```
 
 Finally to apply the configuration changes run:
+
 ```
 $ terraform apply
 ```
 
 When you apply the configuration, Terraform will show you all the actions it'll take in order to change real infrastructure. You'll notice that Terraform uses a similar format to git diff to display additions and deletions in your resources.
 
-Terraform also keeps track of every ID of the created resources into a __.tfstate__ file. Make sure that you commit this file in your version control so that anyone in your team that uses Terraform can use it.
+Terraform also keeps track of every ID of the created resources into a **.tfstate** file. Make sure that you commit this file in your version control so that anyone in your team that uses Terraform can use it.
 
 You could also write state data to a remote data store such as Terraform Cloud or AWS S3.
 
-To use Terraform Cloud as the backend add the following in your __.tf__ file (Make sure you have an account with Terraform):
+To use Terraform Cloud as the backend add the following in your **.tf** file (Make sure you have an account with Terraform):
+
 ```
 terraform {
   backend "remote" {
@@ -77,21 +85,27 @@ terraform {
 ```
 
 To inspect the current state using:
+
 ```
 $ terraform show
 ```
 
 ## Change Infrastructure
+
 As your Terraform configuration changes over time, when you run apply it only modifies, creates or destroys what is necessary. By commiting your configuration in version control you can easily see how it is progressing over time.
 
 ## Destroy Infrastructure
+
 To destroy all resources that you've created by your configuration run:
+
 ```
 $ terraform destroy
 ```
 
 ## Resource Dependencies
-You can specify if a resource depends on another resource before you create it by using the __depends_on__ argument. For example you can specify that you want an EC2 instance to be created but only after the S3 bucket is created. All other resources that don't have any dependencies can be created in parallel.
+
+You can specify if a resource depends on another resource before you create it by using the **depends_on** argument. For example you can specify that you want an EC2 instance to be created but only after the S3 bucket is created. All other resources that don't have any dependencies can be created in parallel.
+
 ```
 resource "aws_instance" "ec2" {
   ami             = "ami"
@@ -107,6 +121,7 @@ resource "aws_instance" "ec2" {
 
 Another way to define dependencies is with interpolation expressions.
 For example to create an aws elastic ip that depends on an instance you would write the following:
+
 ```
 resource “aws_eip” “ip” {
     vpc = true
@@ -117,31 +132,37 @@ resource “aws_eip” “ip” {
 Where ec2 is an instance you defined previously.
 
 ## Provisioners
+
 Terraform also gives you the ability to do post operations after your resources are created or destroyed. This is useful if you want to do some initial setup after an instance creation i.e. run scripts, install software etc.
 
 To define a provisioner, add the following to a resource block:
+
 ```
 Provisioner “local-exec” {
     command = “ls”
 }
 ```
 
-__local-exec__
+**local-exec**
 Executes commands on your local machine.
 
-__remote-exec__
+**remote-exec**
 To execute commands on a remote machine you must define an ssh connection in the connection block.
 
 ### Failed Provisioner and Tainted Resources
-If a resource has been created successfully but there was a problem with your provisioner, Terraform will give you an error and mark this resource as __tainted__.
+
+If a resource has been created successfully but there was a problem with your provisioner, Terraform will give you an error and mark this resource as **tainted**.
 
 Next time you apply your configuration, Terraform will remove the tainted resource, create it again and try to run the provisioning step.
 
 ### Manually Tainting Resources
+
 You also have the ability to mark a resource as tainted manually if you want to destroy and recreate it.
 
 ## Input variables
-If your configuration uses a lot of common variables then Terraform lets you create a __variables.tf__ file where you can define all the variables that you need.
+
+If your configuration uses a lot of common variables then Terraform lets you create a **variables.tf** file where you can define all the variables that you need.
+
 ```
 variable "region" {
   description = "The AWS region the services will use."
@@ -150,6 +171,7 @@ variable "region" {
 ```
 
 Then to use the variables in your main configuration write the following:
+
 ```
 provider "aws" {
   region = var.region
@@ -157,11 +179,13 @@ provider "aws" {
 ```
 
 ## Output variables
+
 Output variables is a way to access values like an instance's IP after a Terraform build.
 
-Create an __output.tf__ file and define all the values that you want to get outputted when you run apply.
+Create an **output.tf** file and define all the values that you want to get outputted when you run apply.
 
-__Note:__ You can also add values to any of your __.tf__ files.
+**Note:** You can also add values to any of your **.tf** files.
+
 ```
 output "instance_ip" {
   value = aws_instance.ec2.public_ip
@@ -171,6 +195,7 @@ output "instance_ip" {
 ## Full configuration
 
 Below you will see a full Terraform configuration that creates an IAM group with an attached policy, a security group with an open SSH port, an EC2 instance, a security group for an RDS instance, an RDS instance, an S3 bucket with subfolders and a CloudFront distribution.
+
 ```
 terraform {
   backend "remote" {
