@@ -20,7 +20,7 @@ Finally save the analysis as a **.json** file in a second bucket.
 
 ## Example
 
-For most of the examples below I'm going to use the aws cli tool but you can do the same using the console. Ideally it's better to write an IAC configuration ([Terraforn](https://www.terraform.io/), [CloudFormation](https://aws.amazon.com/cloudformation/)).
+For most of the examples below I'm going to use the aws cli tool but you can do the same using the console. Ideally it's better to write an IAC configuration ([Terraform](https://www.terraform.io/), [CloudFormation](https://aws.amazon.com/cloudformation/)).
 
 ### Start by creating the buckets in S3
 
