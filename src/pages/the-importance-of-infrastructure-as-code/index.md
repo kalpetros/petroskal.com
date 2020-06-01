@@ -18,7 +18,7 @@ To get started with Terraform go ahead and [download it from the official websit
 
 Export the binary's path in your **.profile**
 
-```
+```bash
 export PATH="$PATH:~/path-to-binary"
 ```
 
@@ -40,28 +40,28 @@ This defines the provider your are about to use.
 
 Then run the following:
 
-```
-$ terraform init
+```bash
+terraform init
 ```
 
 By running `terraform init` Terraform downloads everything that is necessary to provision resources in your specified provider.
 
 To format your configuration for easy readability run:
 
-```
-$ terraform fmt
+```bash
+terraform fmt
 ```
 
 To syntactically validate your configuration run:
 
-```
-$ terraform validate
+```bash
+terraform validate
 ```
 
 Finally to apply the configuration changes run:
 
-```
-$ terraform apply
+```bash
+terraform apply
 ```
 
 When you apply the configuration, Terraform will show you all the actions it'll take in order to change real infrastructure. You'll notice that Terraform uses a similar format to git diff to display additions and deletions in your resources.
@@ -86,8 +86,8 @@ terraform {
 
 To inspect the current state using:
 
-```
-$ terraform show
+```bash
+terraform show
 ```
 
 ## Change Infrastructure
@@ -98,8 +98,8 @@ As your Terraform configuration changes over time, when you run apply it only mo
 
 To destroy all resources that you've created by your configuration run:
 
-```
-$ terraform destroy
+```bash
+terraform destroy
 ```
 
 ## Resource Dependencies

@@ -9,7 +9,7 @@ const BlogPosts = () => {
       allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
         edges {
           node {
-            excerpt(pruneLength: 250)
+            excerpt(pruneLength: 100)
             id
             frontmatter {
               path

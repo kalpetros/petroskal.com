@@ -36,7 +36,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header />
-      <main className="max-w-screen-lg mx-auto px-12">{children}</main>
+      <main className="max-w-screen-md mx-auto px-12">{children}</main>
       <footer className="text-center p-4">
         <a
           rel="license"

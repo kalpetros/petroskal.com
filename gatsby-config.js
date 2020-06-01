@@ -52,6 +52,16 @@ module.exports = {
               maxWidth: 590,
             },
           },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              prompt: {
+                user: "user",
+                host: "localhost",
+                global: true,
+              },
+            },
+          },
         ],
       },
     },

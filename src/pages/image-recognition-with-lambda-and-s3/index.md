@@ -24,19 +24,19 @@ For most of the examples below I'm going to use the aws cli tool but you can do 
 
 ### Start by creating the buckets in S3
 
-```
-$ aws s3api create-bucket --bucket bucket1 --acl private --region eu-central-1 --create-bucket-configuration LocationConstraint=eu-central-1
+```bash
+aws s3api create-bucket --bucket bucket1 --acl private --region eu-central-1 --create-bucket-configuration LocationConstraint=eu-central-1
 ```
 
-```
-$ aws s3api create-bucket --bucket bucket2 --acl private --region eu-central-1 --create-bucket-configuration LocationConstraint=eu-central-1
+```bash
+aws s3api create-bucket --bucket bucket2 --acl private --region eu-central-1 --create-bucket-configuration LocationConstraint=eu-central-1
 ```
 
 **Note:** LocationConstraint is not needed for US regions.
 
 Create a **.json** with the following content:
 
-```
+```json
 {
     url: 'https://upload.wikimedia.org/wikipedia/commons/7/77/Big_Nature_%28155420955%29.jpeg'
 }
@@ -44,8 +44,8 @@ Create a **.json** with the following content:
 
 and upload it to the **bucket1** bucket:
 
-```
-$ aws s3 cp <path-to-json> s3://bucket1
+```bash
+aws s3 cp <path-to-json> s3://bucket1
 ```
 
 ### Create a lambda function
@@ -54,7 +54,7 @@ Before you create a lambda function you need to create a role with access to S3.
 
 Create a **.json** file for the trust relationship policy with the following content:
 
-```
+```json
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -72,33 +72,33 @@ Create a **.json** file for the trust relationship policy with the following con
 
 Create a role:
 
-```
-$ aws iam create-role --role-name lambda-function --assume-role-policy-document file://<path-to-trust-policy.json>
+```bash
+aws iam create-role --role-name lambda-function --assume-role-policy-document file://<path-to-trust-policy.json>
 ```
 
 Attach the **AmazonS3FullAccess** policy to the **lambda-function** role:
 
-```
-$ aws iam attach-role-policy --role-name lambda-function --policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess
+```bash
+aws iam attach-role-policy --role-name lambda-function --policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess
 ```
 
 Also attach the **AmazonRekognitionFullAccess** policy:
 
-```
-$ aws iam attach-role-policy --role-name lambda-function --policy-arn arn:aws:iam::aws:policy/AmazonRekognitionFullAccess
+```bash
+aws iam attach-role-policy --role-name lambda-function --policy-arn arn:aws:iam::aws:policy/AmazonRekognitionFullAccess
 ```
 
 Run the following to get the role's arn in order to use it to the lambda function creation command:
 
-```
-$ aws iam get-role --role-name lambda-function
+```bash
+aws iam get-role --role-name lambda-function
 ```
 
 For the purposes of this example I'm going to use Python.
 
 Create the following python file and compress (zip) it since lambda expects a deployment package:
 
-```
+```python
 import boto3
 import json
 import logging
@@ -107,13 +107,14 @@ import uuid
 
 BUCKET_ORIGIN = 'bucket1'
 BUCKET_DESTINATION = 'bucket2'
+S3_CLIENT = boto3.client('s3')
+REKOGNITION_CLIENT = boto3.client('rekognition')
 
 
 def upload_to_s3(json_file, file_name):
     logging.info(f'Uploading {file_name}')
-    s3 = boto3.client('s3')
 
-    s3.put_object(
+    S3_CLIENT.put_object(
         ACL='public-read',
         Body=json_file,
         Bucket=BUCKET_DESTINATION,
@@ -123,9 +124,8 @@ def upload_to_s3(json_file, file_name):
 
 def analyse_image(image, image_id):
     logging.info(f'Analysing image {image_id}')
-    rekognition = boto3.client('rekognition')
 
-    response = rekognition.detect_labels(
+    response = REKOGNITION_CLIENT.detect_labels(
         Image={
             'Bytes': image
         }
@@ -157,11 +157,10 @@ def download_image(url, image_id):
 
 
 def lambda_handler(event, context):
-    s3 = boto3.client('s3')
-    response = s3.list_objects(Bucket=BUCKET_ORIGIN)
+    response = S3_CLIENT.list_objects(Bucket=BUCKET_ORIGIN)
 
     for obj in response['Contents']:
-        bucket_object = s3.get_object(Bucket=BUCKET_ORIGIN, Key=obj['Key'])
+        bucket_object = S3_CLIENT.get_object(Bucket=BUCKET_ORIGIN, Key=obj['Key'])
         object_content = bucket_object['Body'].read()
         json_content = json.loads(object_content)
         url = json_content['url']
@@ -177,12 +176,12 @@ def lambda_handler(event, context):
 Finally create the lambda function:
 
 ```
-$ aws lambda create-function --function-name analyse-images --runtime python3.8 --handler lambda-function.handler --role <arn-from-previous-command> --zip-file fileb://<path-to-archive.zip>
+aws lambda create-function --function-name analyse-images --runtime python3.8 --handler lambda-function.handler --role <arn-from-previous-command> --zip-file fileb://<path-to-archive.zip>
 ```
 
 If everything goes ok you will see something like the following:
 
-```
+```json
 {
     "State": "Active",
     "LastUpdateStatus": "Successful"
@@ -195,7 +194,7 @@ You need enable event notifications in order to trigger your lambda function for
 
 First you need to create a **.json** with the following:
 
-```
+```json
 {
     "LambdaFunctionConfigurations": [
         {
@@ -211,24 +210,24 @@ First you need to create a **.json** with the following:
 
 Add invoke permissions to the lambda function:
 
-```
-$ aws lambda add-permission --function-name analyse-images --principal s3.amazonaws.com --statement-id S3StatementId --action "lambda:InvokeFunction" --source-arn <lambda-function-arn> --source-account <account-id>
+```bash
+aws lambda add-permission --function-name analyse-images --principal s3.amazonaws.com --statement-id S3StatementId --action "lambda:InvokeFunction" --source-arn <lambda-function-arn> --source-account <account-id>
 ```
 
 You can find your **account-id** in **IAM -> Account identifiers**.
 
 Then to create the notification event for the bucket type:
 
-```
-$ aws s3api put-bucket-notification-configuration --bucket bucket1 --notification-configuration file://<file>.json
+```bash
+aws s3api put-bucket-notification-configuration --bucket bucket1 --notification-configuration file://<file>.json
 ```
 
 ### Test auto lambda function invocation
 
 Go ahead and push a file to S3 to test that the lambda function gets invoked automatically.
 
-```
-$ aws s3 cp file.json s3://bucket1
+```bash
+aws s3 cp file.json s3://bucket1
 ```
 
 Visit your AWS lambda console and check the monitor tab. There should be an entry in the **Recent invocations** panel.
@@ -239,7 +238,7 @@ A Rekognition analysis includes one or more labels. Each label includes an objec
 
 It should look like the following:
 
-```
+```json
 {
   "image_id": "9279f316-bdc1-4ca2-bf8c-5a7e7e4e5bbd",
   "labels": [
