@@ -212,7 +212,7 @@ First you need to create a **.json** with the following:
 Add invoke permissions to the lambda function:
 
 ```
-$ aws lambda add-permission --function-name download-images --principal s3.amazonaws.com --statement-id S3StatementId --action "lambda:InvokeFunction" --source-arn <lambda-function-arn> --source-account <account-id>
+$ aws lambda add-permission --function-name analyse-images --principal s3.amazonaws.com --statement-id S3StatementId --action "lambda:InvokeFunction" --source-arn <lambda-function-arn> --source-account <account-id>
 ```
 
 You can find your **account-id** in **IAM -> Account identifiers**.
