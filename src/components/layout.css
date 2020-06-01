@@ -3,7 +3,7 @@ ul {
 }
 
 a {
-  color: #234E52;
+  color: #234e52;
 }
 
 h1,
@@ -12,5 +12,9 @@ h3,
 h4,
 h5,
 h6 {
-  color: #234E52;
+  color: #234e52;
+}
+
+pre {
+  border-radius: 5px;
 }
