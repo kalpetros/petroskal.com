@@ -3,9 +3,6 @@ path: "/creating-a-blog-with-gatsby"
 date: 2020-06-02T21:00:00.000Z
 title: "Creating a Blog with Gatsby"
 ---
-
-A couple of years back I migrated my website from plain js to jhjen and now gatsby.
-
 ## Getting started
 
 Assumming you are running a Linux distribution and you have the latest Node.js, npm and git installed type the following in your terminal:
