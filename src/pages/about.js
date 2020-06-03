@@ -110,7 +110,7 @@ const About = props => {
         I'm Petros. I'm currently living in Athens, Greece working as a Software
         Engineer for a travel tech startup.
       </p>
-      <p>You can find me on:</p>
+      <h3>You can find me on:</h3>
       <ul>
         <IconItem
           url={props.data.site.siteMetadata.twitter}
