@@ -17,7 +17,12 @@ import {
   faLinkedin,
   faStackOverflow,
 } from "@fortawesome/free-brands-svg-icons"
-import { faEnvelopeOpen, faInfoCircle } from "@fortawesome/free-solid-svg-icons"
+import {
+  faEnvelopeOpen,
+  faInfoCircle,
+  faLongArrowAltLeft,
+  faLongArrowAltRight
+} from "@fortawesome/free-solid-svg-icons"
 
 import Header from "./header"
 
@@ -27,7 +32,9 @@ library.add(
   faLinkedin,
   faStackOverflow,
   faEnvelopeOpen,
-  faInfoCircle
+  faInfoCircle,
+  faLongArrowAltLeft,
+  faLongArrowAltRight
 )
 
 const Layout = ({ children }) => {
