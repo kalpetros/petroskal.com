@@ -80,7 +80,7 @@ const Books = props => {
       <p>
         Below you will find a list of books I've read that I think they are
         worth having a look. This list is not limited to software engineering,
-        hence every intersting book that I come across will be added here.
+        hence every interesting book that I come across will be added here.
       </p>
       <h2>Software Engineering</h2>
       <ul className="list-disc ml-6">{list}</ul>
