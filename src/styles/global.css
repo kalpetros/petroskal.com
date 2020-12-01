@@ -1,3 +1,47 @@
+@tailwind base;
 @tailwind components;
-
 @tailwind utilities;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #234e52;
+  font-weight: 800;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.51572rem;
+}
+
+h3 {
+  font-size: 1.31951rem;
+}
+
+a {
+  color: #234e52;
+}
+
+pre {
+  border-radius: 5px;
+}
+
+.grayscale {
+  filter: grayscale(1);
+}

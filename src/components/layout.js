@@ -4,9 +4,6 @@
  *
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
-
-import "./layout.css"
-
 import React from "react"
 import PropTypes from "prop-types"
 import { library } from "@fortawesome/fontawesome-svg-core"
@@ -41,7 +38,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header />
-      <main className="max-w-screen-md mx-auto px-12">{children}</main>
+      <main className="max-w-screen-lg mx-auto px-12">{children}</main>
       <footer className="text-center p-4">
         <a
           rel="license"

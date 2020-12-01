@@ -3,6 +3,7 @@ import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { Button } from "./button"
 
 const Item = props => {
   let className = "cursor-pointer"
@@ -18,7 +19,7 @@ const Item = props => {
 }
 
 Item.defaultProps = {
-  target: "_blank"
+  target: "_blank",
 }
 
 Item.propTypes = {
@@ -55,7 +56,7 @@ const Header = () => {
 
   return (
     <header className="bg-white sticky top-0 mb-8">
-      <div className="max-w-screen-md mx-auto px-12">
+      <div className="max-w-screen-lg mx-auto px-12">
         <nav className="grid grid-cols-2 py-6 items-center">
           <div className="grid grid-flow-col sm:gap-8 items-center sm:justify-start">
             <Link className="h-12 w-12" to="/">
@@ -67,7 +68,20 @@ const Header = () => {
               />
             </Link>
             <Link to="/about" className="text-gray-900">
-              <FontAwesomeIcon icon="info-circle" />
+              <Button
+                title="About"
+                textColor="gray-900"
+                bgColor="white"
+                bgHoverColor="gray-300"
+              />
+            </Link>
+            <Link to="/books" className="text-gray-900">
+              <Button
+                title="Books"
+                textColor="gray-900"
+                bgColor="white"
+                bgHoverColor="gray-300"
+              />
             </Link>
           </div>
           <div className="grid grid-flow-col sm:gap-8 items-center sm:justify-end text-right">
@@ -86,11 +100,11 @@ const Header = () => {
               icon={["fab", "github"]}
               iconColor="text-gray-900"
             />
-            {/* <Item
+            <Item
               url={data.site.siteMetadata.stackoverflow}
               icon={["fab", "stack-overflow"]}
               iconColor="text-orange-500"
-            /> */}
+            />
             <Item
               url={`mailto:${data.site.siteMetadata.email}`}
               icon="envelope-open"

@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { LinkButton } from "../components/link-button"
 
 export const data = graphql`
   query allMarkdownRemarkaAndBlogPostPyPath($path: String!) {
@@ -75,14 +76,20 @@ const BlogPostTemplate = ({ data, allData }) => {
   return (
     <Layout>
       <SEO title={blogPost.frontmatter.title} />
+      <div className="mb-4">
+        <LinkButton
+          url={tweet}
+          title="Share on Twitter"
+          icon={["fab", "twitter"]}
+          textColor="white"
+          bgColor="indigo-300"
+          bgHoverColor="indigo-400"
+        />
+      </div>
+      <hr />
       <p className="font-bold">{legend}</p>
       <h1>{title}</h1>
       <div dangerouslySetInnerHTML={{ __html: blogPost.html }} />
-      <div className="py-4">
-        <a href={tweet} target="__blank">
-          Share on Twitter
-        </a>
-      </div>
       <hr />
       <div className="grid grid-cols-2 py-4">
         <div>{previousArticleLink}</div>

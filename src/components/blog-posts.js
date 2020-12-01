@@ -37,12 +37,13 @@ const BlogPosts = () => {
     return (
       <div key={blogPost.id} className="mb-8">
         <Panel
-          id={blogPost.id}
+          legend={legend}
           title={blogPost.frontmatter.title}
           description={blogPost.excerpt}
-          legend={legend}
           path={blogPost.frontmatter.path}
-        />
+          id={blogPost.id}
+          shadow={true}
+          />
       </div>
     )
   })
