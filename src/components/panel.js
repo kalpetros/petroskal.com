@@ -29,10 +29,11 @@ const Panel = props => {
     <div
       id={id}
       className={`flex bg-white p-4 leading-normal rounded-lg ${shadowClass}`}
+      // className="bg-gray-100 rounded-xl p-4 mb-4 grid grid-cols-2 gap-4 items-center"
     >
       {imageEl}
       <div>
-        <p className="text-sm font-bold">{legend}</p>
+        {legend}
         <div className="mt-1 text-lg leading-tight font-semibold text-gray-900 hover:underline">
           {url !== "" ? (
             <a href={url} target="__blank">

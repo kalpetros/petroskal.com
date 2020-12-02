@@ -2,6 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Panel from "./panel"
+import { Pill } from "../components/pill"
 
 const BlogPosts = () => {
   const data = useStaticQuery(graphql`
@@ -32,7 +33,13 @@ const BlogPosts = () => {
 
     const date = blogPost.frontmatter.date
     const readingTime = blogPost.fields.readingTime.text
-    const legend = `${date} - ${readingTime}`
+    // const legend = `${date} - ${readingTime}`
+    const legend = (
+      <div className="grid grid-flow-col auto-cols-max gap-2 mb-4">
+        <Pill title={date} />
+        <Pill title={readingTime} />
+      </div>
+    )
 
     return (
       <div key={blogPost.id} className="mb-8">
@@ -43,7 +50,7 @@ const BlogPosts = () => {
           path={blogPost.frontmatter.path}
           id={blogPost.id}
           shadow={true}
-          />
+        />
       </div>
     )
   })
