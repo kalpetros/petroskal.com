@@ -3,7 +3,7 @@ import React from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 export const LinkButton = props => {
-  const { url, title, icon, textColor, bgColor, bgHoverColor } = props
+  const { title, url, icon, textColor, bgColor, bgHoverColor } = props
   return (
     <a
       href={url}

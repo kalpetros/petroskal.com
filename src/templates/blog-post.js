@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { LinkButton } from "../components/link-button"
+import { Pill } from "../components/pill"
 
 export const data = graphql`
   query allMarkdownRemarkaAndBlogPostPyPath($path: String!) {
@@ -42,7 +42,6 @@ const BlogPostTemplate = ({ data, allData }) => {
 
   const date = blogPost.frontmatter.date
   const readingTime = blogPost.fields.readingTime.text
-  const legend = `${date} - ${readingTime}`
   const title = blogPost.frontmatter.title
   const path = blogPost.frontmatter.path
   const url = `https://www.petroskal.com${path}`
@@ -54,6 +53,20 @@ const BlogPostTemplate = ({ data, allData }) => {
   const nextArticle = blogPosts.edges[currentArticle + 1]
   let previousArticleLink = null
   let nextArticleLink = null
+  const legend = (
+    <div className="grid grid-flow-col auto-cols-max gap-2 mb-4">
+      <Pill title={date} />
+      <Pill title={readingTime} />
+      <Pill
+        url={tweet}
+        icon={["fab", "twitter"]}
+        title="Tweet"
+        textColor="white"
+        bgColor="indigo-300"
+        bgHoverColor="indigo-400"
+      />
+    </div>
+  )
 
   if (previousArticle) {
     previousArticleLink = (
@@ -76,17 +89,6 @@ const BlogPostTemplate = ({ data, allData }) => {
   return (
     <Layout>
       <SEO title={blogPost.frontmatter.title} />
-      <div className="mb-4">
-        <LinkButton
-          url={tweet}
-          title="Share on Twitter"
-          icon={["fab", "twitter"]}
-          textColor="white"
-          bgColor="indigo-300"
-          bgHoverColor="indigo-400"
-        />
-      </div>
-      <hr />
       <p className="font-bold">{legend}</p>
       <h1>{title}</h1>
       <div dangerouslySetInnerHTML={{ __html: blogPost.html }} />
