@@ -105,7 +105,7 @@ const About = props => {
   return (
     <Layout>
       <SEO title="About" />
-      <h3>Hey there!</h3>
+      <h1>Hey there!</h1>
       <p>
         I'm Petros. I'm currently living in Athens, Greece working as a Software
         Engineer for a travel tech startup.
