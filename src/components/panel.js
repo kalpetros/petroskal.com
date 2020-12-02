@@ -29,7 +29,6 @@ const Panel = props => {
     <div
       id={id}
       className={`flex bg-white p-4 leading-normal rounded-lg ${shadowClass}`}
-      // className="bg-gray-100 rounded-xl p-4 mb-4 grid grid-cols-2 gap-4 items-center"
     >
       {imageEl}
       <div>
