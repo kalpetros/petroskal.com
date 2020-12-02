@@ -60,6 +60,27 @@ const bookList = [
     image:
       "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1436202607l/3735293._SX318_.jpg",
   },
+  {
+    title: "Code Complete",
+    url: "https://www.goodreads.com/book/show/4845.Code_Complete",
+    genre: "swe",
+    image:
+      "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1396837641l/4845.jpg",
+  },
+  {
+    title: "Head First Design Patterns",
+    url: "https://www.goodreads.com/book/show/58128.Head_First_Design_Patterns",
+    genre: "swe",
+    image:
+      "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1408309444l/58128.jpg",
+  },
+  {
+    title: "Test Driven Development: By Example",
+    url: "https://www.goodreads.com/book/show/387190.Test_Driven_Development",
+    genre: "swe",
+    image:
+      "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1372039943l/387190.jpg",
+  },
 ]
 
 const Books = props => {
