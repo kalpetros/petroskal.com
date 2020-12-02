@@ -56,49 +56,34 @@ export const images = graphql`
   }
 `
 
-const IconItem = props => {
-  let className = "mr-2"
-
-  if (props.iconColor) {
-    className = `${className} ${props.iconColor}`
-  }
+const ImageItem = props => {
+  const { url, image, imageAlt, icon, iconColor } = props
 
   return (
-    <li>
-      <a href={props.url} target="__blank">
-        <FontAwesomeIcon className={className} icon={props.icon} />
-        {props.name}
+    <div className="flex bg-gray-100 rounded-full h-12 w-12 items-center justify-center">
+      <a className="underline" href={url} target="__blank">
+        {icon ? (
+          <FontAwesomeIcon className={iconColor} icon={props.icon} />
+        ) : image ? (
+          <Img
+            fluid={image}
+            alt={imageAlt}
+            className="h-5 w-5"
+            placeholderClassName="mb-0"
+          />
+        ) : null}
       </a>
-    </li>
+    </div>
   )
 }
-
-IconItem.propTypes = {
-  url: PropTypes.string,
-  icon: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-  iconColor: PropTypes.string,
-  name: PropTypes.string.isRequired,
-}
-
-const ImageItem = props => (
-  <li>
-    <a href={props.url} target="__blank">
-      <Img
-        fluid={props.image}
-        alt={props.imageAlt}
-        className="h-5 w-5 mr-2 inline-block align-middle"
-        placeholderClassName="mb-0"
-      />
-      {props.name}
-    </a>
-  </li>
-)
 
 ImageItem.propTypes = {
   url: PropTypes.string,
   image: PropTypes.string,
   imageAlt: PropTypes.string,
-  name: PropTypes.string.isRequired,
+  icon: PropTypes.array,
+  iconColor: PropTypes.string,
+  name: PropTypes.string,
 }
 
 const About = props => {
@@ -111,23 +96,22 @@ const About = props => {
         Engineer for a travel tech startup.
       </p>
       <h3>You can find me on:</h3>
-      <ul>
-        <IconItem
+      <div className="grid grid-flow-col auto-cols-max gap-2 mb-4">
+        <ImageItem
           url={props.data.site.siteMetadata.twitter}
           icon={["fab", "twitter"]}
           iconColor="text-indigo-500"
           name="Twitter"
         />
-        <IconItem
+        <ImageItem
           url={props.data.site.siteMetadata.linkedin}
           icon={["fab", "linkedin"]}
           iconColor="text-indigo-700"
           name="Linkedin"
         />
-      </ul>
-      <hr />
+      </div>
       <h3>This website is made with:</h3>
-      <ul>
+      <div className="grid grid-flow-col auto-cols-max gap-2">
         <ImageItem
           url="https://www.gatsbyjs.org/"
           image={props.data.gatsby.childImageSharp.fluid}
@@ -158,16 +142,13 @@ const About = props => {
           imageAlt="markdown"
           name="Markdown"
         />
-      </ul>
-      <h3>and hosted on:</h3>
-      <ul>
         <ImageItem
           url="https://www.netlify.com/"
           image={props.data.netlify.childImageSharp.fluid}
           imageAlt="netlify"
           name="Netlify"
         />
-      </ul>
+      </div>
     </Layout>
   )
 }

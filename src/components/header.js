@@ -72,7 +72,7 @@ const Header = () => {
                 title="About"
                 textColor="gray-900"
                 bgColor="white"
-                bgHoverColor="gray-300"
+                bgHoverColor="gray-200"
               />
             </Link>
             <Link to="/books" className="text-gray-900">
@@ -80,7 +80,7 @@ const Header = () => {
                 title="Books"
                 textColor="gray-900"
                 bgColor="white"
-                bgHoverColor="gray-300"
+                bgHoverColor="gray-200"
               />
             </Link>
           </div>
