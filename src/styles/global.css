@@ -49,12 +49,13 @@ pre {
 .has-tooltip:after {
   content: attr(data-tooltip);
   position: absolute;
-  top: 100%;
-  right: 0;
+  top: 0;
+  right: 100%;
+  width: max-content;
   background-color: #000;
   color: #fff;
   padding: 0.5rem;
-  margin-top: 0.5rem;
+  margin-right: 0.5rem;
   border-radius: 0.75rem;
   display: none;
   z-index: 1;
