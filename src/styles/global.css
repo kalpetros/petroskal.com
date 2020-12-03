@@ -45,3 +45,21 @@ pre {
 .grayscale {
   filter: grayscale(1);
 }
+
+.has-tooltip:after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #000;
+  color: #fff;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border-radius: 0.75rem;
+  display: none;
+  z-index: 1;
+}
+
+.has-tooltip:hover:after {
+  display: block;
+}

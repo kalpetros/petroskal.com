@@ -55,7 +55,7 @@ const Header = () => {
   const fluidImg = data.avatar.childImageSharp.fluid
 
   return (
-    <header className="bg-white sticky top-0 mb-8">
+    <header className="bg-white sticky top-0 mb-8 z-10">
       <div className="max-w-screen-lg mx-auto px-8">
         <nav className="grid grid-cols-2 py-6 items-center">
           <div className="grid grid-flow-col sm:gap-8 items-center sm:justify-start">

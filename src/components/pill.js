@@ -3,9 +3,13 @@ import React from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 export const Pill = props => {
-  const { title, url, icon, textColor, bgColor, bgHoverColor } = props
+  const { title, tooltip, url, icon, textColor, bgColor, bgHoverColor } = props
 
-  if (url) {
+  const baseClassName = `bg-${bgColor} hover:bg-${bgHoverColor} text-${textColor} relative inline-block p-2 font-semibold text-xs border border-gray-200 shadow-sm rounded-xl`
+  const className =
+    tooltip ? `${baseClassName} has-tooltip` : baseClassName
+
+  if (url !== "") {
     return (
       <a
         href={url}
@@ -26,9 +30,7 @@ export const Pill = props => {
   }
 
   return (
-    <div
-      className={`bg-${bgColor} hover:bg-${bgHoverColor} text-${textColor} inline-block p-2 font-semibold text-xs border border-gray-200 shadow-sm rounded-xl`}
-    >
+    <div className={className} data-tooltip={tooltip}>
       {icon !== "" ? <FontAwesomeIcon icon={icon} /> : title}
     </div>
   )
@@ -36,6 +38,7 @@ export const Pill = props => {
 
 Pill.defaultProps = {
   title: "Pill",
+  tooltip: "",
   url: "",
   icon: "",
   textColor: "gray-900",
@@ -45,6 +48,7 @@ Pill.defaultProps = {
 
 Pill.propTypes = {
   title: PropTypes.string,
+  tooltip: PropTypes.string,
   url: PropTypes.string,
   icon: PropTypes.array,
   textColor: PropTypes.string,

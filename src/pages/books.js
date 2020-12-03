@@ -106,7 +106,14 @@ const Books = () => {
       book.authors.length > 1
         ? `${book.authors[0]} +${book.authors.length - 1}`
         : book.authors[0]
-    const authorsEl = <Pill title={authors} />
+    const authorsEl = (
+      <Pill
+        title={authors}
+        tooltip={
+          book.authors.length > 1 ? book.authors.map(a => a).join(", ") : null
+        }
+      />
+    )
 
     return (
       <div
