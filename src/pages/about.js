@@ -57,10 +57,13 @@ export const images = graphql`
 `
 
 const ImageItem = props => {
-  const { url, image, imageAlt, icon, iconColor } = props
+  const { name, url, image, imageAlt, icon, iconColor } = props
 
   return (
-    <div className="flex bg-gray-100 rounded-full h-12 w-12 items-center justify-center">
+    <div
+      className="flex bg-gray-100 rounded-full h-12 w-12 items-center justify-center relative has-tooltip"
+      data-tooltip={name}
+    >
       <a className="underline" href={url} target="__blank">
         {icon ? (
           <FontAwesomeIcon className={iconColor} icon={props.icon} />
@@ -78,12 +81,12 @@ const ImageItem = props => {
 }
 
 ImageItem.propTypes = {
+  name: PropTypes.string,
   url: PropTypes.string,
   image: PropTypes.string,
   imageAlt: PropTypes.string,
   icon: PropTypes.array,
   iconColor: PropTypes.string,
-  name: PropTypes.string,
 }
 
 const About = props => {
@@ -98,55 +101,55 @@ const About = props => {
       <h3>You can find me on:</h3>
       <div className="grid grid-flow-col auto-cols-max gap-2 mb-4">
         <ImageItem
+          name="Twitter"
           url={props.data.site.siteMetadata.twitter}
           icon={["fab", "twitter"]}
           iconColor="text-indigo-500"
-          name="Twitter"
         />
         <ImageItem
+          name="Linkedin"
           url={props.data.site.siteMetadata.linkedin}
           icon={["fab", "linkedin"]}
           iconColor="text-indigo-700"
-          name="Linkedin"
         />
       </div>
       <h3>This website is made with:</h3>
       <div className="grid grid-flow-col auto-cols-max gap-2">
         <ImageItem
+          name="Gatsby"
           url="https://www.gatsbyjs.org/"
           image={props.data.gatsby.childImageSharp.fluid}
           imageAlt="gatsby"
-          name="Gatsby"
         />
         <ImageItem
+          name="ReactJS"
           url="https://reactjs.org/"
           image={props.data.react.childImageSharp.fluid}
           imageAlt="react"
-          name="ReactJS"
         />
         <ImageItem
+          name="GraphQL"
           url="https://graphql.org/"
           image={props.data.graphql.childImageSharp.fluid}
           imageAlt="graphql"
-          name="GraphQL"
         />
         <ImageItem
+          name="Tailwind"
           url="https://tailwindcss.com/"
           image={props.data.tailwind.childImageSharp.fluid}
           imageAlt="tailwind"
-          name="Tailwind"
         />
         <ImageItem
+          name="Markdown"
           url="https://daringfireball.net/projects/markdown/"
           image={props.data.markdown.childImageSharp.fluid}
           imageAlt="markdown"
-          name="Markdown"
         />
         <ImageItem
+          name="Netlify"
           url="https://www.netlify.com/"
           image={props.data.netlify.childImageSharp.fluid}
           imageAlt="netlify"
-          name="Netlify"
         />
       </div>
     </Layout>
