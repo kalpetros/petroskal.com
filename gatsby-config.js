@@ -65,12 +65,12 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `${__dirname}/src/utils/typography`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-typography`,
+    //   options: {
+    //     pathToConfigModule: `${__dirname}/src/utils/typography`,
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

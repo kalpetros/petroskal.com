@@ -114,7 +114,11 @@ const Books = () => {
         className="bg-gray-100 rounded-lg p-4 mb-4 grid grid-cols-2 gap-4 items-center"
       >
         <div>
-          <a href={book.url} target="__blank">
+          <a
+            className="font-semibold hover:underline"
+            href={book.url}
+            target="__blank"
+          >
             {book.title}
           </a>
         </div>
