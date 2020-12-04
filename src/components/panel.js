@@ -28,21 +28,27 @@ const Panel = props => {
   return (
     <div
       id={id}
-      className={`flex bg-white p-4 leading-normal rounded-lg ${shadowClass}`}
+      className={`flex bg-white dark:bg-gray-700 dark:text-gray-400 p-4 leading-normal rounded-lg ${shadowClass}`}
     >
       {imageEl}
       <div>
         {legend}
-        <div className="mt-1 text-lg leading-tight font-semibold text-gray-900 hover:underline">
+        <div className="mt-1 text-lg leading-tight font-semibold hover:underline">
           {url !== "" ? (
-            <a href={url} target="__blank">
+            <a
+              className="text-gray-900 dark:text-gray-200"
+              href={url}
+              target="__blank"
+            >
               {title}
             </a>
           ) : (
-            <Link to={path}>{title}</Link>
+            <Link className="text-gray-900 dark:text-gray-200" to={path}>
+              {title}
+            </Link>
           )}
         </div>
-        <p className="mt-2 text-gray-600">{description}</p>
+        <p className="mt-2 text-gray-600 dark:text-gray-400">{description}</p>
       </div>
     </div>
   )

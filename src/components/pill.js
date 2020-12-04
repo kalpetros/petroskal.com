@@ -5,9 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 export const Pill = props => {
   const { title, tooltip, url, icon, textColor, bgColor, bgHoverColor } = props
 
-  const baseClassName = `bg-${bgColor} hover:bg-${bgHoverColor} text-${textColor} relative inline-block p-2 font-semibold text-xs border border-gray-200 shadow-sm rounded-xl`
-  const className =
-    tooltip ? `${baseClassName} has-tooltip` : baseClassName
+  const baseClassName = `bg-${bgColor} hover:bg-${bgHoverColor} text-${textColor} dark:bg-gray-800 dark:text-gray-400 relative inline-block p-2 font-semibold text-xs border border-gray-200 dark:border-gray-700 shadow-sm rounded-xl`
+  const className = tooltip ? `${baseClassName} has-tooltip` : baseClassName
 
   if (url !== "") {
     return (

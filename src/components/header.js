@@ -55,7 +55,7 @@ const Header = () => {
   const fluidImg = data.avatar.childImageSharp.fluid
 
   return (
-    <header className="bg-white sticky top-0 mb-8 z-10">
+    <header className="bg-white dark:bg-gray-800 sticky top-0 mb-8 z-10">
       <div className="max-w-screen-lg mx-auto px-8">
         <nav className="grid grid-cols-2 py-6 items-center">
           <div className="grid grid-flow-col sm:gap-8 items-center sm:justify-start">
@@ -67,7 +67,7 @@ const Header = () => {
                 placeholderClassName="mb-0"
               />
             </Link>
-            <Link to="/about" className="text-gray-900">
+            <Link to="/about">
               <Button
                 title="About"
                 textColor="gray-900"
@@ -75,7 +75,7 @@ const Header = () => {
                 bgHoverColor="gray-200"
               />
             </Link>
-            <Link to="/books" className="text-gray-900">
+            <Link to="/books">
               <Button
                 title="Books"
                 textColor="gray-900"
@@ -88,27 +88,27 @@ const Header = () => {
             <Item
               url={data.site.siteMetadata.twitter}
               icon={["fab", "twitter"]}
-              iconColor="text-indigo-500"
+              iconColor="text-indigo-500 dark:text-gray-400"
             />
             <Item
               url={data.site.siteMetadata.linkedin}
               icon={["fab", "linkedin"]}
-              iconColor="text-indigo-700"
+              iconColor="text-indigo-700 dark:text-gray-400"
             />
             <Item
               url={data.site.siteMetadata.github}
               icon={["fab", "github"]}
-              iconColor="text-gray-900"
+              iconColor="text-gray-900 dark:text-gray-400"
             />
             <Item
               url={data.site.siteMetadata.stackoverflow}
               icon={["fab", "stack-overflow"]}
-              iconColor="text-orange-500"
+              iconColor="text-orange-500 dark:text-gray-400"
             />
             <Item
               url={`mailto:${data.site.siteMetadata.email}`}
               icon="envelope-open"
-              iconColor="text-gray-900"
+              iconColor="text-gray-900 dark:text-gray-400"
               target="_self"
             />
           </div>

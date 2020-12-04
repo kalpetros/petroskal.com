@@ -70,7 +70,10 @@ const BlogPostTemplate = ({ data, allData }) => {
 
   if (previousArticle) {
     previousArticleLink = (
-      <Link to={previousArticle.node.frontmatter.path} className="text-sm">
+      <Link
+        className="text-sm text-gray-900 dark:text-gray-400"
+        to={previousArticle.node.frontmatter.path}
+      >
         <FontAwesomeIcon icon="long-arrow-alt-left" />{" "}
         {previousArticle.node.frontmatter.title}
       </Link>
@@ -79,7 +82,10 @@ const BlogPostTemplate = ({ data, allData }) => {
 
   if (nextArticle) {
     nextArticleLink = (
-      <Link to={nextArticle.node.frontmatter.path} className="text-sm">
+      <Link
+        className="text-sm text-gray-900 dark:text-gray-400"
+        to={nextArticle.node.frontmatter.path}
+      >
         {nextArticle.node.frontmatter.title}{" "}
         <FontAwesomeIcon icon="long-arrow-alt-right" />
       </Link>
@@ -89,10 +95,12 @@ const BlogPostTemplate = ({ data, allData }) => {
   return (
     <Layout>
       <SEO title={blogPost.frontmatter.title} />
-      <p className="font-bold">{legend}</p>
-      <h1>{title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: blogPost.html }} />
-      <hr />
+      {legend}
+      <h1 className="text-gray-900 dark:text-gray-400">{title}</h1>
+      <div
+        className="text-gray-900 dark:text-gray-400"
+        dangerouslySetInnerHTML={{ __html: blogPost.html }}
+      />
       <div className="grid grid-cols-2 py-4">
         <div>{previousArticleLink}</div>
         <div className="text-right">{nextArticleLink}</div>
