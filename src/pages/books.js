@@ -106,6 +106,7 @@ const Books = () => {
       book.authors.length > 1
         ? `${book.authors[0]} +${book.authors.length - 1}`
         : book.authors[0]
+
     const authorsEl = (
       <Pill
         title={authors}
@@ -118,7 +119,7 @@ const Books = () => {
     return (
       <div
         key={`book-${index}`}
-        className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 mb-4 grid grid-cols-2 gap-4 items-center"
+        className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 mb-4 grid sm:grid-cols-2 gap-4 items-center"
       >
         <div>
           <a

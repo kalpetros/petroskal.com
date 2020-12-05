@@ -57,8 +57,8 @@ const Header = () => {
   return (
     <header className="bg-white dark:bg-gray-800 sticky top-0 mb-8 z-10">
       <div className="max-w-screen-lg mx-auto px-8">
-        <nav className="grid grid-cols-2 py-6 items-center">
-          <div className="grid grid-flow-col sm:gap-8 items-center sm:justify-start">
+        <nav className="grid sm:grid-cols-2 py-6 items-center">
+          <div className="grid grid-flow-col auto-cols-max gap-8 items-center sm:justify-start">
             <Link className="h-12 w-12" to="/">
               <Img
                 fluid={fluidImg}
@@ -67,14 +67,10 @@ const Header = () => {
                 placeholderClassName="mb-0"
               />
             </Link>
-            <Link to="/about">
-              <Button title="About" />
-            </Link>
-            <Link to="/books">
-              <Button title="Books" />
-            </Link>
+            <Button title="About" to="/about" />
+            <Button title="Books" to="/books" />
           </div>
-          <div className="grid grid-flow-col sm:gap-8 items-center sm:justify-end text-right">
+          <div className="sm:grid grid-flow-col sm:gap-8 items-center sm:justify-end text-right hidden">
             <Item
               url={data.site.siteMetadata.twitter}
               icon={["fab", "twitter"]}

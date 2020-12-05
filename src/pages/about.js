@@ -109,7 +109,7 @@ const About = props => {
         book.
       </p>
       <h3 className="text-gray-700 dark:text-gray-400">You can find me on:</h3>
-      <div className="grid grid-flow-col auto-cols-max gap-2 mb-4">
+      <div className="grid grid-flow-col auto-cols-max gap-2 mb-4 overflow-auto">
         <ImageItem
           name="Twitter"
           url={props.data.site.siteMetadata.twitter}
@@ -139,7 +139,7 @@ const About = props => {
       <h3 className="text-gray-700 dark:text-gray-400">
         This website is made with:
       </h3>
-      <div className="grid grid-flow-col auto-cols-max gap-2">
+      <div className="grid grid-flow-col auto-cols-max gap-2 overflow-auto">
         <ImageItem
           name="Gatsby"
           url="https://www.gatsbyjs.org/"
