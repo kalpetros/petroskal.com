@@ -13,7 +13,7 @@ export const Button = props => {
   const textColorClass =
     textColor !== ""
       ? `text-${textColor}`
-      : "text-gray-900 dark:text-gray-400 dark:hover:text-gray-200"
+      : "text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
   const colorClasses = `${bgColorClass} ${bgHoverColorClass} ${textColorClass}`
 
   return (
