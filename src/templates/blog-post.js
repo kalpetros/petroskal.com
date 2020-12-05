@@ -53,6 +53,7 @@ const BlogPostTemplate = ({ data }) => {
   const nextArticle = blogPosts.edges[currentArticle + 1]
   let previousArticleLink = null
   let nextArticleLink = null
+
   const legend = (
     <div className="grid grid-flow-col auto-cols-max gap-2 mb-4">
       <Pill title={date} />

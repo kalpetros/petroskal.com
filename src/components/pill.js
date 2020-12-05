@@ -21,7 +21,7 @@ export const Pill = props => {
       ? `hover:bg-${bgHoverColor}`
       : "hover:bg-white dark:hover:bg-gray-800"
   const textColorClass =
-    textColor !== "" ? `text-${textColor}` : "text-gray-900 dark:text-gray-200"
+    textColor !== "" ? `text-${textColor}` : "text-gray-700 dark:text-gray-200"
   const borderColorClass =
     borderColor !== ""
       ? `border-${borderColor}`

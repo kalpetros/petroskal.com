@@ -57,7 +57,7 @@ export const images = graphql`
 `
 
 const ImageItem = props => {
-  const { name, url, image, imageAlt, icon, iconColor } = props
+  const { name, url, image, imageAlt, icon } = props
 
   return (
     <div
@@ -66,7 +66,7 @@ const ImageItem = props => {
     >
       <a className="underline" href={url} target="__blank">
         {icon ? (
-          <FontAwesomeIcon className={iconColor} icon={props.icon} />
+          <FontAwesomeIcon className="text-gray-700" icon={props.icon} />
         ) : image ? (
           <Img
             fluid={image}
@@ -86,7 +86,6 @@ ImageItem.propTypes = {
   image: PropTypes.string,
   imageAlt: PropTypes.string,
   icon: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
-  iconColor: PropTypes.string,
 }
 
 const About = props => {
@@ -106,7 +105,7 @@ const About = props => {
       </p>
       <p className="text-gray-700 dark:text-gray-400">
         When I'm away from the keyboard you will usually find me planning my
-        next travel destination, creating music or picking up an interesting
+        next travel destination, creating music or picking up an intersting
         book.
       </p>
       <h3 className="text-gray-700 dark:text-gray-400">You can find me on:</h3>
@@ -115,31 +114,26 @@ const About = props => {
           name="Twitter"
           url={props.data.site.siteMetadata.twitter}
           icon={["fab", "twitter"]}
-          iconColor="text-indigo-500 dark:text-gray-900"
         />
         <ImageItem
           name="Linkedin"
           url={props.data.site.siteMetadata.linkedin}
           icon={["fab", "linkedin"]}
-          iconColor="text-indigo-700 dark:text-gray-900"
         />
         <ImageItem
           name="Github"
           url={props.data.site.siteMetadata.github}
           icon={["fab", "github"]}
-          iconColor="text-gray-900 dark:text-gray-900"
         />
         <ImageItem
           name="Stackoverflow"
           url={props.data.site.siteMetadata.stackoverflow}
           icon={["fab", "stack-overflow"]}
-          iconColor="text-orange-500 dark:text-gray-900"
         />
         <ImageItem
           name="Email"
           url={`mailto:${props.data.site.siteMetadata.email}`}
           icon="envelope-open"
-          iconColor="text-gray-900 dark:text-gray-900"
         />
       </div>
       <h3 className="text-gray-700 dark:text-gray-400">
