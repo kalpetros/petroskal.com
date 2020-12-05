@@ -118,7 +118,7 @@ const Books = () => {
     return (
       <div
         key={`book-${index}`}
-        className="bg-gray-100 dark:bg-gray-700 dark:text-gray-400 rounded-lg p-4 mb-4 grid grid-cols-2 gap-4 items-center"
+        className="bg-gray-50 dark:bg-gray-700 dark:text-gray-400 rounded-lg p-4 mb-4 grid grid-cols-2 gap-4 items-center"
       >
         <div>
           <a
@@ -143,7 +143,7 @@ const Books = () => {
     <Layout>
       <SEO title="Books" />
       <h1 className="text-gray-700 dark:text-gray-200">Books</h1>
-      <p className="text-gray-700 dark:text-gray-400">
+      <p className="text-xl leading-8 text-gray-700 dark:text-gray-400">
         Below you will find a list of books I've read that I think they are
         worth having a look. This list is not limited to software engineering,
         hence every interesting book that I come across will be added here.

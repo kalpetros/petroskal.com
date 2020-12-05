@@ -64,6 +64,7 @@ const BlogPostTemplate = ({ data, allData }) => {
         textColor="white"
         bgColor="indigo-300"
         bgHoverColor="indigo-400"
+        borderColor="indigo-200"
       />
     </div>
   )
@@ -98,7 +99,7 @@ const BlogPostTemplate = ({ data, allData }) => {
       {legend}
       <h1 className="text-gray-700 dark:text-gray-400">{title}</h1>
       <div
-        className="text-gray-700 dark:text-gray-400"
+        className="text-lg leading-8 text-gray-700 dark:text-gray-400"
         dangerouslySetInnerHTML={{ __html: blogPost.html }}
       />
       <div className="grid grid-cols-2 py-4">

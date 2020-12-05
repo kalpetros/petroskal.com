@@ -94,9 +94,17 @@ const About = props => {
     <Layout>
       <SEO title="About" />
       <h1 className="text-gray-700 dark:text-gray-200">Hey there!</h1>
-      <p className="text-gray-700 dark:text-gray-400">
-        I'm Petros. I'm currently living in Athens, Greece working as a Software
-        Engineer for a travel tech startup.
+      <p className="text-lg leading-8 text-gray-700 dark:text-gray-400">
+        Hi, I'm Petros.
+        I'm currenctly living and working between Athens and Crete after
+        spending some years living in the UK and try to balance my time
+        working remotely and in the office wherever I feel like it, after
+        all I think balanced work is the key to performace. When I'm away
+        from the keyboard I'll probably be working my mind on creating stuff
+        for the physical world or trying to create music (all kinds of it).
+        The final hours of the day you'll find me thinking about and hopefully
+        planning about travelling around the world or picking up a book with
+        interesting ideas.
       </p>
       <h3 className="text-gray-700 dark:text-gray-400">You can find me on:</h3>
       <div className="grid grid-flow-col auto-cols-max gap-2 mb-4">
@@ -131,7 +139,9 @@ const About = props => {
           iconColor="text-gray-900"
         />
       </div>
-      <h3 className="text-gray-700 dark:text-gray-400">This website is made with:</h3>
+      <h3 className="text-gray-700 dark:text-gray-400">
+        This website is made with:
+      </h3>
       <div className="grid grid-flow-col auto-cols-max gap-2">
         <ImageItem
           name="Gatsby"
