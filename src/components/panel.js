@@ -15,7 +15,8 @@ const Panel = props => {
     shadow,
   } = props
   let imageEl = null
-  const shadowClass = shadow ? "shadow-md" : null
+  const shadowClass = shadow ? null : null
+  const className = `flex bg-white dark:bg-gray-700 dark:text-gray-400 p-4 border-b leading-normal rounded-lg ${shadowClass}`
 
   if (image) {
     imageEl = (
@@ -26,29 +27,27 @@ const Panel = props => {
   }
 
   return (
-    <div
-      id={id}
-      className={`flex bg-white dark:bg-gray-700 dark:text-gray-400 p-4 leading-normal rounded-lg ${shadowClass}`}
-    >
+    <div id={id} className={className}>
       {imageEl}
       <div>
         {legend}
-        <div className="mt-1 text-lg leading-tight font-semibold hover:underline">
-          {url !== "" ? (
-            <a
-              className="text-gray-900 dark:text-gray-200"
-              href={url}
-              target="__blank"
-            >
-              {title}
-            </a>
-          ) : (
-            <Link className="text-gray-900 dark:text-gray-200" to={path}>
-              {title}
-            </Link>
-          )}
-        </div>
-        <p className="mt-2 text-gray-600 dark:text-gray-400">{description}</p>
+        {url !== "" ? (
+          <a
+            className="text-gray-700 dark:text-gray-200 mt-1 text-2xl leading-tight font-semibold hover:underline"
+            href={url}
+            target="__blank"
+          >
+            {title}
+          </a>
+        ) : (
+          <Link
+            className="text-gray-700 dark:text-gray-200 mt-1 text-2xl leading-tight font-semibold hover:underline"
+            to={path}
+          >
+            {title}
+          </Link>
+        )}
+        <p className="mt-2 text-gray-700 dark:text-gray-400">{description}</p>
       </div>
     </div>
   )

@@ -37,7 +37,7 @@ Pill.defaultProps = {
   tooltip: "",
   url: "",
   icon: "",
-  textColor: "gray-900",
+  textColor: "gray-700",
   bgColor: "white",
   bgHoverColor: "white",
 }

@@ -70,7 +70,7 @@ const Header = () => {
             <Link to="/about">
               <Button
                 title="About"
-                textColor="gray-900"
+                textColor="gray-700"
                 bgColor="white"
                 bgHoverColor="gray-200"
               />
@@ -78,7 +78,7 @@ const Header = () => {
             <Link to="/books">
               <Button
                 title="Books"
-                textColor="gray-900"
+                textColor="gray-700"
                 bgColor="white"
                 bgHoverColor="gray-200"
               />
@@ -88,27 +88,27 @@ const Header = () => {
             <Item
               url={data.site.siteMetadata.twitter}
               icon={["fab", "twitter"]}
-              iconColor="text-indigo-500 dark:text-gray-400"
+              iconColor="text-gray-700 dark:text-gray-400"
             />
             <Item
               url={data.site.siteMetadata.linkedin}
               icon={["fab", "linkedin"]}
-              iconColor="text-indigo-700 dark:text-gray-400"
+              iconColor="text-gray-700 dark:text-gray-400"
             />
             <Item
               url={data.site.siteMetadata.github}
               icon={["fab", "github"]}
-              iconColor="text-gray-900 dark:text-gray-400"
+              iconColor="text-gray-700 dark:text-gray-400"
             />
             <Item
               url={data.site.siteMetadata.stackoverflow}
               icon={["fab", "stack-overflow"]}
-              iconColor="text-orange-500 dark:text-gray-400"
+              iconColor="text-gray-700 dark:text-gray-400"
             />
             <Item
               url={`mailto:${data.site.siteMetadata.email}`}
               icon="envelope-open"
-              iconColor="text-gray-900 dark:text-gray-400"
+              iconColor="text-gray-700 dark:text-gray-400"
               target="_self"
             />
           </div>

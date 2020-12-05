@@ -93,12 +93,12 @@ const About = props => {
   return (
     <Layout>
       <SEO title="About" />
-      <h1 className="text-gray-900 dark:text-gray-200">Hey there!</h1>
-      <p className="text-gray-900 dark:text-gray-400">
+      <h1 className="text-gray-700 dark:text-gray-200">Hey there!</h1>
+      <p className="text-gray-700 dark:text-gray-400">
         I'm Petros. I'm currently living in Athens, Greece working as a Software
         Engineer for a travel tech startup.
       </p>
-      <h3 className="text-gray-900 dark:text-gray-400">You can find me on:</h3>
+      <h3 className="text-gray-700 dark:text-gray-400">You can find me on:</h3>
       <div className="grid grid-flow-col auto-cols-max gap-2 mb-4">
         <ImageItem
           name="Twitter"
@@ -131,7 +131,7 @@ const About = props => {
           iconColor="text-gray-900"
         />
       </div>
-      <h3 className="text-gray-900 dark:text-gray-400">This website is made with:</h3>
+      <h3 className="text-gray-700 dark:text-gray-400">This website is made with:</h3>
       <div className="grid grid-flow-col auto-cols-max gap-2">
         <ImageItem
           name="Gatsby"
