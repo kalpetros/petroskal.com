@@ -66,7 +66,7 @@ const ImageItem = props => {
     >
       <a className="underline" href={url} target="__blank">
         {icon ? (
-          <FontAwesomeIcon className="text-gray-700" icon={props.icon} />
+          <FontAwesomeIcon className="text-gray-700 dark:text-gray-200" icon={props.icon} />
         ) : image ? (
           <Img
             fluid={image}

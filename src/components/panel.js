@@ -3,8 +3,8 @@ import React from "react"
 
 const Panel = props => {
   const { image, imageAlt, legend, title, description } = props
-  const colorClasses = `bg-white dark:bg-gray-700 dark:border-transparent`
-  const className = `${colorClasses} flex p-4 border-b leading-normal`
+  const colorClasses = `bg-gray-50 dark:bg-gray-700`
+  const className = `${colorClasses} flex p-4 leading-normal rounded-xl`
 
   const descriptionEl =
     description !== "" ? (
