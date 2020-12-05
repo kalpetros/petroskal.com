@@ -10,10 +10,7 @@ export const Pill = props => {
 
   if (url !== "") {
     return (
-      <a
-        href={url}
-        className={`bg-${bgColor} hover:bg-${bgHoverColor} text-${textColor} inline-block p-2 font-semibold text-xs border border-gray-200 shadow-sm rounded-xl`}
-      >
+      <a href={url} className={className}>
         {icon !== "" && title !== "" ? (
           <>
             <FontAwesomeIcon className="mr-1" icon={icon} />
