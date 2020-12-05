@@ -118,11 +118,11 @@ const Books = () => {
     return (
       <div
         key={`book-${index}`}
-        className="bg-gray-50 dark:bg-gray-700 dark:text-gray-400 rounded-lg p-4 mb-4 grid grid-cols-2 gap-4 items-center"
+        className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 mb-4 grid grid-cols-2 gap-4 items-center"
       >
         <div>
           <a
-            className="font-semibold hover:underline text-gray-700 dark:text-gray-400"
+            className="font-semibold hover:underline text-gray-700 dark:text-gray-200"
             href={book.url}
             target="__blank"
           >

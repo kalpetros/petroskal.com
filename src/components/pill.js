@@ -14,18 +14,32 @@ export const Pill = props => {
     borderColor,
   } = props
 
-  const baseClassName = `bg-${bgColor} hover:bg-${bgHoverColor} text-${textColor} dark:bg-gray-800 dark:text-gray-400 relative inline-block p-2 font-semibold text-xs border border-${borderColor} dark:border-gray-700 shadow-sm rounded-xl`
+  const bgColorClass =
+    bgColor !== "" ? `bg-${bgColor}` : "bg-white dark:bg-gray-800"
+  const bgHoverColorClass =
+    bgHoverColor !== ""
+      ? `hover:bg-${bgHoverColor}`
+      : "hover:bg-white dark:hover:bg-gray-800"
+  const textColorClass =
+    textColor !== "" ? `text-${textColor}` : "text-gray-900 dark:text-gray-200"
+  const borderColorClass =
+    borderColor !== ""
+      ? `border-${borderColor}`
+      : "border-gray-200 dark:border-gray-700"
+
+  const colorClasses = `${bgColorClass} ${bgHoverColorClass} ${textColorClass} ${borderColorClass}`
+  const baseClassName = `${colorClasses} relative inline-block p-2 font-semibold text-xs border shadow-sm rounded-xl`
   const className = tooltip ? `${baseClassName} has-tooltip` : baseClassName
 
   if (url !== "") {
     return (
       <a href={url} className={className}>
-        {icon !== "" && title !== "" ? (
+        {icon.length > 0 && title !== "" ? (
           <>
             <FontAwesomeIcon className="mr-1" icon={icon} />
             {title}
           </>
-        ) : icon !== "" ? (
+        ) : icon.length > 0 ? (
           <FontAwesomeIcon icon={icon} />
         ) : (
           title
@@ -36,7 +50,7 @@ export const Pill = props => {
 
   return (
     <div className={className} data-tooltip={tooltip}>
-      {icon !== "" ? <FontAwesomeIcon icon={icon} /> : title}
+      {icon.length > 0 ? <FontAwesomeIcon icon={icon} /> : title}
     </div>
   )
 }
@@ -45,11 +59,11 @@ Pill.defaultProps = {
   title: "Pill",
   tooltip: "",
   url: "",
-  icon: "",
-  textColor: "gray-700",
-  bgColor: "white",
-  bgHoverColor: "white",
-  borderColor: "gray-200",
+  icon: [],
+  textColor: "",
+  bgColor: "",
+  bgHoverColor: "",
+  borderColor: "",
 }
 
 Pill.propTypes = {

@@ -115,31 +115,31 @@ const About = props => {
           name="Twitter"
           url={props.data.site.siteMetadata.twitter}
           icon={["fab", "twitter"]}
-          iconColor="text-indigo-500"
+          iconColor="text-indigo-500 dark:text-gray-900"
         />
         <ImageItem
           name="Linkedin"
           url={props.data.site.siteMetadata.linkedin}
           icon={["fab", "linkedin"]}
-          iconColor="text-indigo-700"
+          iconColor="text-indigo-700 dark:text-gray-900"
         />
         <ImageItem
           name="Github"
           url={props.data.site.siteMetadata.github}
           icon={["fab", "github"]}
-          iconColor="text-gray-900"
+          iconColor="text-gray-900 dark:text-gray-900"
         />
         <ImageItem
           name="Stackoverflow"
           url={props.data.site.siteMetadata.stackoverflow}
           icon={["fab", "stack-overflow"]}
-          iconColor="text-orange-500"
+          iconColor="text-orange-500 dark:text-gray-900"
         />
         <ImageItem
           name="Email"
           url={`mailto:${props.data.site.siteMetadata.email}`}
           icon="envelope-open"
-          iconColor="text-gray-900"
+          iconColor="text-gray-900 dark:text-gray-900"
         />
       </div>
       <h3 className="text-gray-700 dark:text-gray-400">

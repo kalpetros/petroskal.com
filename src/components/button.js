@@ -3,28 +3,40 @@ import React from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 export const Button = props => {
-  const { title, icon, textColor, bgColor, bgHoverColor } = props
+  const { title, icon, bgColor, bgHoverColor, textColor } = props
+  const bgColorClass =
+    bgColor !== "" ? `bg-${bgColor}` : "bg-gray-100 dark:bg-transparent"
+  const bgHoverColorClass =
+    bgHoverColor !== ""
+      ? `hover:bg-${bgHoverColor}`
+      : "hover:bg-gray-200 dark:hover:bg-gray-700"
+  const textColorClass =
+    textColor !== ""
+      ? `text-${textColor}`
+      : "text-gray-900 dark:text-gray-400 dark:hover:text-gray-200"
+  const colorClasses = `${bgColorClass} ${bgHoverColorClass} ${textColorClass}`
+
   return (
     <button
-      className={`py-2 px-4 font-semibold rounded-lg text-${textColor} bg-${bgColor} hover:bg-${bgHoverColor} dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-gray-400 focus:outline-none no-underline hover:no-underline`}
+      className={`${colorClasses} py-2 px-4 font-semibold rounded-lg focus:outline-none no-underline hover:no-underline`}
     >
-      {icon !== "" ? <FontAwesomeIcon icon={icon} /> : title}
+      {icon.length > 0 ? <FontAwesomeIcon icon={icon} /> : title}
     </button>
   )
 }
 
 Button.defaultProps = {
   title: "Button",
-  icon: "",
-  textColor: "white",
-  bgColor: "gray-100",
-  bgHoverColor: "gray-200",
+  icon: [],
+  bgColor: "",
+  bgHoverColor: "",
+  textColor: "",
 }
 
 Button.propTypes = {
   title: PropTypes.string,
   icon: PropTypes.array,
-  textColor: PropTypes.string,
   bgColor: PropTypes.string,
   bgHoverColor: PropTypes.string,
+  textColor: PropTypes.string,
 }

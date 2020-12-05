@@ -16,7 +16,10 @@ const Panel = props => {
   } = props
   let imageEl = null
   const shadowClass = shadow ? null : null
-  const className = `flex bg-white dark:bg-gray-700 dark:text-gray-400 p-4 border-b leading-normal rounded-lg ${shadowClass}`
+  const colorClasses = `bg-white dark:bg-gray-700 dark:border-transparent`
+  const className = `${colorClasses} ${shadowClass} flex p-4 border-b leading-normal rounded-lg`
+  const linkClassName =
+    "text-gray-700 dark:text-gray-200 text-2xl leading-tight font-semibold hover:underline"
 
   if (image) {
     imageEl = (
@@ -32,22 +35,15 @@ const Panel = props => {
       <div>
         {legend}
         {url !== "" ? (
-          <a
-            className="text-gray-700 dark:text-gray-200 mt-1 text-2xl leading-tight font-semibold hover:underline"
-            href={url}
-            target="__blank"
-          >
+          <a className={linkClassName} href={url} target="__blank">
             {title}
           </a>
         ) : (
-          <Link
-            className="text-gray-700 dark:text-gray-200 mt-1 text-2xl leading-tight font-semibold hover:underline"
-            to={path}
-          >
+          <Link className={linkClassName} to={path}>
             {title}
           </Link>
         )}
-        <p className="mt-2 text-gray-700 dark:text-gray-400">{description}</p>
+        <p className="text-gray-700 dark:text-gray-400 mt-2">{description}</p>
       </div>
     </div>
   )

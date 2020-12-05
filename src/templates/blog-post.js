@@ -37,7 +37,7 @@ export const data = graphql`
   }
 `
 
-const BlogPostTemplate = ({ data, allData }) => {
+const BlogPostTemplate = ({ data }) => {
   const { markdownRemark: blogPost, allMarkdownRemark: blogPosts } = data
 
   const date = blogPost.frontmatter.date
@@ -64,7 +64,7 @@ const BlogPostTemplate = ({ data, allData }) => {
         textColor="white"
         bgColor="indigo-300"
         bgHoverColor="indigo-400"
-        borderColor="indigo-200"
+        borderColor="transparent"
       />
     </div>
   )
@@ -97,7 +97,7 @@ const BlogPostTemplate = ({ data, allData }) => {
     <Layout>
       <SEO title={blogPost.frontmatter.title} />
       {legend}
-      <h1 className="text-gray-700 dark:text-gray-400">{title}</h1>
+      <h1 className="text-gray-700 dark:text-gray-200">{title}</h1>
       <div
         className="text-gray-700 dark:text-gray-400"
         dangerouslySetInnerHTML={{ __html: blogPost.html }}

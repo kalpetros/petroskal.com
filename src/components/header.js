@@ -68,20 +68,10 @@ const Header = () => {
               />
             </Link>
             <Link to="/about">
-              <Button
-                title="About"
-                textColor="gray-700"
-                bgColor="white"
-                bgHoverColor="gray-100"
-              />
+              <Button title="About" />
             </Link>
             <Link to="/books">
-              <Button
-                title="Books"
-                textColor="gray-700"
-                bgColor="white"
-                bgHoverColor="gray-100"
-              />
+              <Button title="Books" />
             </Link>
           </div>
           <div className="grid grid-flow-col sm:gap-8 items-center sm:justify-end text-right">
