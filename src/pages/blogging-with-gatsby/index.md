@@ -1,7 +1,7 @@
 ---
-path: "/creating-a-blog-with-gatsby"
+path: "/blogging-with-gatsby"
 date: 2020-06-02T21:00:00.000Z
-title: "Creating a Blog with Gatsby"
+title: "Blogging with Gatsby"
 ---
 
 ## Getting started
