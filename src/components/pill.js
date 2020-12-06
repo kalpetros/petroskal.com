@@ -2,7 +2,7 @@ import PropTypes from "prop-types"
 import React from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-export const Pill = props => {
+const Pill = props => {
   const {
     title,
     tooltip,
@@ -76,3 +76,5 @@ Pill.propTypes = {
   bgHoverColor: PropTypes.string,
   borderColor: PropTypes.string,
 }
+
+export default Pill

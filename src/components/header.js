@@ -3,7 +3,8 @@ import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { Button } from "./button"
+
+import Button from "./button"
 
 const Item = props => {
   let className = "cursor-pointer"

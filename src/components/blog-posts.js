@@ -2,8 +2,8 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { Link } from "gatsby"
 
+import Pill from "./pill"
 import Panel from "./panel"
-import { Pill } from "./pill"
 
 const BlogPosts = () => {
   const data = useStaticQuery(graphql`
@@ -47,15 +47,17 @@ const BlogPosts = () => {
 
     return (
       <div key={blogPost.id} className="mb-8">
-        <Panel
-          legend={legend}
-          title={
+        <Panel>
+          <div>
+            {legend}
             <Link className={linkClassName} to={blogPost.frontmatter.path}>
               {blogPost.frontmatter.title}
             </Link>
-          }
-          description={blogPost.excerpt}
-        />
+            <p className="text-gray-700 dark:text-gray-400 mt-2">
+              {blogPost.excerpt}
+            </p>
+          </div>
+        </Panel>
       </div>
     )
   })

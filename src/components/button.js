@@ -3,8 +3,18 @@ import React from "react"
 import { Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-export const Button = props => {
-  const { title, to, icon, bgColor, bgHoverColor, textColor } = props
+const Button = props => {
+  const {
+    title,
+    type,
+    form,
+    to,
+    icon,
+    bgColor,
+    bgHoverColor,
+    textColor,
+    onClick,
+  } = props
   const bgColorClass =
     bgColor !== "" ? `bg-${bgColor}` : "bg-gray-100 dark:bg-transparent"
   const bgHoverColorClass =
@@ -26,7 +36,7 @@ export const Button = props => {
     )
   }
   return (
-    <button className={className}>
+    <button className={className} type={type} form={form} onClick={onClick}>
       {icon.length > 0 ? <FontAwesomeIcon icon={icon} /> : title}
     </button>
   )
@@ -34,6 +44,8 @@ export const Button = props => {
 
 Button.defaultProps = {
   title: "Button",
+  type: "",
+  form: "",
   to: "",
   icon: [],
   bgColor: "",
@@ -43,9 +55,14 @@ Button.defaultProps = {
 
 Button.propTypes = {
   title: PropTypes.string,
+  type: PropTypes.string,
+  form: PropTypes.string,
   to: PropTypes.string,
   icon: PropTypes.array,
   bgColor: PropTypes.string,
   bgHoverColor: PropTypes.string,
   textColor: PropTypes.string,
+  onClick: PropTypes.func,
 }
+
+export default Button

@@ -1,11 +1,9 @@
-import PropTypes from "prop-types"
 import React from "react"
 import { graphql } from "gatsby"
-import Img from "gatsby-image"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import IconItem from "../components/icon-item"
 
 export const image = graphql`
   fragment image on File {
@@ -56,41 +54,6 @@ export const images = graphql`
   }
 `
 
-const ImageItem = props => {
-  const { name, url, image, imageAlt, icon } = props
-
-  return (
-    <div
-      className="flex bg-gray-100 dark:bg-gray-700 rounded-full h-12 w-12 items-center justify-center relative has-tooltip"
-      data-tooltip={name}
-    >
-      <a href={url} target="__blank">
-        {icon ? (
-          <FontAwesomeIcon
-            className="text-gray-700 dark:text-gray-200"
-            icon={props.icon}
-          />
-        ) : image ? (
-          <Img
-            fluid={image}
-            alt={imageAlt}
-            className="h-5 w-5"
-            placeholderClassName="mb-0"
-          />
-        ) : null}
-      </a>
-    </div>
-  )
-}
-
-ImageItem.propTypes = {
-  name: PropTypes.string,
-  url: PropTypes.string,
-  image: PropTypes.string,
-  imageAlt: PropTypes.string,
-  icon: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
-}
-
 const About = props => {
   return (
     <Layout>
@@ -113,27 +76,27 @@ const About = props => {
       </p>
       <h3 className="text-gray-700 dark:text-gray-400">You can find me on:</h3>
       <div className="grid grid-flow-col auto-cols-max gap-2 mb-4 overflow-auto">
-        <ImageItem
+        <IconItem
           name="Twitter"
           url={props.data.site.siteMetadata.twitter}
           icon={["fab", "twitter"]}
         />
-        <ImageItem
+        <IconItem
           name="Linkedin"
           url={props.data.site.siteMetadata.linkedin}
           icon={["fab", "linkedin"]}
         />
-        <ImageItem
+        <IconItem
           name="Github"
           url={props.data.site.siteMetadata.github}
           icon={["fab", "github"]}
         />
-        <ImageItem
+        <IconItem
           name="Stackoverflow"
           url={props.data.site.siteMetadata.stackoverflow}
           icon={["fab", "stack-overflow"]}
         />
-        <ImageItem
+        <IconItem
           name="Email"
           url={`mailto:${props.data.site.siteMetadata.email}`}
           icon="envelope-open"
@@ -143,37 +106,37 @@ const About = props => {
         This website is made with:
       </h3>
       <div className="grid grid-flow-col auto-cols-max gap-2 overflow-auto">
-        <ImageItem
+        <IconItem
           name="Gatsby"
           url="https://www.gatsbyjs.org/"
           image={props.data.gatsby.childImageSharp.fluid}
           imageAlt="gatsby"
         />
-        <ImageItem
+        <IconItem
           name="ReactJS"
           url="https://reactjs.org/"
           image={props.data.react.childImageSharp.fluid}
           imageAlt="react"
         />
-        <ImageItem
+        <IconItem
           name="GraphQL"
           url="https://graphql.org/"
           image={props.data.graphql.childImageSharp.fluid}
           imageAlt="graphql"
         />
-        <ImageItem
+        <IconItem
           name="Tailwind"
           url="https://tailwindcss.com/"
           image={props.data.tailwind.childImageSharp.fluid}
           imageAlt="tailwind"
         />
-        <ImageItem
+        <IconItem
           name="Markdown"
           url="https://daringfireball.net/projects/markdown/"
           image={props.data.markdown.childImageSharp.fluid}
           imageAlt="markdown"
         />
-        <ImageItem
+        <IconItem
           name="Netlify"
           url="https://www.netlify.com/"
           image={props.data.netlify.childImageSharp.fluid}

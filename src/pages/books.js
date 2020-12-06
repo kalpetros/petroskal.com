@@ -2,7 +2,8 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { Pill } from "../components/pill"
+import Pill from "../components/pill"
+import Panel from "../components/panel"
 
 const bookList = [
   {
@@ -117,25 +118,26 @@ const Books = () => {
     )
 
     return (
-      <div
-        key={`book-${index}`}
-        className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 mb-4 grid sm:grid-cols-2 gap-4 items-center"
-      >
-        <div>
-          <a
-            className="font-semibold hover:underline text-gray-700 dark:text-gray-200"
-            href={book.url}
-            target="__blank"
-          >
-            {book.title}
-          </a>
-        </div>
-        <div className="grid grid-flow-col auto-cols-max gap-2 items-center justify-end">
-          <div>{authorsEl}</div>
-          <div>
-            <Pill title={book.genre} />
+      <div className="mb-4">
+        <Panel key={`book-${index}`}>
+          <div className="grid sm:grid-cols-2 gap-4 items-center">
+            <div>
+              <a
+                className="font-semibold hover:underline text-gray-700 dark:text-gray-200"
+                href={book.url}
+                target="__blank"
+              >
+                {book.title}
+              </a>
+            </div>
+            <div className="grid grid-flow-col auto-cols-max gap-2 items-center justify-end">
+              <div>{authorsEl}</div>
+              <div>
+                <Pill title={book.genre} />
+              </div>
+            </div>
           </div>
-        </div>
+        </Panel>
       </div>
     )
   })
