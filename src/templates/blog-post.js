@@ -136,7 +136,7 @@ const BlogPostTemplate = ({ data }) => {
       {legend}
       <h1 className="text-gray-700 dark:text-gray-200">{title}</h1>
       <div
-        className="text-gray-700 dark:text-gray-400"
+        className="text-gray-700 dark:text-gray-400 text-xl leading-8"
         dangerouslySetInnerHTML={{ __html: blogPost.html }}
       />
       <div className="mt-8">

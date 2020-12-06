@@ -57,7 +57,7 @@ const Header = () => {
 
   return (
     <header className="bg-white dark:bg-gray-800 sticky top-0 mb-8 z-10">
-      <div className="max-w-screen-lg mx-auto px-8">
+      <div className="max-w-screen-lg mx-auto px-8 sm:px-12">
         <nav className="grid sm:grid-cols-2 py-6 items-center">
           <div className="grid grid-flow-col auto-cols-max gap-8 items-center sm:justify-start">
             <Link className="h-12 w-12" to="/">

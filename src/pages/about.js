@@ -59,17 +59,17 @@ const About = props => {
     <Layout>
       <SEO title="About" />
       <h1 className="text-gray-700 dark:text-gray-200">Hey there!</h1>
-      <p className="text-gray-700 dark:text-gray-400">
+      <p className="text-gray-700 dark:text-gray-400 text-xl leading-8 mt-12">
         I'm Petros. I'm a software engineer passionate about the web, its future
         and how to build and deliver efficient, human-friendly and well tested
         software. I love rich user experiences and interfaces that scale and can
         be used with minimal effort.
       </p>
-      <p className="text-gray-700 dark:text-gray-400">
+      <p className="text-gray-700 dark:text-gray-400 text-xl leading-8">
         I'm currently working with a semi-remote agile team in a travel
         technology startup.
       </p>
-      <p className="text-gray-700 dark:text-gray-400">
+      <p className="text-gray-700 dark:text-gray-400 text-xl leading-8 mb-12">
         When I'm away from the keyboard you will usually find me planning my
         next travel destination, creating music or picking up an intersting
         book.
