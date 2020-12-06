@@ -118,8 +118,8 @@ const Books = () => {
     )
 
     return (
-      <div className="mb-4">
-        <Panel key={`book-${index}`}>
+      <div key={`book-${index}`} className="mb-4">
+        <Panel>
           <div className="grid sm:grid-cols-2 gap-4 items-center">
             <div>
               <a
