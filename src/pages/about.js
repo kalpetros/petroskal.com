@@ -28,28 +28,44 @@ export const images = graphql`
       }
     }
 
-    gatsby: file(relativePath: { eq: "gatsby.png" }) {
-      ...image
+    twitter: file(relativePath: { eq: "twitter.svg" }) {
+      publicURL
     }
 
-    react: file(relativePath: { eq: "react.png" }) {
-      ...image
+    linkedin: file(relativePath: { eq: "linkedin.svg" }) {
+      publicURL
     }
 
-    graphql: file(relativePath: { eq: "graphql.png" }) {
-      ...image
+    github: file(relativePath: { eq: "github.svg" }) {
+      publicURL
     }
 
-    tailwind: file(relativePath: { eq: "tailwind.png" }) {
-      ...image
+    stackoverflow: file(relativePath: { eq: "stackoverflow.svg" }) {
+      publicURL
     }
 
-    markdown: file(relativePath: { eq: "markdown.png" }) {
-      ...image
+    gatsby: file(relativePath: { eq: "gatsby.svg" }) {
+      publicURL
     }
 
-    netlify: file(relativePath: { eq: "netlify.png" }) {
-      ...image
+    react: file(relativePath: { eq: "react.svg" }) {
+      publicURL
+    }
+
+    graphql: file(relativePath: { eq: "graphql.svg" }) {
+      publicURL
+    }
+
+    tailwind: file(relativePath: { eq: "tailwindcss.svg" }) {
+      publicURL
+    }
+
+    markdown: file(relativePath: { eq: "markdown.svg" }) {
+      publicURL
+    }
+
+    netlify: file(relativePath: { eq: "netlify.svg" }) {
+      publicURL
     }
   }
 `
@@ -59,17 +75,17 @@ const About = props => {
     <Layout>
       <SEO title="About" />
       <h1 className="text-gray-700 dark:text-gray-200">Hey there!</h1>
-      <p className="text-gray-700 dark:text-gray-400 text-xl leading-8 mt-12">
+      <p className="text-gray-700 dark:text-gray-400">
         I'm Petros. I'm a software engineer passionate about the web, its future
         and how to build and deliver efficient, human-friendly and well tested
         software. I love rich user experiences and interfaces that scale and can
         be used with minimal effort.
       </p>
-      <p className="text-gray-700 dark:text-gray-400 text-xl leading-8">
+      <p className="text-gray-700 dark:text-gray-400">
         I'm currently working with a semi-remote agile team in a travel
         technology startup.
       </p>
-      <p className="text-gray-700 dark:text-gray-400 text-xl leading-8 mb-12">
+      <p className="text-gray-700 dark:text-gray-400">
         When I'm away from the keyboard you will usually find me planning my
         next travel destination, creating music or picking up an intersting
         book.
@@ -79,27 +95,22 @@ const About = props => {
         <IconItem
           name="Twitter"
           url={props.data.site.siteMetadata.twitter}
-          icon={["fab", "twitter"]}
+          image={props.data.twitter.publicURL}
         />
         <IconItem
           name="Linkedin"
           url={props.data.site.siteMetadata.linkedin}
-          icon={["fab", "linkedin"]}
+          image={props.data.linkedin.publicURL}
         />
         <IconItem
           name="Github"
           url={props.data.site.siteMetadata.github}
-          icon={["fab", "github"]}
+          image={props.data.github.publicURL}
         />
         <IconItem
           name="Stackoverflow"
           url={props.data.site.siteMetadata.stackoverflow}
-          icon={["fab", "stack-overflow"]}
-        />
-        <IconItem
-          name="Email"
-          url={`mailto:${props.data.site.siteMetadata.email}`}
-          icon="envelope-open"
+          image={props.data.stackoverflow.publicURL}
         />
       </div>
       <h3 className="text-gray-700 dark:text-gray-400">
@@ -109,37 +120,37 @@ const About = props => {
         <IconItem
           name="Gatsby"
           url="https://www.gatsbyjs.org/"
-          image={props.data.gatsby.childImageSharp.fluid}
+          image={props.data.gatsby.publicURL}
           imageAlt="gatsby"
         />
         <IconItem
           name="ReactJS"
           url="https://reactjs.org/"
-          image={props.data.react.childImageSharp.fluid}
+          image={props.data.react.publicURL}
           imageAlt="react"
         />
         <IconItem
           name="GraphQL"
           url="https://graphql.org/"
-          image={props.data.graphql.childImageSharp.fluid}
+          image={props.data.graphql.publicURL}
           imageAlt="graphql"
         />
         <IconItem
           name="Tailwind"
           url="https://tailwindcss.com/"
-          image={props.data.tailwind.childImageSharp.fluid}
+          image={props.data.tailwind.publicURL}
           imageAlt="tailwind"
         />
         <IconItem
           name="Markdown"
           url="https://daringfireball.net/projects/markdown/"
-          image={props.data.markdown.childImageSharp.fluid}
+          image={props.data.markdown.publicURL}
           imageAlt="markdown"
         />
         <IconItem
           name="Netlify"
           url="https://www.netlify.com/"
-          image={props.data.netlify.childImageSharp.fluid}
+          image={props.data.netlify.publicURL}
           imageAlt="netlify"
         />
       </div>

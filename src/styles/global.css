@@ -33,6 +33,10 @@ h3 {
   font-size: 1.31951rem;
 }
 
+p {
+  font-size: 1.25rem;
+}
+
 pre {
   border-radius: 5px;
 }
@@ -49,6 +53,7 @@ pre {
   width: max-content;
   background-color: #000;
   color: #fff;
+  font-weight: 400;
   padding: 0.5rem;
   margin-right: 0.5rem;
   border-radius: 0.75rem;

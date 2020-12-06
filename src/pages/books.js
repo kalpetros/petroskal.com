@@ -146,7 +146,7 @@ const Books = () => {
     <Layout>
       <SEO title="Books" />
       <h1 className="text-gray-700 dark:text-gray-200">Books</h1>
-      <p className="text-gray-700 dark:text-gray-400 text-xl leading-8 my-12">
+      <p className="text-gray-700 dark:text-gray-400">
         Below you will find a list of books I've read that I think they are
         worth having a look. This list is not limited to software engineering,
         hence every interesting book that I come across will be added here.
