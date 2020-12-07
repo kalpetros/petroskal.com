@@ -6,8 +6,32 @@
  */
 import React from "react"
 import PropTypes from "prop-types"
+import { library } from "@fortawesome/fontawesome-svg-core"
+import {
+  faGithub,
+  faTwitter,
+  faLinkedin,
+  faStackOverflow,
+} from "@fortawesome/free-brands-svg-icons"
+import {
+  faEnvelopeOpen,
+  faInfoCircle,
+  faLongArrowAltLeft,
+  faLongArrowAltRight,
+} from "@fortawesome/free-solid-svg-icons"
 
 import Header from "./header"
+
+library.add(
+  faGithub,
+  faTwitter,
+  faLinkedin,
+  faStackOverflow,
+  faEnvelopeOpen,
+  faInfoCircle,
+  faLongArrowAltLeft,
+  faLongArrowAltRight
+)
 
 const Layout = ({ children }) => {
   return (
