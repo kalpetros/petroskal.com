@@ -87,7 +87,7 @@ const About = props => {
       </p>
       <p className="text-gray-700 dark:text-gray-400">
         When I'm away from the keyboard you will usually find me planning my
-        next travel destination, creating music or picking up an intersting
+        next travel destination, creating music or picking up an interesting
         book.
       </p>
       <h3 className="text-gray-700 dark:text-gray-400">You can find me on:</h3>
