@@ -3,7 +3,7 @@
   "private": true,
   "description": "Personal website",
   "version": "0.1.0",
-  "author": "Petros Kalogiannakis <hi@petroskal.com>",
+  "author": "Petros Kalogiannakis <kalpetros@pm.me>",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
     "@fortawesome/free-brands-svg-icons": "^5.13.0",

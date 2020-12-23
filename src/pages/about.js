@@ -113,6 +113,10 @@ const About = props => {
           image={props.data.stackoverflow.publicURL}
         />
       </div>
+      <div>
+        <p className="text-gray-700 dark:text-gray-400"><b>Email:</b> kalpetros at "pm" . me</p>
+        <p className="text-gray-700 dark:text-gray-400"><b>PGP Fingerprint:</b> 01143d49d4c9935012532e8ecfae0ddceb237cc7</p>
+      </div>
       <h3 className="text-gray-700 dark:text-gray-400">
         This website is made with:
       </h3>
