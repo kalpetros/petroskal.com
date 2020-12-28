@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import IconItem from "../components/icon-item"
+import Panel from "../components/panel"
 
 export const image = graphql`
   fragment image on File {
@@ -131,13 +132,18 @@ const About = props => {
         />
       </div>
       <div>
-        <p className="text-gray-700 dark:text-gray-400">
-          <b>Email:</b> "kalpetros" at "pm" dot "me"
-        </p>
-        <p className="text-gray-700 dark:text-gray-400">
-          <b>PGP Fingerprint:</b>{" "}
-          <span className="uppercase">CBFD 8362 5C61 8509</span>
-        </p>
+        <div className="mb-4">
+          <Panel>
+            <div className="font-semibold">Email</div>
+            <div>kalpetros at pm dot me</div>
+          </Panel>
+        </div>
+        <div className="mb-4">
+          <Panel>
+            <div className="font-semibold">PGP Signature</div>
+            <div className="uppercase">CBFD 8362 5C61 8509</div>
+          </Panel>
+        </div>
       </div>
       <h3 className="text-gray-700 dark:text-gray-400">
         This website is made with:
