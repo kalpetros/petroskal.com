@@ -20,12 +20,21 @@ export const images = graphql`
     site {
       siteMetadata {
         title
+        github
+        keybase
         twitter
         linkedin
-        github
         stackoverflow
         email
       }
+    }
+
+    github: file(relativePath: { eq: "github.svg" }) {
+      publicURL
+    }
+
+    keybase: file(relativePath: { eq: "keybase.svg" }) {
+      publicURL
     }
 
     twitter: file(relativePath: { eq: "twitter.svg" }) {
@@ -33,10 +42,6 @@ export const images = graphql`
     }
 
     linkedin: file(relativePath: { eq: "linkedin.svg" }) {
-      publicURL
-    }
-
-    github: file(relativePath: { eq: "github.svg" }) {
       publicURL
     }
 
@@ -87,11 +92,28 @@ const About = props => {
       </p>
       <p className="text-gray-700 dark:text-gray-400">
         When I'm away from the keyboard you will usually find me planning my
-        next travel destination, creating music or picking up an interesting
-        book.
+        next travel destination, creating music or picking up{" "}
+        <a
+          href="https://www.goodreads.com/user/show/65614320-petros-kalogiannakis"
+          className="text-indigo-500"
+          target="__blank"
+        >
+          an interesting book
+        </a>
+        .
       </p>
       <h3 className="text-gray-700 dark:text-gray-400">You can find me on:</h3>
       <div className="grid grid-flow-col auto-cols-max gap-2 mb-4 overflow-auto">
+        <IconItem
+          name="Github"
+          url={props.data.site.siteMetadata.github}
+          image={props.data.github.publicURL}
+        />
+        <IconItem
+          name="Keybase"
+          url={props.data.site.siteMetadata.keybase}
+          image={props.data.keybase.publicURL}
+        />
         <IconItem
           name="Twitter"
           url={props.data.site.siteMetadata.twitter}
@@ -103,19 +125,19 @@ const About = props => {
           image={props.data.linkedin.publicURL}
         />
         <IconItem
-          name="Github"
-          url={props.data.site.siteMetadata.github}
-          image={props.data.github.publicURL}
-        />
-        <IconItem
           name="Stackoverflow"
           url={props.data.site.siteMetadata.stackoverflow}
           image={props.data.stackoverflow.publicURL}
         />
       </div>
       <div>
-        <p className="text-gray-700 dark:text-gray-400"><b>Email:</b> kalpetros at "pm" . me</p>
-        <p className="text-gray-700 dark:text-gray-400"><b>PGP Fingerprint:</b> 01143d49d4c9935012532e8ecfae0ddceb237cc7</p>
+        <p className="text-gray-700 dark:text-gray-400">
+          <b>Email:</b> "kalpetros" at "pm" dot "me"
+        </p>
+        <p className="text-gray-700 dark:text-gray-400">
+          <b>PGP Fingerprint:</b>{" "}
+          <span className="uppercase">CBFD 8362 5C61 8509</span>
+        </p>
       </div>
       <h3 className="text-gray-700 dark:text-gray-400">
         This website is made with:

@@ -2,10 +2,11 @@ module.exports = {
   siteMetadata: {
     title: `Petros Kalogiannakis`,
     description: `Personal website`,
+    github: "https://github.com/kalpetros",
+    keybase: "https://keybase.io/kalpetros",
     author: `Petros Kalogiannakis`,
     twitter: "https://twitter.com/kalpetross",
     linkedin: "https://www.linkedin.com/in/kalpetros/",
-    github: "https://github.com/kalpetros",
     stackoverflow: "https://stackoverflow.com/users/2005799/kalpetros",
     email: "kalpetros@pm.me",
   },
@@ -24,8 +25,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/pages`,
         name: "posts",
+        path: `${__dirname}/src/pages`,
       },
     },
     {
