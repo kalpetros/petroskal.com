@@ -101,7 +101,7 @@ const About = props => {
         .
       </p>
       <h3 className="text-gray-700 dark:text-gray-400">You can find me on:</h3>
-      <div className="grid grid-flow-col auto-cols-max gap-2 mb-4 overflow-auto">
+      <div className="grid grid-flow-col auto-cols-max gap-2 mb-4">
         <IconItem
           name="Github"
           url={props.data.site.siteMetadata.github}
@@ -145,7 +145,7 @@ const About = props => {
       <h3 className="text-gray-700 dark:text-gray-400">
         This website is made with:
       </h3>
-      <div className="grid grid-flow-col auto-cols-max gap-2 overflow-auto">
+      <div className="grid grid-flow-col auto-cols-max gap-2">
         <IconItem
           name="Gatsby"
           url="https://www.gatsbyjs.org/"
