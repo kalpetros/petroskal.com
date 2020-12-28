@@ -6,7 +6,7 @@ const IconItem = props => {
 
   return (
     <div
-      className="flex bg-gray-100 dark:bg-gray-700 rounded-full h-12 w-12 items-center justify-center relative has-tooltip"
+      className="flex bg-gray-100 dark:bg-gray-700 rounded-full h-12 w-12 items-center justify-center cursor-pointer relative has-tooltip"
       data-tooltip={name}
     >
       <a href={url} target="__blank">
