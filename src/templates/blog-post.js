@@ -84,8 +84,8 @@ const BlogPostTemplate = ({ data }) => {
         icon={["fab", "twitter"]}
         title="Tweet"
         textColor="white"
-        bgColor="indigo-300"
-        bgHoverColor="indigo-400"
+        bgColor="indigo-500"
+        bgHoverColor="indigo-600"
         borderColor="transparent"
       />
     </div>
@@ -161,8 +161,8 @@ const BlogPostTemplate = ({ data }) => {
                   title="Subscribe"
                   type="submit"
                   form="newsletter"
-                  bgColor="gray-500"
-                  bgHoverColor="gray-600"
+                  bgColor="indigo-500"
+                  bgHoverColor="indigo-600"
                   textColor="white"
                 />
               </div>
