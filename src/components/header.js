@@ -44,7 +44,6 @@ const Header = () => {
               />
             </Link>
             <Button title="About" to="/about" />
-            <Button title="Books" to="/books" />
           </div>
           <div className="grid justify-end">
             <Button

@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
@@ -94,13 +95,9 @@ const About = props => {
       <p className="text-gray-700 dark:text-gray-400">
         When I'm away from the keyboard you will usually find me planning my
         next travel destination, creating music or picking up{" "}
-        <a
-          href="https://www.goodreads.com/user/show/65614320-petros-kalogiannakis"
-          className="text-indigo-500"
-          target="__blank"
-        >
+        <Link to="/books" className="text-indigo-500" target="__blank">
           an interesting book
-        </a>
+        </Link>
         .
       </p>
       <h3 className="text-gray-700 dark:text-gray-400">You can find me on:</h3>
