@@ -38,19 +38,7 @@ const Layout = ({ children }) => {
     <>
       <Header />
       <main className="max-w-screen-lg mx-auto px-8 sm:px-12">{children}</main>
-      <footer className="text-center p-4">
-        <a
-          rel="license"
-          href="http://creativecommons.org/licenses/by/4.0/"
-          target="__blank"
-        >
-          <img
-            className="inline-block"
-            src="https://i.creativecommons.org/l/by/4.0/80x15.png"
-            alt="Creative Commons License"
-          />
-        </a>
-      </footer>
+      <footer className="text-center p-4"></footer>
     </>
   )
 }

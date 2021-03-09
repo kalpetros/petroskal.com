@@ -131,14 +131,22 @@ const About = props => {
       <div>
         <div className="mb-4">
           <Panel>
-            <div className="font-semibold">Email</div>
-            <div>kalpetros at pm dot me</div>
+            <div className="text-gray-700 dark:text-gray-200 font-semibold">
+              Email
+            </div>
+            <div className="text-gray-700 dark:text-gray-400">
+              kalpetros at pm dot me
+            </div>
           </Panel>
         </div>
         <div className="mb-4">
           <Panel>
-            <div className="font-semibold">PGP Signature</div>
-            <div className="uppercase">CBFD 8362 5C61 8509</div>
+            <div className="text-gray-700 dark:text-gray-200 font-semibold">
+              PGP Signature
+            </div>
+            <div className="text-gray-700 dark:text-gray-400 uppercase">
+              CBFD 8362 5C61 8509
+            </div>
           </Panel>
         </div>
       </div>
